@@ -33,6 +33,8 @@ export interface Service {
     featuresTitle?: string;
     featuresDescription?: string;
     showFeaturesTop?: boolean; // Some pages show features before intro
+    metaTitle?: string;
+    metaDescription?: string;
 }
 
 export const specialtiesList: Service[] = [
@@ -201,276 +203,199 @@ export const servicesList: Service[] = [
     {
         title: "Eligibility Verification",
         slug: "eligibility-verification",
-        bannerTitle: "Eligibility Verification",
-        description: "Comprehensive patient eligibility verification services.",
+        bannerTitle: "Medical Insurance Verification Services in New York",
+        description: "SBN provides medical insurance verification service in New York. Reduce claim denials with real-time checks and accurate eligibility verification.",
         sections: [
             {
                 type: 'problem-snapshot',
-                title: 'The Hidden Cost of Poor Verification',
+                title: 'The Hidden Cost of Poor Insurance Verification',
                 data: [
-                    { title: 'Eligibility Denials', description: 'Over 30% of denials stem from simple eligibility errors or inactive coverage.' },
-                    { title: 'Manual Verification', description: 'High labor costs and human error during manual portal checks.' },
-                    { title: 'Delayed Care', description: 'Patients turned away or delayed due to unverified insurance status.' }
+                    { title: 'Billed Services', description: 'Treating patients without checking insurance leads to services that cannot be billed.' },
+                    { title: 'Claim Denials', description: 'Manual work and poor communication make claim denials even worse.' },
+                    { title: 'Loss of Revenue', description: 'Accuracy matters more than location when it comes to Protecting your revenue and reducing extra work.' }
                 ]
             },
             {
                 type: 'workflow',
-                title: 'Real-Time Verification Engine',
-                subtitle: 'Automated Precision',
+                title: 'Simple Verification System',
+                subtitle: 'Our Step-by-Step Process',
                 data: [
-                    { title: 'Capture', description: 'Patient demographic data ingested via EMR integration.' },
-                    { title: 'Query', description: 'Automated 270/271 EDI transactions to payers for instant coverage verification.' },
-                    { title: 'Validate', description: 'Cross-check for secondary insurance, deductible balance, and co-pay requirements.' },
-                    { title: 'Notify', description: 'Instant alerts to front-desk staff for any eligibility discrepancies.' }
+                    { title: 'Step 1: Details', description: 'Collect patient details accurately to initiate the verification process.' },
+                    { title: 'Step 2: Eligibility', description: 'Live real-time check of patient eligibility across multiple payers.' },
+                    { title: 'Step 3: Authorization', description: 'Check if prior approval or authorization is required for the treatment.' },
+                    { title: 'Step 4: Responsibility', description: 'Confirm final payment responsibility, co-pay, and deductible details.' }
                 ]
             },
             {
                 type: 'kpi',
-                title: 'Verification Performance',
-                subtitle: 'Operational Excellence',
+                title: 'Measurable Impact',
+                subtitle: 'Operational Results',
                 data: [
-                    { value: '99.9%', label: 'Accuracy Rate', description: 'Eliminating the guesswork from patient insurance coverage.' },
-                    { value: '< 2 Min', label: 'Processing Time', description: 'Instant feedback on patient eligibility for staff.' }
+                    { value: 'Correct', label: 'First Time', description: 'Ensuring claims are correct the first time with multiple accuracy checks.' },
+                    { value: 'Safe', label: 'HIPAA Compliant', description: 'Your data is safe, work is accurate and fully HIPAA compliant.' }
                 ]
+            },
+            {
+                type: 'standard',
+                title: 'Frequently Asked Questions',
+                image: '/Section 4-1.png',
+                imagePosition: 'right',
+                list: [
+                    'What is insurance verification? It means checking patient insurance before treatment to prevent claim denials.',
+                    'Do you work in New York? Yes, we support New York providers remotely with high accuracy.',
+                    'How can I contact you? You can get started today by phone or email for a free eligibility audit.',
+                    'Does it reduce errors? Yes, it significantly reduces billing errors and improves correct co-pay collection.'
+                ]
+            },
+            {
+                title: "Ready to stop losing money?",
+                content: "Stop the leakage now. Always check insurance before treatment. Get your free eligibility audit today.",
+                type: "cta"
             }
         ],
-        featuresTitle: "Insurance Eligibility",
-        features: [
-            { title: "Schedule", icon: FaChartArea },
-            { title: "Ascertain Coverage", icon: FaBullhorn },
-            { title: "Obtain Prior Authorization", icon: FaList },
-            { title: "Identify Policy Exclusion", icon: FaLocationArrow },
-        ],
-        showFeaturesTop: false
-    },
-    {
-        title: "Medical Billing",
-        slug: "medical-billing",
-        bannerTitle: "Advanced & Efficient Medical Billing Services",
-        description: "Error-free charge entry and real-time insurance verification.",
         showFeaturesTop: true,
-        featuresTitle: "Key Features of Medical Billing Services",
-        featuresDescription: "SBN Healthcare Medical billing and coding services can do a lot to help you run your medical practice efficiently while growing your practice. Our free medical billing software enables you to manage all the patients’ data, improve your practice profitability, increase the number of patients, increase collection rates and reduce denied claims.",
+        featuresTitle: "Service Highlights",
+        featuresDescription: "We check patient insurance before treatment so you can avoid errors and protect your revenue.",
         features: [
-            { title: "Error-Free Charge Entry", icon: FaChartPie, description: "We provide detailed error-free charge entry to ensure first-time approved claim submission. We take the demographics and charge info for each patient from you. Our billers enter the charges daily for the claim processing." },
-            { title: "Real-Time Insurance Verification", icon: FaFileInvoice, description: "We confirm every patients’ insurance eligibility to streamline your process, shorten account receivable days, and avoid denials." },
-            { title: "Claim Submission and Scrubbing", icon: FaCoins, description: "Our billing experts and scrubbing process make sure clean claims are submitted. If there are any rejections, after corrections, re-submission is done the same day." },
-            { title: "Payment Posting", icon: FaHandshake, description: "ERAs and EOBs are verified and posted on time. The remaining balances are posted to the patient's account. We verify to make sure appropriate payment is made on each claim." },
-            { title: "Patient Statements", icon: FaChartLine, description: "After confirmed appropriate payment from all payers, if the remaining balance is owed by a patient, a detailed statement is generated to send to the patient showing the due balance." },
-            { title: "Follow-Up & Appeals", icon: FaHandshake, description: "In case of a denial, our A/R specialists work on the cause of denial to resolve the problem and process the due payment." },
+            { title: "Real-time checks", icon: FaCheckCircle, description: "Instant verification of patient insurance before the visit." },
+            { title: "Fewer claim denials", icon: FaChartArea, description: "Ensure claims are correct the first time to minimize denials." },
+            { title: "HIPAA compliant", icon: FaHandshake, description: "Your data is safe and our work is fully compliant with HIPAA rules." },
+            { title: "Correct co-pays", icon: FaCoins, description: "We accurately confirm co-pay, deductible, and plan coverage." },
         ],
-        sections: [
-            {
-                type: 'ai-indicator',
-                stage: 'Intelligent Charge Capture',
-                description: 'Our AI-driven charge entry system identifies missing charges and potential coding errors before submission.',
-                data: '98.5% First-Pass Clean Claims'
-            },
-            {
-                type: 'workflow',
-                title: 'Full-Cycle Billing Precision',
-                subtitle: 'End-to-End Management',
-                data: [
-                    { title: 'Ingest', description: 'Seamless data retrieval from your EMR or secure encounter forms.' },
-                    { title: 'Scrub', description: 'Rigorous automated claim scrubbing for NCCI and payer-specific edits.' },
-                    { title: 'Submit', description: 'Direct EDI submission to primary, secondary, and tertiary payers.' },
-                    { title: 'Recover', description: 'Aggressive follow-up on any claim that doesn\'t result in appropriate payment within 15 days.' }
-                ]
-            },
-            {
-                type: 'kpi',
-                title: 'Billing Outcomes',
-                subtitle: 'Measured Success',
-                data: [
-                    { value: '15%', label: 'Revenue Lift', description: 'Average increase in collections for new clients in the first 6 months.' },
-                    { value: '25 Days', label: 'Average A/R', description: 'Consistently maintaining days in A/R well below industry benchmarks.' }
-                ]
-            },
-            {
-                title: "Ready to Transform Your Revenue Cycle?",
-                content: "Stop guessing and start growing. Our specialists are ready to conduct a comprehensive RCM audit for your practice today.",
-                type: "cta"
-            }
-        ]
+        metaTitle: "Medical Insurance Verification Service in New York | SBN",
+        metaDescription: "SBN provides medical insurance verification service in New York. Reduce claim denials with real-time checks and accurate eligibility verification."
     },
     {
-        title: "Medical Coding",
-        slug: "medical-coding",
-        bannerTitle: "Enjoy Greater Convenience with Integrated Coding Services",
-        description: "Save valuable time and get paid faster by sending clean insurance claims the first time.",
-        sections: [
-            {
-                type: 'ai-indicator',
-                stage: 'AI-Assisted Coding Accuracy',
-                description: 'Our proprietary AI engine cross-references clinical notes with ICD-10 and CPT databases to suggest the most precise codes, reducing human error.',
-                data: '99.2% Coding Accuracy'
-            },
-            {
-                type: 'workflow',
-                title: 'High-Velocity Coding Pipeline',
-                subtitle: 'Accuracy at Scale',
-                data: [
-                    { title: 'Ingest', description: 'Real-time retrieval of physician notes and clinical transcripts from EMR.' },
-                    { title: 'Screen', description: 'AI pre-coding and automated cross-referencing for NCCI edits.' },
-                    { title: 'Verify', description: 'CPC-certified review for complex cases and surgical procedure coding.' },
-                    { title: 'Finalize', description: 'Same-day completion of encounters for immediate billing submission.' }
-                ]
-            },
-            {
-                type: 'kpi',
-                title: 'Coding Performance',
-                subtitle: 'Speed and Precision',
-                data: [
-                    { value: '24h', label: 'Turnaround Time', description: 'Ensuring your claims are ready for submission within one business day.' },
-                    { value: '98%+', label: 'Audit Acceptance', description: 'Consistent performance that stands up to the most rigorous payer audits.' }
-                ]
-            },
-            {
-                title: "Ready to Minimize Denials with Precise Coding?",
-                content: "Accuracy starts at the code level. Our certified experts are ready to optimize your coding workflow today.",
-                type: "cta"
-            }
-        ],
-        featuresTitle: "Why Choose Us",
+        title: "Benefits Check",
+        slug: "benefits-check",
+        bannerTitle: "Real-Time Benefits Check & Coverage Confirmation",
+        description: "We confirm co-pay, deductible, and coverage details before treatment starts.",
+        showFeaturesTop: true,
+        metaTitle: "Comprehensive Benefits Check & Coverage Analysis | SBN",
+        metaDescription: "Identify patient responsibility early with our real-time benefits check. Get precise co-pay, deductible, and plan coverage details instantly.",
+        featuresTitle: "Key Highlights",
         features: [
-            { title: "Customer Service", icon: FaChartPie, description: "Our customer service team is always happy to assist at any time." },
-            { title: "Security", icon: FaFileInvoice, description: "We provide a tight security system to keep all your information safe." },
-            { title: "Support", icon: FaCoins, description: "The support we provide covers all aspects of the process." },
-        ]
-    },
-    {
-        title: "AR Follow-up & Denial Management",
-        slug: "ar-follow-up-and-denial-management",
-        bannerTitle: "AR Follow-up & Denial Management",
-        description: "Account Receivable Follow-up Services",
+            { title: "Real-time checks", icon: FaCheckCircle, description: "Instant verification of patient insurance before the visit." },
+            { title: "Correct Details", icon: FaList, description: "Providing accurate co-pay and deductible information for patient responsibility." },
+            { title: "Fewer Denials", icon: FaHandshake, description: "Reducing errors by checking insurance the right way every time." },
+        ],
         sections: [
             {
                 type: 'problem-snapshot',
-                title: 'The Burden of Unchecked Ar/Denials',
+                title: 'The Hidden Cost of Poor Insurance Verification',
                 data: [
-                    { title: 'Aging A/R > 90 Days', description: 'Hidden revenue leakage often hides in accounts that haven\'t been touched in months.' },
-                    { title: 'Generic Denial Codes', description: 'Automated payer responses that lack actionable intelligence.' },
-                    { title: 'Limited Staff Capacity', description: 'In-house teams overwhelmed by the volume of unpaid claims.' },
-                    { title: 'Missed Appeal Windows', description: 'Revenue permanently lost due to administrative delays.' }
+                    { title: 'Service Denials', description: 'Treating patients without checking insurance leads to services that cannot be billed.' },
+                    { title: 'Loss of Revenue', description: 'Claim denials and manual work lead to significant financial loss and extra work for staff.' }
                 ]
             },
             {
                 type: 'workflow',
-                title: 'Our Clean-Claim Engine',
+                title: 'Our Simple Verification System',
                 subtitle: 'The SBN Process',
                 data: [
-                    { title: 'Analyze', description: 'Root-cause analysis of every denial using historical data.' },
-                    { title: 'Correct', description: 'Human-in-the-loop validation of CPT and ICD coding edits.' },
-                    { title: 'Execute', description: 'Strategic re-submission and aggressive Payer follow-up.' },
-                    { title: 'Recover', description: 'Verification of appropriate payment and aging report cleanup.' }
+                    { title: 'Step 1: Collect', description: 'Gathering patient details accurately for initial validation.' },
+                    { title: 'Step 2: Check', description: 'Immediate eligibility check to confirm active coverage.' },
+                    { title: 'Step 3: Authorize', description: 'Verification of prior authorization requirements for specific services.' },
+                    { title: 'Step 4: Confirm', description: 'Final confirmation of patient payment responsibility and deductible status.' }
                 ]
             },
+            {
+                type: 'kpi',
+                title: 'Measurable Results',
+                subtitle: 'Operational Efficiency',
+                data: [
+                    { value: '100%', label: 'HIPAA Compliant', description: 'Ensuring your patient data is safe and fully compliant with rules.' },
+                    { value: 'Fast', label: 'Processing', description: 'Accelerating front desk work and reducing rework through automation.' }
+                ]
+            },
+            {
+                title: "Ready to stop losing money?",
+                content: "Always check insurance before treatment. Get your free eligibility audit today.",
+                type: "cta"
+            }
+        ]
+    },
+    {
+        title: "Prior Authorization",
+        slug: "prior-authorization",
+        bannerTitle: "Prior Authorization Management",
+        description: "We check if approval is needed and obtain it before the treatment is provided.",
+        metaTitle: "Advanced Prior Authorization Management for Providers | SBN",
+        metaDescription: "Streamline your pre-approval process with SBN's automated prior authorization management. Avoid claim denials by capturing approval before care.",
+        sections: [
             {
                 type: 'ai-indicator',
-                stage: 'Predictive Denial Mapping',
-                description: 'Our AI engine analyzes Payer patterns to predict potential denials before claims are even submitted, allowing for proactive correction.',
-                data: '94% Prediction Accuracy'
-            },
-            {
-                type: 'kpi',
-                title: 'Measurable Financial Recovery',
-                subtitle: 'Performance Benchmarks',
-                data: [
-                    { value: '30%', label: 'Reduction in A/R Days', description: 'Accelerating cash flow by shortening the billing cycle.' },
-                    { value: '98%', label: 'Clean Claim Rate', description: 'First-pass acceptance rate through rigorous scrubbing.' },
-                    { value: '15%', label: 'Revenue Lift', description: 'Average increase in collected revenue within 6 months.' },
-                    { value: '24/7', label: 'Monitor', description: 'Continuous surveillance of claim status across all Payers.' }
-                ]
-            },
-            {
-                title: "Ready to Recover Your Revenue?",
-                content: "Stop the leakage. Let our specialists conduct a free audit of your current aging reports and identify immediate recovery opportunities.",
-                type: "cta"
-            }
-        ]
-    },
-    {
-        title: "Credentialing & Contracting",
-        slug: "credentialing-and-contracting",
-        bannerTitle: "Credentialing & Contracting",
-        description: "Credentialing and contracting services.",
-        sections: [
-            {
-                type: 'problem-snapshot',
-                title: 'The Enrollment Bottleneck',
-                data: [
-                    { title: 'Delayed Revenue', description: 'New providers often wait 90-120 days to start billing while waiting for enrollment.' },
-                    { title: 'Incomplete Filings', description: 'Application rejections due to missing CAQH updates or expired licenses.' },
-                    { title: 'Out-of-Network Risks', description: 'High patient costs and lost volume due to expired or unmaintained contracts.' }
-                ]
+                stage: 'Smart Approval Check',
+                description: 'Our system automatically identifies services that require prior approval from the payer.',
+                data: 'Simple Verification System'
             },
             {
                 type: 'workflow',
-                title: 'Rapid Provider Enrollment',
-                subtitle: 'Accelerated Access',
+                title: 'Authorization Pipeline',
+                subtitle: 'Efficiency at Scale',
                 data: [
-                    { title: 'Onboard', description: 'Comprehensive documentation collection and verification (License, DEA, CV).' },
-                    { title: 'Submit', description: 'Strategic payer application submission via portal or direct EDI.' },
-                    { title: 'Monitor', description: 'Aggressive weekly follow-up with payer credentialing committees.' },
-                    { title: 'Network', description: 'Final contract execution and NPI/Payer ID linkage in EMR.' }
+                    { title: 'Identify', description: 'Step 1: Collecting patient details and service codes.' },
+                    { title: 'Verify', description: 'Step 2: Checking authorization requirements against payer rules.' },
+                    { title: 'Obtain', description: 'Step 3: Strategic submission of authorization requests to payers.' },
+                    { title: 'Confirm', description: 'Step 4: Confirming payment responsibility after approval.' }
                 ]
             },
             {
                 type: 'kpi',
-                title: 'Credentialing Velocity',
-                subtitle: 'Market Readiness',
+                title: 'Results & Success',
+                subtitle: 'Measured Excellence',
                 data: [
-                    { value: '-30%', label: 'Enrollment Lead Time', description: 'Average reduction in time-to-first-claim for new providers.' },
-                    { value: '100%', label: 'Compliance Audit', description: 'Ensuring every provider is fully licensed and credentialed across all active payers.' }
+                    { value: 'Fewer', label: 'Denials', description: 'Significantly reducing claim denials by ensuring authorization is set.' },
+                    { value: 'Better', label: 'Cash Flow', description: 'Less rework and faster reimbursements through precise front-end work.' }
                 ]
             },
             {
-                title: "Ready to Start Billing Faster?",
-                content: "Don't let paperwork slow down your growth. Our enrollment experts are ready to handle the heavy lifting for you.",
-                type: "cta"
+                type: 'standard',
+                title: 'Safe and Compliant',
+                content: 'We follow HIPAA rules strictly. Your data is safe, work is accurate, and fully compliant with healthcare regulations.'
             }
         ],
-        featuresTitle: "Provider Enrollment and Credentialing",
+        featuresTitle: "Why Choose Authorization Services",
         features: [
-            { title: "Documentation", icon: FaChartPie, description: "Collect documentation and validate, Catalog and Store." },
-            { title: "Payer Submission", icon: FaFileInvoice, description: "Identify top payers and file the application in payer-specific format." },
-            { title: "Ensure Enrollment", icon: FaCoins, description: "Timely follow-up of application and obtain the enrollment." },
-            { title: "Updates / Re-credentialing", icon: FaHandshake, description: "Periodic updates of the payer documents for recredenialing." }
+            { title: "HIPAA Compliant", icon: FaHandshake, description: "Following all HIPAA rules to keep your data safe and private." },
+            { title: "Accurate Work", icon: FaCheckCircle, description: "Ensuring all approvals are correct the first time." },
+            { title: "NY Providers", icon: FaLocationArrow, description: "We support New York providers remotely with precision." },
         ]
     },
     {
-        title: "Credit Balance Resolution",
-        slug: "credit-balance-resolution",
-        bannerTitle: "Credit Balance Resolution",
-        description: "Services that clean the credit balance backlog.",
+        title: "Exclusion Check",
+        slug: "exclusion-check",
+        bannerTitle: "Identify Policy Exclusions Early",
+        description: "We find services that are not covered by the patient's plan to avoid billing errors.",
+        metaTitle: "Medical Policy Exclusion Check | HIPAA Compliant | SBN",
+        metaDescription: "Reduce billing errors and rework by identifying policy exclusions up front. Our HIPAA compliant platform ensures precision policy mapping.",
         sections: [
             {
                 type: 'problem-snapshot',
-                title: 'The Burden of Credit Balances',
+                title: 'Avoid Unbillable Services',
                 data: [
-                    { title: 'Inaccurate Aging', description: 'Credit balances hide true receivables, leading to misleading financial reports.' },
-                    { title: 'Compliance Risk', description: 'Federal and State laws require timely identification and return of overpayments.' },
-                    { title: 'Administrator Overhead', description: 'Internal staff often lack the time to research complex overpayment scenarios.' }
+                    { title: 'Policy Exclusions', description: 'Hidden exclusions in patient policies can lead to services that cannot be billed.' },
+                    { title: 'In-State Rules', description: 'Specific rules for New York providers require accuracy over location.' }
                 ]
             },
             {
                 type: 'workflow',
-                title: 'Clean Aging Initiative',
-                subtitle: 'Precision Resolution',
+                title: 'Exclusion Verification Process',
+                subtitle: 'Strategic Analysis',
                 data: [
-                    { title: 'Identify', description: 'Deep audit of aging reports to find accounts with credit balance status.' },
-                    { title: 'Analyze', description: 'Root-cause analysis: duplicate posting, overpayment, or adjustment errors.' },
-                    { title: 'Resolve', description: 'Immediate correction of posting errors or processing of patient/payer refunds.' },
-                    { title: 'Cleanse', description: 'Final report validation to ensure aging accurately reflects practice profit.' }
+                    { title: 'Gather', description: 'Step 1: Collecting all necessary patient and policy information.' },
+                    { title: 'Analyze', description: 'Step 2: Checking policy language for specific service exclusions.' },
+                    { title: 'Alert', description: 'Step 3: Notifying the provider of unbillable services before treatment.' },
+                    { title: 'Validate', description: 'Step 4: Confirming alternate payment responsibility if excluded.' }
                 ]
             },
             {
                 type: 'kpi',
-                title: 'Resolution Impact',
-                subtitle: 'Audited Clarity',
+                title: 'Performance FAQ',
+                subtitle: 'Answers & Insights',
                 data: [
-                    { value: '100%', label: 'Compliance Guarantee', description: 'Eliminating the risk of OIG or payer audits related to overpayments.' },
-                    { value: '0', label: 'Credit Backlog', description: 'Our goal is a pristine ledger with zero unresolved credit balances.' }
+                    { value: 'Yes', label: 'NY Support', description: 'We support New York providers with remote, accurate services.' },
+                    { value: 'Yes', label: 'Error Reduction', description: 'Significantly reducing billing errors by identifying coverage gaps.' }
                 ]
             }
         ],

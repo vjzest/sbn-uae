@@ -20,7 +20,7 @@ const row2 = [...softwareList.slice(8, 16), ...softwareList.slice(8, 16)];
 
 const SoftwareExpertise = () => {
     return (
-        <section 
+        <section
             className="py-20 md:py-28 bg-cover bg-center bg-no-repeat overflow-hidden relative border-t border-slate-100"
             style={{ backgroundImage: 'url("/background%20image.webp")' }}
         >
@@ -39,8 +39,8 @@ const SoftwareExpertise = () => {
                         <span className="w-2 h-2 bg-[#0033e7] rounded-full animate-pulse"></span>
                         Integrations
                     </motion.div>
-                    
-                    <motion.h2 
+
+                    <motion.h2
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: "-50px" }}
@@ -63,7 +63,7 @@ const SoftwareExpertise = () => {
                             <img
                                 src={sw.logo}
                                 alt={`Software ${sw.id}`}
-                                className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                                className="max-w-full max-h-full object-contain filter grayscale-0 hover:grayscale-0 transition-all duration-300"
                             />
                         </div>
                     ))}
@@ -81,14 +81,14 @@ const SoftwareExpertise = () => {
                             <img
                                 src={sw.logo}
                                 alt={`Software ${sw.id}`}
-                                className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                                className="max-w-full max-h-full object-contain filter grayscale-0 hover:grayscale-0 transition-all duration-300"
                             />
                         </div>
                     ))}
                 </div>
             </div>
 
-            <motion.p 
+            <motion.p
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}

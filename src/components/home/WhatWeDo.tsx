@@ -60,7 +60,7 @@ const WhatWeDo = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {featuresData.map((feature, index) => {
                         const imgNum = index + 1;
-                        const imgSrc = `/img/service${imgNum}.jpg`;
+                        const imgSrc = `/Section 4-${imgNum}.png`;
 
                         return (
                             <motion.div

@@ -3,8 +3,8 @@ import { FaChartLine, FaCheckCircle, FaClock, FaHandHoldingUsd } from 'react-ico
 
 export const heroData = {
   headline: "Welcome to SBN Healthcare Solution",
-  subheadline: "We Are Expert in Healthcare Billing Services",
-  description: "We have more than 11+ years of experience in Medical Billing Services. The major benefit of outsourcing billing with SBN Healthcare Solution is an improvement in your financial performance.",
+  subheadline: "Expert in Medical Insurance Verification Services",
+  description: "SBN provides comprehensive medical insurance verification services in New York. We focus on reducing claim denials and accurately verifying eligibility to improve your financial performance.",
   ctaText: "Contact Us",
   ctaLink: "/contact-us",
   image: "/img/intro-img.jpg"

@@ -14,10 +14,9 @@ const navLinks = [
         href: '#',
         dropdown: [
             { name: 'Eligibility & Front Office', href: '/services/eligibility-verification' },
-            { name: 'Revenue Cycle Management', href: '/services/medical-billing' },
-            { name: 'Denial Management', href: '/services/ar-follow-up-and-denial-management' },
-            { name: 'Coding Accuracy', href: '/services/medical-coding' },
-            { name: 'Credentialing', href: '/services/credentialing-and-contracting' },
+            { name: 'Benefits Check', href: '/services/benefits-check' },
+            { name: 'Prior Authorization', href: '/services/prior-authorization' },
+            { name: 'Exclusion Check', href: '/services/exclusion-check' },
             { name: 'More Solutions', href: '/services' },
         ]
     },

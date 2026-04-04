@@ -91,10 +91,9 @@ const Footer = () => {
                         <ul className="flex flex-col gap-5 p-0 list-none">
                             {[
                                 { name: 'Eligibility Verification', href: '/services/eligibility-verification' },
-                                { name: 'Medical Billing', href: '/services/medical-billing' },
-                                { name: 'Medical Coding', href: '/services/medical-coding' },
-                                { name: 'AR & Denials', href: '/services/ar-follow-up-and-denial-management' },
-                                { name: 'Credentialing', href: '/services/credentialing-and-contracting' },
+                                { name: 'Benefits Check', href: '/services/benefits-check' },
+                                { name: 'Prior Authorization', href: '/services/prior-authorization' },
+                                { name: 'Exclusion Check', href: '/services/exclusion-check' },
                                 { name: 'Privacy & Security', href: '/security' }
                             ].map((item, idx) => (
                                 <motion.li 

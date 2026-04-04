@@ -13,13 +13,12 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params;
-    const dynamic = await getDynamicMetadata(slug);
     const service = servicesList.find((s) => s.slug === slug);
-    if (!service) return { title: dynamic?.title || 'Service Not Found' };
+    if (!service) return { title: 'Service Not Found' };
 
     return {
-        title: dynamic?.title || `${service.title} - SBN Healthcare Solution`,
-        description: dynamic?.description || service.description,
+        title: service.metaTitle || `${service.title} - SBN Healthcare Solution`,
+        description: service.metaDescription || service.description,
     };
 }
 

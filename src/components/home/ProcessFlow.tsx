@@ -56,11 +56,11 @@ const ProcessFlow = () => {
                             >
                                 {/* Colorful Background Image */}
                                 <div 
-                                    className="absolute inset-0 bg-cover bg-center opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
-                                    style={{ backgroundImage: `url('/img/feature${imgIndex}.jpg')` }}
+                                    className="absolute inset-0 bg-cover bg-center opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                                    style={{ backgroundImage: `url('/Phase%20${imgIndex}.png?v=6')` }}
                                 ></div>
                                 {/* Smooth Gradient to protect text visibility */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] via-[#0d0d0d]/60 to-[#0d0d0d]/10 pointer-events-none transition-colors duration-500"></div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d]/80 via-[#0d0d0d]/20 to-transparent pointer-events-none transition-colors duration-500"></div>
 
                                 {/* Content */}
                                 <div className="relative z-20 flex flex-col h-full justify-end pt-32 w-full">

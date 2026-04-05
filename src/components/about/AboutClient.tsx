@@ -123,7 +123,7 @@ export default function AboutClient() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="bg-[#0B1F33] border border-slate-700/50 p-10 rounded-2xl hover:border-[#0033e7]/50 transition-colors shadow-2xl relative overflow-hidden group">
                             <div className="absolute -right-10 -top-10 w-40 h-40 bg-[#0033e7]/20 rounded-full blur-[50px] group-hover:bg-[#0033e7]/40 transition-all"></div>
-                            <h3 className="text-2xl font-extrabold mb-2 relative z-10">Iftikhar Ali Khan</h3>
+                            <h3 className="text-2xl font-extrabold mb-2 relative z-10 text-white">Iftikhar Ali Khan</h3>
                             <span className="text-teal-400 font-bold uppercase text-[12px] tracking-[2px] mb-6 block relative z-10">Founder & CEO</span>
                             <p className="text-slate-400 font-medium leading-relaxed relative z-10">
                                 Iftikhar Ali Khan leads SBN Healthcare with a clear vision — build systems that are scalable, structured, and actually deliver results. He looks after the bigger picture — strategy, growth, and making sure everything stays aligned with performance and compliance.
@@ -132,7 +132,7 @@ export default function AboutClient() {
 
                         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="bg-[#0B1F33] border border-slate-700/50 p-10 rounded-2xl hover:border-teal-500/50 transition-colors shadow-2xl relative overflow-hidden group">
                             <div className="absolute -right-10 -top-10 w-40 h-40 bg-teal-500/20 rounded-full blur-[50px] group-hover:bg-teal-500/40 transition-all"></div>
-                            <h3 className="text-2xl font-extrabold mb-2 relative z-10">Md Nematullah</h3>
+                            <h3 className="text-2xl font-extrabold mb-2 relative z-10 text-white">Md Nematullah</h3>
                             <span className="text-teal-400 font-bold uppercase text-[12px] tracking-[2px] mb-6 block relative z-10">Head of Operations (COO)</span>
                             <p className="text-slate-400 font-medium leading-relaxed relative z-10">
                                 Md Nematullah handles what happens behind the scenes — operations, teams, and workflows. His focus is simple: everything should run smoothly, efficiently, and without unnecessary errors.

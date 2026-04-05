@@ -4,10 +4,9 @@ import { getDynamicMetadata } from '@/utils/seo';
 import RCMCalculatorPageClient from '@/components/tools/RCMCalculatorPageClient';
 
 export async function generateMetadata(): Promise<Metadata> {
-    const dynamic = await getDynamicMetadata('rcm-calculator');
     return {
-        title: dynamic?.title || 'RCM Calculator - SBN Healthcare Solution',
-        description: dynamic?.description || 'Calculate your potential savings and revenue increase with our RCM tools.',
+        title: 'RCM Calculator | Estimate Revenue Loss & Recovery',
+        description: 'Use our RCM calculator to estimate revenue loss, denial impact, and recovery potential. Get instant insights to improve your billing performance.',
     };
 }
 

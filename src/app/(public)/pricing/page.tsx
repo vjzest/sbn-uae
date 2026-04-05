@@ -4,10 +4,9 @@ import { getDynamicMetadata } from '@/utils/seo';
 import PricingPageClient from '@/components/pricing/PricingPageClient';
 
 export async function generateMetadata(): Promise<Metadata> {
-    const dynamic = await getDynamicMetadata('pricing');
     return {
-        title: dynamic?.title || 'Pricing Plans - SBN Healthcare Solution',
-        description: dynamic?.description || 'Transparent and competitive pricing for medical billing services.',
+        title: 'Pricing Philosophy | Flexible RCM Pricing Models',
+        description: 'Explore a flexible pricing philosophy with scalable RCM models. Improve revenue, reduce costs, and choose pricing strategies that fit your practice growth.',
     };
 }
 

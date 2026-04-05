@@ -210,7 +210,7 @@ const Footer = () => {
 
             <div className="border-t border-gray-200 pt-10 pb-6 text-center text-gray-400 text-[12px] font-bold uppercase tracking-[2px] relative z-10">
                 <div className="container mx-auto px-4">
-                    &copy; {new Date().getFullYear()} SBN Healthcare Solution. All Rights Reserved.
+                    &copy; 2022 SBN Healthcare Solution. All Rights Reserved.
                 </div>
             </div>
         </footer>

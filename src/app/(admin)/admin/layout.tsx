@@ -53,7 +53,7 @@ function DashboardLayoutContent({ children }: { children: React.ReactNode }) {
                 <div className="pt-16 pb-12 px-8">
                     <div className="flex items-center gap-4 group cursor-default">
                         <div className="w-12 h-12 relative rounded-2xl overflow-hidden shadow-[0_0_30px_rgba(var(--primary-color-rgb),0.1)] border border-white/10 group-hover:rotate-6 transition-all duration-700">
-                            <Image src="/img/logo.jpg" alt="Logo" fill className="object-cover scale-110" />
+                            <Image src="/Logo.png" alt="Logo" fill className="object-cover scale-110" />
                         </div>
                         <div className="min-w-0">
                             <h2 className="text-lg font-black text-white tracking-[4px] leading-none uppercase -mb-0.5">Nexus</h2>
@@ -150,7 +150,7 @@ function DashboardLayoutContent({ children }: { children: React.ReactNode }) {
             <div className="lg:hidden fixed top-0 left-0 right-0 h-20 bg-white/70 backdrop-blur-2xl border-b border-slate-200/50 z-50 px-6 flex items-center justify-between">
                 <div className="flex items-center gap-3.5">
                     <div className="w-10 h-10 relative rounded-xl overflow-hidden shadow-lg border border-slate-200">
-                        <Image src="/img/logo.jpg" alt="Logo" fill className="object-cover" />
+                        <Image src="/Logo.png" alt="Logo" fill className="object-cover" />
                     </div>
                     <div>
                         <h2 className="text-[13px] font-black text-slate-900 uppercase tracking-[3px] leading-none">Nexus</h2>
@@ -186,7 +186,7 @@ function DashboardLayoutContent({ children }: { children: React.ReactNode }) {
                             <div className="p-8 border-b border-white/5">
                                 <div className="flex items-center gap-4">
                                     <div className="w-10 h-10 relative rounded-xl overflow-hidden border border-white/10">
-                                        <Image src="/img/logo.jpg" alt="Logo" fill className="object-cover" />
+                                        <Image src="/Logo.png" alt="Logo" fill className="object-cover" />
                                     </div>
                                     <div>
                                         <h2 className="text-base font-black text-white tracking-[3px] leading-none uppercase">Nexus</h2>

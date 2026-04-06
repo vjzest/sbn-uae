@@ -38,7 +38,7 @@ export default function AdminLoginPage() {
                         {/* Internal Branding */}
                         <div className="flex flex-col items-center mb-6">
                             <div className="w-12 h-12 relative mb-3 grayscale brightness-[1.5] group hover:grayscale-0 transition-all duration-700">
-                                <img src="/img/logo.jpg" alt="Logo" className="w-full h-full object-cover rounded-xl border border-white/10 shadow-[0_0_15px_rgba(255,255,255,0.05)]" />
+                                <img src="/Logo.png" alt="Logo" className="w-full h-full object-cover rounded-xl border border-white/10 shadow-[0_0_15px_rgba(255,255,255,0.05)]" />
                             </div>
                             <div className="text-center">
                                 <h1 className="text-white text-base font-black tracking-[4px] uppercase mb-1">Admin Login</h1>

@@ -83,7 +83,7 @@ const Header = () => {
                     {/* Logo Section */}
                     <Link href="/" className="flex items-center gap-3 no-underline group py-1 flex-shrink-0 mr-4 transition-all">
                         <div className="transition-transform group-hover:scale-105">
-                            <img src="/img/logo.jpg" alt="SBN Healthcare Solution" className="max-h-[44px] xl:max-h-[55px] w-auto mix-blend-multiply" />
+                            <img src="/Logo.png" alt="SBN Healthcare Solution" className="max-h-[44px] xl:max-h-[55px] w-auto mix-blend-multiply" />
                         </div>
                         <div className="flex flex-col justify-center leading-none min-w-fit">
                             <span className="text-[#010614] font-black text-[15px] xl:text-[19px] tracking-tight uppercase">

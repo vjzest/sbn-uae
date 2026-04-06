@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { FaLinkedin, FaTwitter, FaFacebook } from 'react-icons/fa';
+import { FaLinkedin, FaTwitter, FaFacebook, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 
@@ -36,13 +36,25 @@ const Footer = () => {
                             whileInView="visible"
                             viewport={{ once: true }}
                             variants={fadeUp}
-                            className="mb-8 p-2 bg-white/80 backdrop-blur-md rounded-2xl shadow-sm border border-white inline-flex transition-transform hover:scale-105"
+                            className="mb-8"
                         >
-                            <img
-                                src="/img/logo.jpg"
-                                alt="SBN Healthcare Solution"
-                                className="h-[60px] md:h-[70px] w-auto mix-blend-multiply"
-                            />
+                            <Link href="/" className="flex items-center gap-4 no-underline group">
+                                <div className="p-2 bg-white/80 backdrop-blur-md rounded-2xl shadow-sm border border-white transition-transform group-hover:scale-105">
+                                    <img
+                                        src="/Logo.png"
+                                        alt="SBN Healthcare Solution"
+                                        className="h-[50px] md:h-[60px] w-auto mix-blend-multiply"
+                                    />
+                                </div>
+                                <div className="flex flex-col justify-center leading-none">
+                                    <span className="text-[#010614] font-black text-[18px] md:text-[22px] tracking-tight uppercase">
+                                        SBN Healthcare
+                                    </span>
+                                    <span className="text-[#0033e7] font-black text-[10px] md:text-[12px] tracking-[4px] uppercase mt-0.5">
+                                        Solution
+                                    </span>
+                                </div>
+                            </Link>
                         </motion.div>
                         <motion.p
                             initial="hidden"
@@ -84,7 +96,7 @@ const Footer = () => {
                             whileInView="visible"
                             viewport={{ once: true }}
                             variants={fadeUp}
-                            className="text-[11px] font-black uppercase tracking-[4px] text-[#0033e7] mb-10 border-b-2 border-blue-600/10 pb-2 inline-block"
+                            className="text-[11px] font-black uppercase tracking-[4px] text-[#0033e7] mb-10 border-b-2 border-blue-600/10 pb-2 inline-block relative after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:w-1/2 after:h-[2px] after:bg-[#0033e7]"
                         >
                             Platform Solutions
                         </motion.h4>
@@ -125,7 +137,7 @@ const Footer = () => {
                             whileInView="visible"
                             viewport={{ once: true }}
                             variants={fadeUp}
-                            className="text-[11px] font-black uppercase tracking-[4px] text-[#0033e7] mb-10 border-b-2 border-blue-600/10 pb-2 inline-block"
+                            className="text-[11px] font-black uppercase tracking-[4px] text-[#0033e7] mb-10 border-b-2 border-blue-600/10 pb-2 inline-block relative after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:w-1/2 after:h-[2px] after:bg-[#0033e7]"
                         >
                             Company
                         </motion.h4>
@@ -166,7 +178,7 @@ const Footer = () => {
                             whileInView="visible"
                             viewport={{ once: true }}
                             variants={fadeUp}
-                            className="text-[11px] font-black uppercase tracking-[4px] text-[#0033e7] mb-10 border-b-2 border-blue-600/10 pb-2 inline-block"
+                            className="text-[11px] font-black uppercase tracking-[4px] text-[#0033e7] mb-10 border-b-2 border-blue-600/10 pb-2 inline-block relative after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:w-1/2 after:h-[2px] after:bg-[#0033e7]"
                         >
                             Get In Touch
                         </motion.h4>
@@ -182,35 +194,46 @@ const Footer = () => {
                                 Sheridan, WY 82801
                             </motion.div>
                             <div className="space-y-4">
-                                <motion.p
+                                <motion.a
+                                    href="tel:8054264609"
                                     initial="hidden"
                                     whileInView="visible"
                                     viewport={{ once: true }}
                                     variants={fadeUp}
-                                    className="text-gray-600 text-[15px] flex items-center gap-4 transition-colors hover:text-[#0033e7]"
+                                    className="text-gray-600 text-[15px] flex items-center gap-4 transition-all hover:text-[#0033e7] group no-underline"
                                 >
-                                    <strong className="text-[#0033e7] font-black text-[10px] uppercase tracking-widest bg-blue-600/10 px-2 py-1 rounded">PH</strong>
-                                    (805) 426-4609
-                                </motion.p>
-                                <motion.p
+                                    <div className="w-8 h-8 rounded-lg bg-blue-600/10 flex items-center justify-center text-[#0033e7] group-hover:bg-[#0033e7] group-hover:text-white transition-all">
+                                        <FaPhoneAlt size={12} />
+                                    </div>
+                                    <span className="font-bold">(805) 426-4609</span>
+                                </motion.a>
+                                <motion.a
+                                    href="mailto:info@sbnhealthcaresolution.com"
                                     initial="hidden"
                                     whileInView="visible"
                                     viewport={{ once: true }}
                                     variants={fadeUp}
-                                    className="text-gray-600 text-[15px] flex items-center gap-4 transition-colors hover:text-[#0033e7]"
+                                    className="text-gray-600 text-[15px] flex items-center gap-4 transition-all hover:text-[#0033e7] group no-underline"
                                 >
-                                    <strong className="text-[#0033e7] font-black text-[10px] uppercase tracking-widest bg-blue-600/10 px-2 py-1 rounded">EX</strong>
-                                    info@sbnhealthcaresolution.com
-                                </motion.p>
+                                    <div className="w-8 h-8 rounded-lg bg-blue-600/10 flex items-center justify-center text-[#0033e7] group-hover:bg-[#0033e7] group-hover:text-white transition-all">
+                                        <FaEnvelope size={12} />
+                                    </div>
+                                    <span className="font-bold break-all">info@sbnhealthcaresolution.com</span>
+                                </motion.a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div className="border-t border-gray-200 pt-10 pb-6 text-center text-gray-400 text-[12px] font-bold uppercase tracking-[2px] relative z-10">
+            <div className="border-t border-slate-200/50 pt-10 pb-10 text-center relative z-10 bg-white/30 backdrop-blur-sm">
                 <div className="container mx-auto px-4">
-                    &copy; 2022 SBN Healthcare Solution. All Rights Reserved.
+                    <p className="text-slate-500 text-[11px] font-black uppercase tracking-[3px] mb-2">
+                        &copy; 2022 SBN Healthcare Solution. All Rights Reserved.
+                    </p>
+                    <p className="text-slate-400 text-[9px] font-bold uppercase tracking-[2px]">
+                        ENGINEERED FOR EXCELLENCE IN HEALTHCARE REVENUE CYCLE MANAGEMENT
+                    </p>
                 </div>
             </div>
         </footer>

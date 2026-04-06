@@ -17,6 +17,9 @@ const asap = Asap({
 export const metadata: Metadata = {
   title: 'SBN Healthcare Solution | Medical Insurance Verification Service in New York',
   description: 'SBN offers professional medical insurance verification and billing services in New York. Reduce claim denials, improve cash flow, and ensure HIPAA-compliant accuracy.',
+  icons: {
+    icon: '/Logo.png',
+  },
 };
 
 export default function RootLayout({

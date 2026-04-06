@@ -14,7 +14,7 @@ export const statsData = [
   { value: "20%", label: "Revenue Improved" },
   { value: "40%", label: "Costs Reduced" },
   { value: "50%", label: "Patient Experience Transformed" },
-  { value: "11+", label: "Years of Experience" }
+  { value: "14+", label: "Years of Experience" }
 ];
 
 export const processSteps = [

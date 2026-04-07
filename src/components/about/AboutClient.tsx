@@ -135,7 +135,7 @@ export default function AboutClient() {
                                 <h3 className="text-2xl font-black text-white tracking-tighter mb-1 relative z-10">Iftikhar Ali Khan</h3>
                                 <p className="text-teal-400 font-bold uppercase text-[11px] tracking-[3px] mb-4 relative z-10">Founder & CEO</p>
                                 <p className="text-slate-400 font-bold leading-relaxed text-[14px] relative z-10 mb-6">
-                                    Iftikhar Ali Khan leads SBN Healthcare with a clear vision to build systems that are scalable, structured, and actually deliver results. He looks after strategy and growth alignment.
+                                    Iftikhar Ali Khan is CEO of SBN Healthcare Solution, leading strategy, growth, and scalable RCM systems with expertise in global business, operations, compliance, and long-term performance-driven healthcare outcomes.
                                 </p>
                                 <div className="flex gap-3 relative z-10">
                                     <a href="https://www.linkedin.com/in/iftikhar-ali-khan/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-[#0033e7] transition-colors"><FaLinkedin size={14} /></a>

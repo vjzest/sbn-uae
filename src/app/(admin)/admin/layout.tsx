@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { AdminAuthProvider, useAdminAuth } from '@/components/admin/AdminAuthProvider';
-import { FaTachometerAlt, FaBlog, FaEnvelope, FaSearch, FaSignOutAlt, FaBars, FaTimes, FaUserCircle } from 'react-icons/fa';
+import { FaTachometerAlt, FaBlog, FaEnvelope, FaSearch, FaSignOutAlt, FaBars, FaTimes, FaUserCircle, FaExclamationTriangle } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 
@@ -43,6 +43,7 @@ function DashboardLayoutContent({ children }: { children: React.ReactNode }) {
         { name: 'Blogs', href: '/admin/blogs', icon: <FaBlog /> },
         { name: 'Inquiries', href: '/admin/contacts', icon: <FaEnvelope /> },
         { name: 'SEO Engine', href: '/admin/seo', icon: <FaSearch /> },
+        { name: 'Error Logs', href: '/admin/error-logs', icon: <FaExclamationTriangle /> },
     ];
 
     return (

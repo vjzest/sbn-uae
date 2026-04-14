@@ -29,7 +29,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const json = await res.json()
     const dbEntries = json?.data || []
 
-    // Map DB entries to sitemap format
     const dynamicEntries = Array.isArray(dbEntries) ? dbEntries.map((seo: any) => ({
       url: `${baseUrl}/${seo.page === 'home' ? '' : seo.page}`,
       lastModified: new Date(seo.updatedAt || Date.now()),
@@ -37,7 +36,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: seo.page === 'home' ? 1.0 : 0.8,
     })) : []
 
-    // Build the final static list
     const coreEntries = staticPages.map(page => ({
       url: `${baseUrl}/${page.url}`,
       lastModified: new Date(),
@@ -59,8 +57,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     }))
 
+    // 4. Dynamic Blog Entries from Database
+    const blogsRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blogs`, { next: { revalidate: 3600 } })
+    const blogsJson = await blogsRes.json()
+    const blogEntries = (blogsJson?.data || []).filter((b: any) => b.isPublished !== false).map((blog: any) => ({
+      url: `${baseUrl}/blog/${blog.slug}`,
+      lastModified: new Date(blog.updatedAt || blog.date || Date.now()),
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+    }))
+
     // Merge everything, removing duplicates based on URL
-    const allEntries = [...coreEntries, ...serviceEntries, ...specialtyEntries, ...dynamicEntries]
+    const allEntries = [...coreEntries, ...serviceEntries, ...specialtyEntries, ...dynamicEntries, ...blogEntries]
     
     // De-duplicate URLs
     const uniqueEntries = Array.from(new Map(allEntries.map(item => [item.url, item])).values())

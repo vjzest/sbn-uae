@@ -1,25 +1,26 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import { specialtiesList } from '@/data/services';
-import { getDynamicMetadata } from '@/utils/seo';
+import { getDynamicMetadata, constructMetadata } from '@/utils/seo';
 import SpecialtyDetailClient from '@/components/specialties/SpecialtyDetailClient';
 
 interface Props {
-    params: {
+    params: Promise<{
         slug: string;
-    };
+    }>;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params;
     const dynamic = await getDynamicMetadata(`specialty-${slug}`);
     const specialty = specialtiesList.find((s) => s.slug === slug);
-    if (!specialty) return { title: dynamic?.title || 'Specialty Not Found' };
+    if (!specialty) return { title: 'Specialty Not Found' };
 
-    return {
-        title: dynamic?.title || `${specialty.title} - SBN Healthcare Solution`,
-        description: dynamic?.description || specialty.description,
-    };
+    return constructMetadata(dynamic, {
+        title: `${specialty.title} - SBN Healthcare Solution`,
+        description: specialty.description,
+        slug: `specialties/${slug}`
+    });
 }
 
 export async function generateStaticParams() {

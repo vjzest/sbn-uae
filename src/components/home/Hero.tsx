@@ -46,9 +46,9 @@ const Hero = () => {
                             viewport={{ once: true, margin: "-100px" }}
                             variants={fadeUp}
                         >
-                            Next-Generation <br className="hidden xl:block" />
-                            <span className="text-[#0033e7]">RCM Infrastructure</span> <br />
-                            for Modern Practices
+                            Medical Insurance <br className="hidden xl:block" />
+                            <span className="text-[#0033e7]">Verification Services</span> <br />
+                            in New York
                         </motion.h1>
 
                         <motion.p

@@ -33,7 +33,7 @@ const navLinks = [
             { name: 'Multi-Speciality Hospitals', href: '/specialties/multi-speciality-hospitals' },
         ]
     },
-    { name: 'Resources', href: '/white-paper' },
+    { name: 'Resources', href: '/resources' },
     { name: 'Compliance & Security', href: '/security' },
     { name: 'RCM Calculator', href: '/rcm-calculator' },
     { name: 'Pricing', href: '/pricing' },
@@ -82,7 +82,7 @@ const Header = () => {
         >
             {/* Main Header - EFFAH Style Light Theme */}
             <div className="bg-white/95 backdrop-blur-xl h-[80px] xl:h-[90px] flex items-center border-b border-slate-100 relative">
-                <div className="w-full px-4 lg:px-6 2xl:px-10 flex items-center h-full relative z-10 transition-all duration-300">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 flex items-center h-full relative z-10 transition-all duration-300">
                     {/* Logo Section */}
                     <Link href="/" className="flex items-center gap-3 no-underline group py-1 flex-shrink-0 mr-4 transition-all">
                         <div className="transition-transform group-hover:scale-105">
@@ -156,10 +156,7 @@ const Header = () => {
                             {isOpen ? <FaTimes /> : <FaBars />}
                         </button>
                         
-                        {/* Desktop EFFAH Style Blue Circle Button */}
-                        <button className="hidden xl:flex w-11 h-11 bg-[#0033e7] hover:bg-blue-800 text-white rounded-xl items-center justify-center transition-all duration-300 shadow-lg shadow-[#0033e7]/20 transform hover:scale-105 active:scale-95">
-                            <FaBars />
-                        </button>
+                        {/* Desktop action button removed as requested - nav items are already visible */}
                     </div>
                 </div>
             </div>

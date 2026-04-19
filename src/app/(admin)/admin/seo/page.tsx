@@ -40,9 +40,9 @@ export default function SeoManagement() {
     ];
 
     const suggestions = [
-        'home', 'about-us', 'services', 'contact-us', 'rcm-calculator', 'blog',
-        'medical-billing', 'medical-coding', 'eligibility-verification',
-        'ar-follow-up', 'credentialing', 'credit-balance'
+        'home', 'about-us', 'services', 'contact-us', 'rcm-calculator', 'blog', 
+        'resources', 'security', 'pricing', 'medical-billing', 'medical-coding', 
+        'eligibility-verification', 'ar-follow-up'
     ];
 
     const fetchToolsData = async () => {

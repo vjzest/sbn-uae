@@ -2,7 +2,7 @@
 
 
 import type { Metadata } from 'next';
-import { getDynamicMetadata } from '@/utils/seo';
+import { getDynamicMetadata, constructMetadata } from '@/utils/seo';
 import Hero from '@/components/home/Hero';
 import Stats from '@/components/home/Stats';
 import ProcessFlow from '@/components/home/ProcessFlow';
@@ -14,10 +14,11 @@ import Testimonials from '@/components/home/Testimonials';
 
 export async function generateMetadata(): Promise<Metadata> {
   const dynamic = await getDynamicMetadata('home');
-  return {
-    title: dynamic?.title || 'SBN Healthcare Solution - Expert in Healthcare Billing Services',
-    description: dynamic?.description || 'Improving your financial performance aimed at reducing costs and increasing revenue.',
-  };
+  return constructMetadata(dynamic, {
+    title: 'Medical Insurance Verification Service in New York | SBN',
+    description: 'SBN provides medical insurance verification service in New York. Reduce claim denials with real-time checks and accurate eligibility verification.',
+    slug: ''
+  });
 }
 
 export default function Home() {

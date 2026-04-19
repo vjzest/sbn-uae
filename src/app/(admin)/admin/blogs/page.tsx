@@ -110,11 +110,33 @@ export default function BlogManagement() {
 
     const calculateSeoScore = () => {
         let score = 0;
-        if (formData.title.length > 50 && formData.title.length < 70) score += 20;
-        if (formData.metaDescription.length > 120 && formData.metaDescription.length < 160) score += 20;
-        if (formData.focusKeywords.length > 0) score += 20;
-        if (formData.content.length > 1000) score += 20;
-        if (formData.imageAlt) score += 20;
+        const content = formData.content.toLowerCase();
+        const title = formData.title.toLowerCase();
+        const primaryKeyword = formData.focusKeywords[0]?.toLowerCase();
+
+        // 1. Meta Title Optimization (20%)
+        if (formData.title.length > 50 && formData.title.length < 70) score += 10;
+        if (primaryKeyword && title.includes(primaryKeyword)) score += 10;
+
+        // 2. Meta Description (20%)
+        if (formData.metaDescription.length > 120 && formData.metaDescription.length < 160) score += 10;
+        if (primaryKeyword && formData.metaDescription.toLowerCase().includes(primaryKeyword)) score += 10;
+
+        // 3. Content Depth & Structure (30%)
+        if (formData.content.length > 1500) score += 15;
+        else if (formData.content.length > 800) score += 10;
+        
+        const headingCount = (formData.content.match(/#{1,3} /g) || []).length;
+        if (headingCount >= 3) score += 15;
+        else if (headingCount >= 1) score += 5;
+
+        // 4. Media & Keywords (20%)
+        if (formData.imageAlt) score += 10;
+        if (formData.focusKeywords.length >= 3) score += 10;
+
+        // 5. Links & Readability (10%)
+        if (content.includes('http') || content.includes('/blog/')) score += 10;
+
         setSeoScore(score);
     };
 
@@ -453,6 +475,38 @@ export default function BlogManagement() {
                                                     </div>
                                                 </div>
                                             </div>
+
+                                            <div className="p-8 bg-indigo-50 border border-indigo-100 rounded-2xl">
+                                                <div className="flex items-center gap-3 mb-6">
+                                                    <div className="w-8 h-8 rounded-lg bg-indigo-500 text-white flex items-center justify-center shadow-lg">
+                                                        <FaCheck size={12} />
+                                                    </div>
+                                                    <h4 className="text-[10px] font-black uppercase tracking-[3px] text-slate-900">Internal Linking Suggestions</h4>
+                                                </div>
+                                                <div className="space-y-4">
+                                                    {blogs.filter((b: any) => b._id !== formData._id && b.category === formData.category).slice(0, 3).map((blog: any) => (
+                                                        <div key={blog._id} className="flex items-center justify-between bg-white px-5 py-3 rounded-xl border border-indigo-100 shadow-sm">
+                                                            <div className="truncate pr-4">
+                                                                <p className="text-[10px] font-bold text-slate-700 truncate">{blog.title}</p>
+                                                                <p className="text-[8px] text-indigo-500 font-bold uppercase tracking-widest">/blog/{blog.slug}</p>
+                                                            </div>
+                                                            <button 
+                                                                type="button"
+                                                                onClick={() => {
+                                                                    const link = `\n\n[Related: ${blog.title}](/blog/${blog.slug})`;
+                                                                    setFormData({...formData, content: formData.content + link});
+                                                                }}
+                                                                className="text-[8px] font-black uppercase tracking-widest py-2 px-4 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-all shadow-md active:scale-95"
+                                                            >
+                                                                Add Link
+                                                            </button>
+                                                        </div>
+                                                    ))}
+                                                    {blogs.filter((b: any) => b._id !== formData._id && b.category === formData.category).length === 0 && (
+                                                        <p className="text-[9px] font-bold text-slate-400 italic px-2">No related blogs found in this category.</p>
+                                                    )}
+                                                </div>
+                                            </div>
                                         </motion.div>
                                     )}
 
@@ -505,6 +559,9 @@ export default function BlogManagement() {
                                                                 <option value="Article">Professional Article</option>
                                                                 <option value="FAQ">FAQ Section</option>
                                                                 <option value="HowTo">Guide / How-To</option>
+                                                                <option value="JobPosting">Job Posting</option>
+                                                                <option value="LocalBusiness">Local Business</option>
+                                                                <option value="Organization">Organization</option>
                                                                 <option value="None">No Schema</option>
                                                             </select>
                                                         </div>

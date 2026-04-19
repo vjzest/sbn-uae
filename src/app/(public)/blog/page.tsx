@@ -2,15 +2,16 @@ import React from 'react';
 import Link from 'next/link';
 import axios from 'axios';
 import type { Metadata } from 'next';
-import { getDynamicMetadata } from '@/utils/seo';
+import { getDynamicMetadata, constructMetadata } from '@/utils/seo';
 import PageHeader from '@/components/layout/PageHeader';
 
 export async function generateMetadata(): Promise<Metadata> {
     const dynamic = await getDynamicMetadata('blog');
-    return {
-        title: dynamic?.title || 'Our Blog - Latest Healthcare Insights | SBN Healthcare',
-        description: dynamic?.description || 'Insights, news and trends from the healthcare billing and RCM world.',
-    };
+    return constructMetadata(dynamic, {
+        title: 'Our Blog - Latest Healthcare Insights | SBN Healthcare',
+        description: 'Insights, news and trends from the healthcare billing and RCM world.',
+        slug: 'blog'
+    });
 }
 
 async function getBlogPosts() {

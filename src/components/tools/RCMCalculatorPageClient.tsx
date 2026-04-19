@@ -111,7 +111,7 @@ export default function RCMCalculatorPageClient() {
                                 Interactive Tool
                             </span>
                             <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-6">
-                                Enter Your Practice Details
+                                Estimate Your Revenue Loss and Recovery Potential
                             </h2>
                             <p className="text-lg text-slate-600 font-medium leading-relaxed">
                                 Add your basic details below and get instant estimates.

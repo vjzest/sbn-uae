@@ -46,8 +46,8 @@ export default function ServicesClient() {
                             Primary Keywords • More Solutions
                         </div>
                         <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-black tracking-tighter leading-[0.9] mb-10 text-slate-900">
-                            <span className="bg-clip-text text-transparent bg-gradient-to-b from-slate-900 to-slate-700">More Solutions For</span> <br className="hidden md:block" />
-                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#0033e7] to-teal-500">Revenue Cycle</span>
+                            More Solutions for <br className="hidden md:block" />
+                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#0033e7] to-teal-500">Complete Revenue Cycle Management</span>
                         </h1>
                         <p className="text-xl md:text-2xl text-slate-600 font-bold leading-relaxed max-w-3xl mx-auto tracking-tight">
                             Today, healthcare providers need more solutions than just basic billing. A simple system is not enough. If your process is not connected, it can cause delays, errors, and lost revenue.
@@ -97,14 +97,12 @@ export default function ServicesClient() {
                         <p className="text-slate-500 font-bold text-xl max-w-2xl mx-auto leading-relaxed">We take care of your complete billing process with a structured, connected approach.</p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                         {[
                             { title: 'Eligibility & Benefits', desc: 'Pre-service verification to secure your payments early.' },
                             { title: 'Medical Coding', desc: 'Expert ICD-10 & CPT coding to maximize claim accuracy.' },
-                            { title: 'Charge Capture', desc: 'Fast submission and precise charge tracking system.' },
                             { title: 'Denial Management', desc: 'Aggressive follow-up to recover every dollar possible.' },
                             { title: 'Payment Posting', desc: 'Accurate reconciliation and rapid database matching.' },
-                            { title: 'Connected Workflow', desc: 'A unified system where nothing falls through the gaps.' },
                         ].map((item, i) => (
                             <motion.div
                                 key={i}

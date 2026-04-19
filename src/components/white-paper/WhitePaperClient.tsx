@@ -31,7 +31,7 @@ export default function WhitePaperClient() {
                             Premium Resource Guide
                         </div>
                         <h1 className="text-4xl md:text-[4rem] lg:text-[4.5rem] font-black text-slate-900 leading-[1] mb-8 tracking-tighter">
-                            The Hidden <span className="text-[#0033e7]">Revenue Leakage</span> in Your Cycle
+                            The Hidden <span className="text-[#0033e7]">Revenue Leakage</span> in Your Revenue Cycle | Resource Guide
                         </h1>
                         <p className="text-lg md:text-xl text-slate-600 font-semibold leading-relaxed max-w-3xl mx-auto">
                             Healthcare organizations today are not struggling with volume. They are struggling with visibility. This is where the right resource becomes important.

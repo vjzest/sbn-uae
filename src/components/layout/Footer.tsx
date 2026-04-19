@@ -229,7 +229,7 @@ const Footer = () => {
             <div className="border-t border-slate-200/50 pt-10 pb-10 text-center relative z-10 bg-white/30 backdrop-blur-sm">
                 <div className="container mx-auto px-4">
                     <p className="text-slate-500 text-[11px] font-black uppercase tracking-[3px] mb-2">
-                        &copy; 2022 SBN Healthcare Solution. All Rights Reserved.
+                        &copy; 2026 SBN Healthcare Solution. All Rights Reserved.
                     </p>
                     <p className="text-slate-400 text-[9px] font-bold uppercase tracking-[2px]">
                         ENGINEERED FOR EXCELLENCE IN HEALTHCARE REVENUE CYCLE MANAGEMENT

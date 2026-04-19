@@ -2,6 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import axios from 'axios';
+import { constructMetadata } from '@/utils/seo';
 import { notFound } from 'next/navigation';
 import PageHeader from '@/components/layout/PageHeader';
 import { FaChevronRight, FaRegClock, FaRegCalendarAlt, FaUserEdit, FaListUl, FaLink, FaShareAlt } from 'react-icons/fa';
@@ -19,36 +20,20 @@ async function getPost(slug: string) {
     }
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+type Props = { params: Promise<{ slug: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params;
     const post = await getPost(slug);
     if (!post) return { title: 'Post Not Found' };
 
-    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.sbnhealthcaresolution.com';
-    const canonical = post.canonicalUrl || `${siteUrl}/blog/${post.slug}`;
-
-    return {
-        title: post.metaTitle || `${post.title} - SBN Insights`,
+    return constructMetadata(post, {
+        title: post.metaTitle || post.title,
         description: post.metaDescription || post.excerpt,
-        alternates: { canonical },
-        robots: {
-            index: post.robotsIndex ?? true,
-            follow: post.robotsFollow ?? true,
-        },
-        openGraph: {
-            title: post.ogTitle || post.title,
-            description: post.ogDescription || post.excerpt,
-            url: `${siteUrl}/blog/${post.slug}`,
-            images: [{ url: post.ogImage || post.image || '/og-default.jpg' }],
-            type: 'article',
-        },
-        twitter: {
-            card: post.twitterCard as any || 'summary_large_image',
-            title: post.twitterTitle || post.title,
-            description: post.twitterDescription || post.excerpt,
-            images: [post.twitterImage || post.image || '/og-default.jpg'],
-        }
-    };
+        image: post.image,
+        slug: `blog/${slug}`,
+        keywords: post.focusKeywords
+    });
 }
 
 export default async function BlogDetailPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -107,6 +92,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                 title={post.title}
                 subtitle={post.category || 'Insights'}
                 description={post.excerpt}
+                bgImage={post.image}
             />
 
             {/* Breadcrumbs */}

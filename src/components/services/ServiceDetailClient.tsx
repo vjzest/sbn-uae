@@ -92,16 +92,17 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
                         if (isCta) {
                             return (
                                 <section key={index} 
-                                    className="text-white relative py-20 overflow-hidden my-16 rounded-2xl mx-4 lg:mx-auto max-w-7xl shadow-[0_30px_60px_rgba(0,0,0,0.15)] group bg-cover bg-center"
-                                    style={{ backgroundImage: 'url("/background%20image.webp")' }}
+                                    className="relative py-20 overflow-hidden my-16 rounded-3xl mx-4 lg:mx-auto max-w-7xl shadow-[0_10px_40px_rgba(0,0,0,0.03)] group bg-[#f8faff] border border-blue-50"
                                 >
-                                    <div className="absolute inset-0 bg-[#0B1F33]/90 z-0"></div>
+                                    <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100/40 rounded-full blur-[100px] -mr-32 -mt-32"></div>
+                                    <div className="absolute bottom-0 left-0 w-64 h-64 bg-teal-50/40 rounded-full blur-[100px] -ml-20 -mb-20"></div>
+                                    
                                     <div className="container mx-auto px-10 relative z-10 text-center">
-                                        <h2 className="text-3xl md:text-5xl font-black mb-8 text-white tracking-tighter">
+                                        <h2 className="text-3xl md:text-5xl font-black mb-8 text-slate-900 tracking-tighter">
                                             {section.title}
                                         </h2>
                                         {section.content && (
-                                            <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed font-bold mb-12">
+                                            <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed font-bold mb-12">
                                                 {section.content}
                                             </p>
                                         )}
@@ -176,14 +177,14 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
 
                 {service.features && (
                     <section className="py-24 relative z-10 overflow-hidden bg-cover bg-center" style={{ backgroundImage: 'url("/background%20image.webp")' }}>
-                        <div className="absolute inset-0 bg-slate-900/95 pointer-events-none"></div>
+                        <div className="absolute inset-0 bg-white/95 pointer-events-none"></div>
                         <div className="container mx-auto px-4 max-w-7xl relative z-20">
                             {service.featuresTitle && (
                                 <div className="text-center mb-20">
-                                    <span className="text-teal-400 font-black uppercase text-[12px] tracking-[6px] mb-4 block">Core Competencies</span>
-                                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight mb-6">{service.featuresTitle}</h2>
+                                    <span className="text-[#0033e7] font-black uppercase text-[12px] tracking-[6px] mb-4 block">Core Competencies</span>
+                                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight mb-6">{service.featuresTitle}</h2>
                                     {service.featuresDescription && (
-                                        <p className="text-slate-400 font-bold text-lg max-w-2xl mx-auto">{service.featuresDescription}</p>
+                                        <p className="text-slate-500 font-bold text-lg max-w-2xl mx-auto">{service.featuresDescription}</p>
                                     )}
                                 </div>
                             )}
@@ -196,16 +197,16 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true }}
                                         transition={{ duration: 0.6, delay: index * 0.1 }}
-                                        className="bg-white/5 backdrop-blur-xl p-10 rounded-2xl border border-white/10 group hover:border-[#0033e7]/50 transition-all duration-500"
+                                        className="bg-white p-10 rounded-3xl border border-slate-100 shadow-[0_10px_30px_rgba(0,0,0,0.02)] group hover:border-[#0033e7]/50 hover:shadow-2xl transition-all duration-500"
                                     >
-                                        <div className="text-4xl text-teal-400 mb-8 group-hover:scale-110 transition-transform">
+                                        <div className="text-4xl text-[#0033e7] mb-8 group-hover:scale-110 transition-transform">
                                             <feature.icon />
                                         </div>
-                                        <h3 className="text-2xl font-black mb-4 text-white tracking-tight group-hover:text-teal-400">
+                                        <h3 className="text-2xl font-black mb-4 text-slate-900 tracking-tight group-hover:text-[#0033e7]">
                                             {feature.title}
                                         </h3>
                                         {feature.description && (
-                                            <p className="text-slate-400 leading-relaxed font-bold text-[16px] group-hover:text-white transition-colors">
+                                            <p className="text-slate-500 leading-relaxed font-bold text-[16px] group-hover:text-slate-700 transition-colors">
                                                 {feature.description}
                                             </p>
                                         )}

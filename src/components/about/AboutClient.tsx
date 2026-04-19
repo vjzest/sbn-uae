@@ -96,9 +96,16 @@ export default function AboutClient() {
                         transition={{ duration: 0.8, delay: 0.1 }}
                         className="text-4xl md:text-[4rem] lg:text-[4.5rem] font-black text-white tracking-tighter leading-[1] mb-8"
                     >
-                        Building Better <span className="text-teal-400">Revenue Systems</span>
-                        <br />for Modern Healthcare
+                        About SBN Healthcare
                     </motion.h1>
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        className="text-xl md:text-2xl font-bold text-white/90 max-w-2xl mx-auto"
+                    >
+                        Building Better Revenue Systems for Modern Healthcare
+                    </motion.h2>
                 </div>
             </div>
 

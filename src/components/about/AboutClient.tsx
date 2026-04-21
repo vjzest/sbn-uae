@@ -32,14 +32,6 @@ const makesUsDifferent = [
     { t: "Work is transparent" }
 ];
 
-const takeaways = [
-    "Most billing issues come from weak systems",
-    "Structured workflows improve results",
-    "Leadership = strategy + execution",
-    "Better systems = better revenue",
-    "Simplicity + structure = long-term growth"
-];
-
 const faqs = [
     { q: "What services does SBN Healthcare offer?", a: "Complete revenue cycle support including billing, coding, denial management, and workflow optimization." },
     { q: "How can I book an appointment with SBN Healthcare online?", a: "You can easily schedule a consultation through the website." },
@@ -71,7 +63,7 @@ export default function AboutClient() {
             className="relative selection:bg-[#0033e7] selection:text-white bg-cover bg-center bg-fixed"
             style={{ backgroundImage: 'url("/background%20image.webp")' }}
         >
-            <div className="absolute inset-0 bg-white/40 z-0 pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-[#f8faff]/95 via-white/90 to-[#f0f4ff]/85 z-0 pointer-events-none"></div>
 
             {/* Banner Section */}
             <div
@@ -109,16 +101,15 @@ export default function AboutClient() {
                 </div>
             </div>
 
-            {/* Leadership Section - Redesigned with Real Images */}
+            {/* Leadership Section - Redesigned to Light Theme */}
             <section className="py-24 relative z-10 overflow-hidden">
-                <div className="absolute inset-0 bg-slate-900/95 pointer-events-none"></div>
-                <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#0033e7]/20 rounded-full blur-[120px] -mr-48 -mt-48 pointer-events-none"></div>
+                <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#0033e7]/5 rounded-full blur-[120px] -mr-48 -mt-48 pointer-events-none"></div>
 
                 <div className="container mx-auto px-4 max-w-6xl relative z-10">
                     <div className="text-center mb-20">
                         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-                            <span className="text-teal-400 font-black uppercase text-[12px] tracking-[6px] mb-4 block">The Core Team</span>
-                            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight mb-8">Leadership That Keeps Things Running Smoothly</h2>
+                            <span className="text-[#0033e7] font-black uppercase text-[12px] tracking-[6px] mb-4 block">The Core Team</span>
+                            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight mb-8">Leadership That Keeps Things Running Smoothly</h2>
                             <div className="w-24 h-1.5 bg-[#0033e7] mx-auto rounded-full"></div>
                         </motion.div>
                     </div>
@@ -127,26 +118,25 @@ export default function AboutClient() {
                         {/* Iftikhar Ali Khan */}
                         <motion.div
                             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-                            className="group bg-[#0B1F33]/80 border border-white/10 rounded-2xl overflow-hidden backdrop-blur-xl shadow-2xl flex flex-col sm:flex-row items-stretch hover:border-[#0033e7]/50 transition-all duration-500 min-h-[320px]"
+                            className="group bg-white/90 border border-blue-50 rounded-2xl overflow-hidden backdrop-blur-xl shadow-2xl flex flex-col sm:flex-row items-stretch hover:border-[#0033e7]/30 transition-all duration-500 min-h-[320px]"
                         >
-                            <div className="sm:w-2/5 relative overflow-hidden grayscale-0 group-hover:grayscale-0 transition-all duration-1000 bg-slate-800">
+                            <div className="sm:w-2/5 relative overflow-hidden bg-slate-100">
                                 <img
                                     src="/Iftekhar Ali khan.png"
                                     alt="Iftikhar Ali Khan"
                                     className="w-full h-full object-cover transform scale-105 group-hover:scale-110 transition-transform duration-1000"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-slate-900/40 hidden sm:block"></div>
+                                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/10 hidden sm:block"></div>
                             </div>
                             <div className="sm:w-3/5 p-8 flex flex-col justify-center relative overflow-hidden">
-                                <div className="absolute top-0 right-0 w-32 h-32 bg-[#0033e7]/10 rounded-full blur-[40px] pointer-events-none"></div>
-                                <h3 className="text-2xl font-black text-white tracking-tighter mb-1 relative z-10">Iftikhar Ali Khan</h3>
-                                <p className="text-teal-400 font-bold uppercase text-[11px] tracking-[3px] mb-4 relative z-10">Founder & CEO</p>
-                                <p className="text-slate-400 font-bold leading-relaxed text-[14px] relative z-10 mb-6">
+                                <h3 className="text-2xl font-black text-slate-900 tracking-tighter mb-1">Iftikhar Ali Khan</h3>
+                                <p className="text-[#0033e7] font-bold uppercase text-[11px] tracking-[3px] mb-4">Founder & CEO</p>
+                                <p className="text-slate-600 font-bold leading-relaxed text-[14px] mb-6">
                                     Iftikhar Ali Khan is CEO of SBN Healthcare Solution, leading strategy, growth, and scalable RCM systems with expertise in global business, operations, compliance, and long-term performance-driven healthcare outcomes.
                                 </p>
                                 <div className="flex gap-3 relative z-10">
-                                    <a href="https://www.linkedin.com/in/iftikhar-ali-khan/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-[#0033e7] transition-colors"><FaLinkedin size={14} /></a>
-                                    <a href="mailto:iakhan@sbnhealthcaresolution.com" className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-[#0033e7] transition-colors"><FaEnvelope size={14} /></a>
+                                    <a href="https://www.linkedin.com/in/iftikhar-ali-khan/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-900 hover:bg-[#0033e7] hover:text-white transition-all"><FaLinkedin size={14} /></a>
+                                    <a href="mailto:iakhan@sbnhealthcaresolution.com" className="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-900 hover:bg-[#0033e7] hover:text-white transition-all"><FaEnvelope size={14} /></a>
                                 </div>
                             </div>
                         </motion.div>
@@ -154,26 +144,25 @@ export default function AboutClient() {
                         {/* Md Nematullah */}
                         <motion.div
                             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-                            className="group bg-[#0B1F33]/80 border border-white/10 rounded-2xl overflow-hidden backdrop-blur-xl shadow-2xl flex flex-col sm:flex-row items-stretch hover:border-teal-400/50 transition-all duration-500 min-h-[320px]"
+                            className="group bg-white/90 border border-blue-50 rounded-2xl overflow-hidden backdrop-blur-xl shadow-2xl flex flex-col sm:flex-row items-stretch hover:border-teal-400/50 transition-all duration-500 min-h-[320px]"
                         >
-                            <div className="sm:w-2/5 relative overflow-hidden grayscale-0 group-hover:grayscale-0 transition-all duration-1000 bg-slate-800">
+                            <div className="sm:w-2/5 relative overflow-hidden bg-slate-100">
                                 <img
                                     src="/Nematullah.png"
                                     alt="Md Nematullah"
                                     className="w-full h-full object-cover transform scale-105 group-hover:scale-110 transition-transform duration-1000"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-slate-900/40 hidden sm:block"></div>
+                                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/10 hidden sm:block"></div>
                             </div>
                             <div className="sm:w-3/5 p-8 flex flex-col justify-center relative overflow-hidden">
-                                <div className="absolute top-0 right-0 w-32 h-32 bg-teal-400/10 rounded-full blur-[40px] pointer-events-none"></div>
-                                <h3 className="text-2xl font-black text-white tracking-tighter mb-1 relative z-10">Md Nematullah</h3>
-                                <p className="text-teal-400 font-bold uppercase text-[11px] tracking-[3px] mb-4 relative z-10">Head of Operations (COO)</p>
-                                <p className="text-slate-400 font-bold leading-relaxed text-[14px] relative z-10 mb-6">
+                                <h3 className="text-2xl font-black text-slate-900 tracking-tighter mb-1">Md Nematullah</h3>
+                                <p className="text-teal-600 font-bold uppercase text-[11px] tracking-[3px] mb-4">Head of Operations (COO)</p>
+                                <p className="text-slate-600 font-bold leading-relaxed text-[14px] mb-6">
                                     MD Nematullah is Operations Head at SBN Healthcare Solutions, overseeing revenue cycle management, team performance, and client success. Drives operational excellence, ensures compliance, and implements strategic solutions to optimize billing efficiency and maximize healthcare practice profitability.
                                 </p>
                                 <div className="flex gap-3 relative z-10">
-                                    <a href="https://www.linkedin.com/in/md-nematullah-356b0b219/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-teal-400 transition-colors"><FaLinkedin size={14} /></a>
-                                    <a href="mailto:md.nematullah@sbnhealthcaresolution.com" className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-teal-400 transition-colors"><FaEnvelope size={14} /></a>
+                                    <a href="https://www.linkedin.com/in/md-nematullah-356b0b219/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-900 hover:bg-teal-500 hover:text-white transition-all"><FaLinkedin size={14} /></a>
+                                    <a href="mailto:md.nematullah@sbnhealthcaresolution.com" className="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-900 hover:bg-teal-500 hover:text-white transition-all"><FaEnvelope size={14} /></a>
                                 </div>
                             </div>
                         </motion.div>
@@ -184,19 +173,19 @@ export default function AboutClient() {
             {/* Introductory text - Standard Card Style */}
             <section className="py-24 relative z-10">
                 <div className="container mx-auto px-4 max-w-5xl relative z-10">
-                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="bg-white/90 backdrop-blur-2xl rounded-2xl p-10 md:p-16 border border-white shadow-[0_20px_50px_rgba(0,0,0,0.04)]">
-                        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 items-center">
+                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="bg-white rounded-[2.5rem] p-10 md:p-16 border border-blue-50 shadow-[0_40px_100px_rgba(0,51,231,0.04)]">
+                        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 items-center">
                             <div className="md:col-span-1 flex justify-center">
-                                <div className="w-24 h-24 bg-blue-50 rounded-2xl flex items-center justify-center text-[#0033e7] shadow-sm">
-                                    <FaShieldAlt size={40} />
+                                <div className="w-28 h-28 bg-blue-50 rounded-3xl flex items-center justify-center text-[#0033e7] shadow-inner">
+                                    <FaShieldAlt size={48} />
                                 </div>
                             </div>
                             <div className="md:col-span-3">
-                                <p className="text-[20px] md:text-[22px] text-slate-800 font-bold leading-relaxed mb-6 tracking-tight">
+                                <p className="text-[22px] md:text-[24px] text-slate-900 font-black leading-tight mb-6 tracking-tight">
                                     Let’s be honest, most healthcare billing systems are messy. Too many gaps, too many delays, and way too many denials.
                                 </p>
-                                <p className="text-[18px] text-slate-600 font-bold leading-relaxed mb-0">
-                                    That’s exactly why About SBN Healthcare matters. We’re not here just to “do billing.” We focus on building proper, structured revenue systems that actually work in real life.
+                                <p className="text-[18px] text-slate-600 font-bold leading-relaxed mb-0 opacity-80">
+                                    That’s exactly why SBN Healthcare matters. We’re not here just to “do billing.” We focus on building proper, structured revenue systems that actually work in real life.
                                 </p>
                             </div>
                         </div>
@@ -204,26 +193,28 @@ export default function AboutClient() {
                 </div>
             </section>
 
-            {/* Mission Vision - Dark Contrast Section */}
+            {/* Mission Vision - Redesigned to Light Theme */}
             <section className="py-24 relative z-10">
                 <div className="container mx-auto px-4 max-w-6xl relative z-10">
                     <motion.div
-                        initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-                        className="bg-slate-900 rounded-2xl p-12 md:p-20 relative overflow-hidden text-white shadow-2xl"
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="bg-white rounded-[3rem] p-12 md:p-20 relative overflow-hidden border border-blue-50 shadow-[0_50px_100px_rgba(0,0,0,0.03)]"
                     >
-                        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0033e7]/30 rounded-full blur-[120px] -mr-64 -mt-64 pointer-events-none"></div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 relative z-10 divide-y md:divide-y-0 md:divide-x divide-white/10">
+                        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0033e7]/5 rounded-full blur-[120px] -mr-64 -mt-64 pointer-events-none"></div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 relative z-10 divide-y md:divide-y-0 md:divide-x divide-slate-100">
                             <div className="pb-10 md:pb-0 md:pr-10">
-                                <span className="text-teal-400 font-black uppercase text-[12px] tracking-[5px] mb-4 block">Our Target</span>
-                                <h2 className="text-4xl font-black mb-6 tracking-tighter text-white">Mission</h2>
-                                <p className="text-[18px] font-bold text-slate-200 leading-relaxed">
+                                <span className="text-[#0033e7] font-black uppercase text-[12px] tracking-[5px] mb-4 block">Our Target</span>
+                                <h2 className="text-4xl font-black mb-6 tracking-tighter text-slate-900">Mission</h2>
+                                <p className="text-[18px] font-bold text-slate-600 leading-relaxed">
                                     To help healthcare providers run financially stable and efficient operations through structured revenue systems.
                                 </p>
                             </div>
-                            <div className="pt-10 md:pt-0 md:pl-10">
-                                <span className="text-teal-400 font-black uppercase text-[12px] tracking-[5px] mb-4 block">Our Future</span>
-                                <h2 className="text-4xl font-black mb-6 tracking-tighter text-white">Vision</h2>
-                                <p className="text-[18px] font-bold text-slate-200 leading-relaxed">
+                            <div className="pt-10 md:pt-0 md:pl-10 text-right md:text-left">
+                                <span className="text-teal-600 font-black uppercase text-[12px] tracking-[5px] mb-4 block">Our Future</span>
+                                <h2 className="text-4xl font-black mb-6 tracking-tighter text-slate-900">Vision</h2>
+                                <p className="text-[18px] font-bold text-slate-600 leading-relaxed italic">
                                     To become a long-term, trusted RCM partner known for consistency, transparency, and real results.
                                 </p>
                             </div>
@@ -237,42 +228,42 @@ export default function AboutClient() {
                 <div className="container mx-auto px-4 max-w-7xl relative z-10">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {/* What We Actually Do */}
-                        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="bg-white/90 backdrop-blur-xl p-10 rounded-2xl border border-white shadow-sm hover:shadow-xl transition-all duration-500">
+                        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="bg-white/90 p-10 rounded-[2.5rem] border border-blue-50 shadow-sm hover:shadow-2xl transition-all duration-700">
                             <h3 className="text-2xl font-black text-slate-900 mb-4 tracking-tighter">What We Actually Do</h3>
-                            <p className="text-slate-600 font-bold mb-8 text-[16px]">We connect the full revenue cycle, not just one part of it.</p>
+                            <p className="text-slate-500 font-bold mb-8 text-[16px]">We connect the full revenue cycle, not just one part of it.</p>
                             <span className="text-[11px] font-black text-[#0033e7] uppercase tracking-[3px] block mb-6 border-b border-blue-50 pb-3">Focus Areas</span>
                             <ul className="space-y-4">
                                 {focusAreas.map((item, idx) => (
                                     <li key={idx} className="flex gap-4 text-slate-700 font-bold items-center text-[15px]">
-                                        <div className="w-6 h-6 rounded-full bg-blue-50 text-[#0033e7] flex items-center justify-center flex-shrink-0">✔</div> {item.t}
+                                        <div className="w-6 h-6 rounded-lg bg-blue-50 text-[#0033e7] flex items-center justify-center flex-shrink-0 text-[10px]">✔</div> {item.t}
                                     </li>
                                 ))}
                             </ul>
                         </motion.div>
 
                         {/* How We Work */}
-                        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="bg-white/90 backdrop-blur-xl p-10 rounded-2xl border border-white shadow-sm hover:shadow-xl transition-all duration-500">
+                        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="bg-white/90 p-10 rounded-[2.5rem] border border-blue-50 shadow-sm hover:shadow-2xl transition-all duration-700">
                             <h3 className="text-2xl font-black text-slate-900 mb-4 tracking-tighter">How We Work</h3>
-                            <p className="text-slate-600 font-bold mb-8 text-[16px]">No chaos. No guesswork. Just a clear system.</p>
+                            <p className="text-slate-500 font-bold mb-8 text-[16px]">No chaos. No guesswork. Just a clear system.</p>
                             <span className="text-[11px] font-black text-[#0033e7] uppercase tracking-[3px] block mb-6 border-b border-blue-50 pb-3">Operations</span>
                             <ul className="space-y-4">
                                 {operationsLookLike.map((item, idx) => (
                                     <li key={idx} className="flex gap-4 text-slate-700 font-bold items-center text-[15px]">
-                                        <div className="w-6 h-6 rounded-full bg-blue-50 text-[#0033e7] flex items-center justify-center flex-shrink-0">✔</div> {item.t}
+                                        <div className="w-6 h-6 rounded-lg bg-blue-50 text-[#0033e7] flex items-center justify-center flex-shrink-0 text-[10px]">✔</div> {item.t}
                                     </li>
                                 ))}
                             </ul>
                         </motion.div>
 
                         {/* Why Choose Us */}
-                        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="bg-white/90 backdrop-blur-xl p-10 rounded-2xl border border-white shadow-sm hover:shadow-xl transition-all duration-500">
+                        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="bg-white/90 p-10 rounded-[2.5rem] border border-blue-50 shadow-sm hover:shadow-2xl transition-all duration-700">
                             <h3 className="text-2xl font-black text-slate-900 mb-4 tracking-tighter">Why Choose Us</h3>
-                            <p className="text-slate-600 font-bold mb-8 text-[16px]">We deliver performance-driven structured models.</p>
+                            <p className="text-slate-500 font-bold mb-8 text-[16px]">We deliver performance-driven structured models.</p>
                             <span className="text-[11px] font-black text-[#0033e7] uppercase tracking-[3px] block mb-6 border-b border-blue-50 pb-3">Differentiation</span>
                             <ul className="space-y-4">
                                 {makesUsDifferent.map((item, idx) => (
                                     <li key={idx} className="flex gap-4 text-slate-700 font-bold items-center text-[15px]">
-                                        <div className="w-6 h-6 rounded-full bg-blue-50 text-[#0033e7] flex items-center justify-center flex-shrink-0">✔</div> {item.t}
+                                        <div className="w-6 h-6 rounded-lg bg-blue-50 text-[#0033e7] flex items-center justify-center flex-shrink-0 text-[10px]">✔</div> {item.t}
                                     </li>
                                 ))}
                             </ul>
@@ -281,56 +272,60 @@ export default function AboutClient() {
                 </div>
             </section>
 
-            {/* Case Study Table - Clean Glass View */}
-            <section className="py-24 relative z-10 overflow-hidden bg-slate-900/95">
-                <div className="container mx-auto px-4 max-w-6xl relative z-20 text-white">
+            {/* Case Study Table - Improved Light Theme */}
+            <section className="py-24 relative z-10 overflow-hidden bg-gradient-to-b from-white/40 to-[#f8faff]/80">
+                <div className="container mx-auto px-4 max-w-6xl relative z-20">
                     <div className="text-center mb-16">
-                        <span className="text-teal-400 font-black uppercase text-[12px] tracking-[6px] mb-4 block">Proven Performance</span>
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-6 text-white">Real Results from Real Practices</h2>
-                        <p className="text-slate-300 font-bold text-lg max-w-2xl mx-auto">See how structural changes directly impact financial and operational efficiency.</p>
+                        <span className="text-[#0033e7] font-black uppercase text-[12px] tracking-[6px] mb-4 block">Proven Performance</span>
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-6 text-slate-900">Real Results from Real Practices</h2>
+                        <p className="text-slate-600 font-bold text-lg max-w-2xl mx-auto opacity-70">See how structural changes directly impact financial and operational efficiency.</p>
                     </div>
 
                     {caseStudiesTemplate.map((study) => (
-                        <div key={study.id} className="bg-white/5 border border-white/10 rounded-2xl p-8 md:p-14 backdrop-blur-xl shadow-2xl">
-                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                        <div key={study.id} className="bg-white border border-blue-50 rounded-[3rem] p-8 md:p-14 shadow-[0_40px_100px_rgba(0,0,0,0.02)]">
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
                                 <div className="lg:col-span-1">
-                                    <h3 className="text-3xl md:text-4xl font-black mb-4 tracking-tighter text-white">{study.clientType}</h3>
-                                    <p className="text-slate-300 font-bold leading-relaxed mb-10">{study.description}</p>
+                                    <h3 className="text-3xl md:text-4xl font-black mb-4 tracking-tighter text-slate-900">{study.clientType}</h3>
+                                    <p className="text-slate-500 font-bold leading-relaxed mb-10">{study.description}</p>
                                     <div className="space-y-6">
                                         {study.metrics.map((metric, idx) => (
-                                            <div key={idx} className="bg-white/5 p-8 rounded-xl border-l-[6px] border-[#0033e7] shadow-inner transition-all hover:bg-white/10">
+                                            <div key={idx} className="bg-slate-50/50 p-8 rounded-2xl border-l-[6px] border-[#0033e7] shadow-sm transition-all hover:bg-white hover:shadow-xl group">
                                                 <div className="text-4xl font-black text-[#0033e7] mb-2">{metric.value}</div>
-                                                <div className="text-[12px] font-black uppercase text-teal-400 tracking-[3px] mb-2">{metric.label}</div>
-                                                <div className="text-[14px] font-bold text-slate-400">{metric.description}</div>
+                                                <div className="text-[12px] font-black uppercase text-teal-600 tracking-[3px] mb-2">{metric.label}</div>
+                                                <div className="text-[14px] font-bold text-slate-400 group-hover:text-slate-600 transition-colors">{metric.description}</div>
                                             </div>
                                         ))}
                                     </div>
                                 </div>
                                 <div className="lg:col-span-2">
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                                         {/* Conventional Way */}
                                         <div className="space-y-6">
-                                            <div className="text-[12px] font-black uppercase text-red-400 tracking-[4px] mb-6 flex items-center gap-3">
-                                                <div className="w-2.5 h-2.5 bg-red-400 rounded-full shadow-[0_0_10px_rgba(248,113,113,0.5)]"></div>
-                                                Conventional Way
+                                            <div className="px-3">
+                                                <div className="text-[12px] font-black uppercase text-red-500 tracking-[4px] mb-6 flex items-center gap-3">
+                                                    <div className="w-2.5 h-2.5 bg-red-500 rounded-full shadow-[0_0_10px_rgba(248,113,113,0.5)]"></div>
+                                                    Conventional Way
+                                                </div>
                                             </div>
                                             {study.beforeAfter.map((item, idx) => (
-                                                <div key={idx} className="p-8 bg-white/5 rounded-xl border border-white/5 group hover:bg-white/10 transition-all">
-                                                    <span className="block text-[10px] uppercase font-black tracking-widest mb-3 text-slate-500">{item.feature}</span>
-                                                    <p className="text-[16px] font-bold text-slate-300 leading-snug">{item.before}</p>
+                                                <div key={idx} className="p-8 bg-slate-50/50 rounded-2xl border border-slate-100 group hover:bg-white hover:shadow-lg transition-all duration-500">
+                                                    <span className="block text-[10px] uppercase font-black tracking-widest mb-3 text-slate-400">{item.feature}</span>
+                                                    <p className="text-[16px] font-bold text-slate-500 leading-snug">{item.before}</p>
                                                 </div>
                                             ))}
                                         </div>
                                         {/* SBN Integration */}
                                         <div className="space-y-6">
-                                            <div className="text-[12px] font-black uppercase text-teal-400 tracking-[4px] mb-6 flex items-center gap-3">
-                                                <div className="w-2.5 h-2.5 bg-teal-400 rounded-full animate-pulse shadow-[0_0_10px_rgba(45,212,191,0.5)]"></div>
-                                                SBN Integration
+                                            <div className="px-3">
+                                                <div className="text-[12px] font-black uppercase text-[#0033e7] tracking-[4px] mb-6 flex items-center gap-3">
+                                                    <div className="w-2.5 h-2.5 bg-[#0033e7] rounded-full animate-pulse shadow-[0_0_10px_rgba(0,51,231,0.5)]"></div>
+                                                    SBN Integration
+                                                </div>
                                             </div>
                                             {study.beforeAfter.map((item, idx) => (
-                                                <div key={idx} className="p-8 bg-white/10 rounded-xl border border-teal-400/20 shadow-[0_15px_30px_rgba(0,0,0,0.2)] group hover:border-[#0033e7]/50 transition-all">
-                                                    <span className="block text-[10px] uppercase font-black tracking-widest mb-3 text-teal-400">{item.feature}</span>
-                                                    <p className="text-[17px] font-black text-white leading-snug">{item.after}</p>
+                                                <div key={idx} className="p-8 bg-[#0033e7]/5 rounded-2xl border border-[#0033e7]/10 shadow-sm group hover:border-[#0033e7]/40 hover:bg-white hover:shadow-2xl transition-all duration-700">
+                                                    <span className="block text-[10px] uppercase font-black tracking-widest mb-3 text-[#0033e7] font-black">{item.feature}</span>
+                                                    <p className="text-[17px] font-black text-slate-900 leading-snug">{item.after}</p>
                                                 </div>
                                             ))}
                                         </div>
@@ -347,24 +342,24 @@ export default function AboutClient() {
                 <div className="container mx-auto px-4 max-w-5xl relative z-10">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
                         <div>
-                            <h2 className="text-4xl font-black text-slate-900 tracking-tighter mb-10 leading-tight">FAQs & Quick Information</h2>
-                            <div className="space-y-6">
+                            <h2 className="text-4xl font-black text-slate-900 tracking-tighter mb-10 leading-tight uppercase">FAQs & Information</h2>
+                            <div className="space-y-4">
                                 {faqs.slice(0, 4).map((faq, idx) => (
-                                    <div key={idx} className="bg-white/90 backdrop-blur-sm p-6 rounded-xl border border-white shadow-sm">
-                                        <h4 className="text-[17px] font-black text-slate-900 mb-2">{faq.q}</h4>
-                                        <p className="text-[15px] text-slate-600 font-bold mb-0">{faq.a}</p>
+                                    <div key={idx} className="bg-white p-7 rounded-2xl border border-blue-50 shadow-sm hover:shadow-xl transition-all group">
+                                        <h4 className="text-[17px] font-black text-slate-900 mb-2 group-hover:text-[#0033e7] transition-colors">{faq.q}</h4>
+                                        <p className="text-[15px] text-slate-500 font-bold mb-0 leading-relaxed">{faq.a}</p>
                                     </div>
                                 ))}
                             </div>
                         </div>
-                        <div className="text-center md:text-left bg-[#0033e7] p-12 rounded-2xl text-white shadow-2xl relative overflow-hidden">
-                            <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-white/10 rounded-full blur-[80px] -mr-32 -mb-32"></div>
-                            <h3 className="text-4xl font-black mb-8 tracking-tighter leading-tight relative z-10 text-white">Let’s Build Something That Actually Works</h3>
-                            <p className="text-[18px] font-bold text-blue-100 mb-10 relative z-10">
+                        <div className="text-center md:text-left bg-gradient-to-br from-[#0033e7] to-[#0A1F33] p-12 lg:p-16 rounded-[3rem] text-white shadow-[0_50px_100px_rgba(0,51,231,0.2)] relative overflow-hidden">
+                            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white/5 rounded-full blur-[100px] -mr-32 -mt-32"></div>
+                            <h3 className="text-4xl md:text-5xl font-black mb-8 tracking-tighter leading-tight relative z-10 text-white">Let’s Build Something Together</h3>
+                            <p className="text-[18px] font-bold text-blue-100 mb-10 relative z-10 opacity-90">
                                 Your revenue cycle can be simpler, stronger, and more reliable. Let’s structured your financial operations for maximum growth.
                             </p>
-                            <Link href="/contact-us" className="inline-block bg-teal-400 text-slate-900 px-10 py-5 rounded-xl font-black uppercase tracking-[2px] transition-all hover:bg-white hover:-translate-y-1 shadow-xl relative z-10">
-                                Schedule Consultation
+                            <Link href="/contact-us" className="inline-block bg-white text-[#0033e7] px-12 py-5 rounded-2xl font-black uppercase tracking-[2px] transition-all hover:bg-teal-400 hover:text-slate-900 hover:-translate-y-1 shadow-2xl relative z-10">
+                                Get Started Now
                             </Link>
                         </div>
                     </div>

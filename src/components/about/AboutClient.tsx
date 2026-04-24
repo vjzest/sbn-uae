@@ -68,7 +68,7 @@ export default function AboutClient() {
             {/* Banner Section */}
             <div
                 className="relative bg-cover bg-center py-[120px] md:py-[180px] text-center overflow-hidden z-10"
-                style={{ backgroundImage: "url('/About.png')" }}
+                style={{ backgroundImage: "url('/About.webp')" }}
             >
                 <div className="absolute inset-0 bg-gradient-to-r from-[#0033e7]/85 to-[#0B1F33]/85 mix-blend-multiply"></div>
 
@@ -122,7 +122,7 @@ export default function AboutClient() {
                         >
                             <div className="sm:w-2/5 relative overflow-hidden bg-slate-100">
                                 <img
-                                    src="/Iftekhar Ali khan.png"
+                                    src="/Iftekhar Ali khan.webp"
                                     alt="Iftikhar Ali Khan"
                                     className="w-full h-full object-cover transform scale-105 group-hover:scale-110 transition-transform duration-1000"
                                 />
@@ -148,7 +148,7 @@ export default function AboutClient() {
                         >
                             <div className="sm:w-2/5 relative overflow-hidden bg-slate-100">
                                 <img
-                                    src="/Nematullah.png"
+                                    src="/Nematullah.webp"
                                     alt="Md Nematullah"
                                     className="w-full h-full object-cover transform scale-105 group-hover:scale-110 transition-transform duration-1000"
                                 />

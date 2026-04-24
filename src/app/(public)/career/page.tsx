@@ -35,7 +35,7 @@ const Career = () => {
                         </div>
                         <div className="flex-1 min-w-[300px] flex justify-center">
                             <img
-                                src="/img/career.jpg"
+                                src="/img/career.webp"
                                 alt="Career"
                                 className="w-full max-w-[500px] h-[350px] object-cover rounded-xl shadow-[0_20px_40px_rgba(0,0,0,0.15)] border-4 border-white transition-transform duration-300 hover:-translate-y-1"
                             />

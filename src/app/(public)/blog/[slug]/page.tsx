@@ -68,7 +68,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
             name: 'SBN Healthcare Solution',
             logo: {
                 '@type': 'ImageObject',
-                url: 'https://www.sbnhealthcaresolution.com/logo.png'
+                url: 'https://www.sbnhealthcaresolution.com/logo.webp'
             }
         },
         datePublished: post.date,
@@ -111,7 +111,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
             <article className="py-20 md:py-24">
                 <div className="container mx-auto px-4">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-                        
+
                         {/* Left Sidebar / Meta */}
                         <div className="lg:col-span-1 hidden lg:block">
                             <div className="sticky top-32 space-y-12 flex flex-col items-center">
@@ -129,7 +129,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                         {/* Main Content */}
                         <div className="lg:col-span-8">
                             <div className="max-w-[760px] mx-auto">
-                                
+
                                 {/* Post Metadata Info */}
                                 <div className="flex flex-wrap items-center gap-6 md:gap-10 mb-12 py-8 border-b border-slate-100">
                                     <div className="flex items-center gap-3">
@@ -157,8 +157,8 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                                         </div>
                                         <nav className="space-y-4">
                                             {toc.map((item: any, i: number) => (
-                                                <a 
-                                                    key={i} 
+                                                <a
+                                                    key={i}
                                                     href={`#${item.id}`}
                                                     className={`block text-sm font-bold text-slate-600 hover:text-[var(--primary-color)] transition-colors ${item.level === 3 ? 'ml-6 border-l border-slate-200 pl-4' : ''}`}
                                                 >
@@ -178,7 +178,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                                     {/* Author Box */}
                                     <div className="mt-20 p-10 bg-slate-50 rounded-[2.5rem] border border-slate-100 flex flex-col md:flex-row gap-8 items-center md:items-start text-center md:text-left">
                                         <div className="w-24 h-24 rounded-full overflow-hidden bg-white border-4 border-white shadow-xl flex-shrink-0">
-                                            <img src={post.author?.image || '/img/team/ceo.jpg'} alt={post.author?.name} className="w-full h-full object-cover" />
+                                            <img src={post.author?.image || '/img/team/ceo.webp'} alt={post.author?.name} className="w-full h-full object-cover" />
                                         </div>
                                         <div>
                                             <div className="inline-block px-3 py-1 bg-[var(--primary-color)]/10 text-[var(--primary-color)] rounded-lg text-[9px] font-black uppercase tracking-widest mb-3">Author Insight</div>
@@ -224,7 +224,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                         </div>
 
                     </div>
-                    
+
                     <div className="mt-20 pt-12 border-t border-slate-100 flex justify-between items-center">
                         <Link href="/blog" className="flex items-center gap-3 text-[var(--primary-color)] font-black text-[10px] uppercase tracking-[3px] group">
                             <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center border border-slate-100 group-hover:bg-[var(--primary-color)] group-hover:text-white transition-all shadow-sm">

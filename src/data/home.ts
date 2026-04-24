@@ -7,7 +7,7 @@ export const heroData = {
   description: "SBN provides comprehensive medical insurance verification services in New York. We focus on reducing claim denials and accurately verifying eligibility to improve your financial performance.",
   ctaText: "Contact Us",
   ctaLink: "/contact-us",
-  image: "/img/intro-img.jpg"
+  image: "/img/intro-img.webp"
 };
 
 export const statsData = [

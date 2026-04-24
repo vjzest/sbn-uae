@@ -40,8 +40,8 @@ export default function SeoManagement() {
     ];
 
     const suggestions = [
-        'home', 'about-us', 'services', 'contact-us', 'rcm-calculator', 'blog', 
-        'resources', 'security', 'pricing', 'medical-billing', 'medical-coding', 
+        'home', 'about-us', 'services', 'contact-us', 'rcm-calculator', 'blog',
+        'resources', 'security', 'pricing', 'medical-billing', 'medical-coding',
         'eligibility-verification', 'ar-follow-up'
     ];
 
@@ -73,7 +73,7 @@ export default function SeoManagement() {
         setIsSavingRobots(true);
         try {
             const token = localStorage.getItem('adminToken');
-            await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/settings`, 
+            await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/settings`,
                 { key: 'robots_txt', value: robotsTxt },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -173,7 +173,7 @@ export default function SeoManagement() {
             {/* Status Notifications */}
             <AnimatePresence>
                 {status.message && (
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: 20 }}
@@ -190,7 +190,7 @@ export default function SeoManagement() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
                 {/* Editor Section */}
                 <div className="lg:col-span-12">
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         className="bg-white rounded-[2.5rem] overflow-hidden shadow-2xl border border-slate-200"
@@ -213,7 +213,7 @@ export default function SeoManagement() {
                                 >
                                     {tab.icon} {tab.label}
                                     {activeTab === tab.id && (
-                                        <motion.div 
+                                        <motion.div
                                             layoutId="seoTabActive"
                                             className="absolute bottom-0 left-0 right-0 h-1 bg-[var(--primary-color)]"
                                         />
@@ -225,7 +225,7 @@ export default function SeoManagement() {
                         <form onSubmit={handleSubmit} className="p-8 lg:p-12">
                             <AnimatePresence mode="wait">
                                 {activeTab === 'general' && (
-                                    <motion.div 
+                                    <motion.div
                                         key="general"
                                         initial={{ opacity: 0, x: -10 }}
                                         animate={{ opacity: 1, x: 0 }}
@@ -320,7 +320,7 @@ export default function SeoManagement() {
                                 )}
 
                                 {activeTab === 'social' && (
-                                    <motion.div 
+                                    <motion.div
                                         key="social"
                                         initial={{ opacity: 0, x: -10 }}
                                         animate={{ opacity: 1, x: 0 }}
@@ -355,7 +355,7 @@ export default function SeoManagement() {
                                                     className="w-full px-7 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:border-[var(--primary-color)] focus:outline-none transition-all font-bold text-slate-800"
                                                     value={formData.ogImage}
                                                     onChange={(e) => setFormData({ ...formData, ogImage: e.target.value })}
-                                                    placeholder="/img/og-preview.jpg"
+                                                    placeholder="/img/og-preview.webp"
                                                 />
                                             </div>
                                             <div className="space-y-4">
@@ -374,7 +374,7 @@ export default function SeoManagement() {
                                 )}
 
                                 {activeTab === 'advanced' && (
-                                    <motion.div 
+                                    <motion.div
                                         key="advanced"
                                         initial={{ opacity: 0, x: -10 }}
                                         animate={{ opacity: 1, x: 0 }}
@@ -426,7 +426,7 @@ export default function SeoManagement() {
                                 )}
 
                                 {activeTab === 'tools' && (
-                                    <motion.div 
+                                    <motion.div
                                         key="tools"
                                         initial={{ opacity: 0, x: -10 }}
                                         animate={{ opacity: 1, x: 0 }}
@@ -441,8 +441,8 @@ export default function SeoManagement() {
                                                     </div>
                                                     <h4 className="text-sm font-black text-slate-900 uppercase tracking-widest leading-none">Sitemap Tool</h4>
                                                 </div>
-                                                <button 
-                                                    type="button" 
+                                                <button
+                                                    type="button"
                                                     onClick={() => showStatus('success', 'Starting sitemap generation...')}
                                                     className="w-full py-4 bg-slate-900 text-white text-[10px] font-black rounded-xl uppercase tracking-[2px] hover:bg-[var(--primary-color)] transition-all shadow-xl"
                                                 >
@@ -457,13 +457,13 @@ export default function SeoManagement() {
                                                     </div>
                                                     <h4 className="text-sm font-black text-slate-900 uppercase tracking-widest leading-none">Robots.txt</h4>
                                                 </div>
-                                                <textarea 
+                                                <textarea
                                                     className="w-full p-5 rounded-xl bg-white border border-slate-200 font-mono text-xs text-slate-600 mb-4 focus:border-slate-900 outline-none flex-grow min-h-[100px]"
                                                     value={robotsTxt}
                                                     onChange={(e) => setRobotsTxt(e.target.value)}
                                                 />
-                                                <button 
-                                                    type="button" 
+                                                <button
+                                                    type="button"
                                                     onClick={handleSaveRobots}
                                                     disabled={isSavingRobots}
                                                     className="w-full py-4 bg-slate-900 text-white text-[10px] font-black rounded-xl uppercase tracking-[2px] transition-all disabled:opacity-50"
@@ -485,28 +485,28 @@ export default function SeoManagement() {
                                             </div>
 
                                             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-10">
-                                                <input 
+                                                <input
                                                     className="md:col-span-1 px-6 py-4 rounded-xl text-xs font-bold border border-slate-200 bg-white focus:border-orange-400 outline-none"
                                                     placeholder="/old-link"
                                                     value={newRedirect.fromPath}
-                                                    onChange={(e) => setNewRedirect({...newRedirect, fromPath: e.target.value})}
+                                                    onChange={(e) => setNewRedirect({ ...newRedirect, fromPath: e.target.value })}
                                                 />
-                                                <input 
+                                                <input
                                                     className="md:col-span-1 px-6 py-4 rounded-xl text-xs font-bold border border-slate-200 bg-white focus:border-orange-400 outline-none"
                                                     placeholder="/new-link"
                                                     value={newRedirect.toPath}
-                                                    onChange={(e) => setNewRedirect({...newRedirect, toPath: e.target.value})}
+                                                    onChange={(e) => setNewRedirect({ ...newRedirect, toPath: e.target.value })}
                                                 />
-                                                <select 
+                                                <select
                                                     className="px-6 py-4 rounded-xl text-[10px] font-black border border-slate-200 bg-white focus:border-orange-400 outline-none appearance-none"
                                                     value={newRedirect.code}
-                                                    onChange={(e) => setNewRedirect({...newRedirect, code: parseInt(e.target.value)})}
+                                                    onChange={(e) => setNewRedirect({ ...newRedirect, code: parseInt(e.target.value) })}
                                                 >
                                                     <option value={301}>301 (Permanent)</option>
                                                     <option value={302}>302 (Temporary)</option>
                                                 </select>
-                                                <button 
-                                                    type="button" 
+                                                <button
+                                                    type="button"
                                                     onClick={handleAddRedirect}
                                                     className="bg-orange-500 text-white font-black rounded-xl uppercase tracking-[2px] text-[10px] hover:bg-orange-600 transition-all shadow-lg shadow-orange-500/20"
                                                 >
@@ -516,10 +516,10 @@ export default function SeoManagement() {
 
                                             <div className="space-y-3">
                                                 {redirects.map((r: any) => (
-                                                    <motion.div 
+                                                    <motion.div
                                                         initial={{ opacity: 0 }}
                                                         animate={{ opacity: 1 }}
-                                                        key={r._id} 
+                                                        key={r._id}
                                                         className="flex items-center justify-between p-4 bg-white rounded-2xl border border-slate-100 group shadow-sm"
                                                     >
                                                         <div className="flex items-center gap-6 overflow-hidden">
@@ -532,8 +532,8 @@ export default function SeoManagement() {
                                                                 <p className="text-[11px] font-black text-[var(--primary-color)]">{r.toPath}</p>
                                                             </div>
                                                         </div>
-                                                        <button 
-                                                            type="button" 
+                                                        <button
+                                                            type="button"
                                                             onClick={() => handleDeleteRedirect(r._id)}
                                                             className="w-9 h-9 flex items-center justify-center rounded-xl bg-red-50 text-red-400 hover:bg-red-500 hover:text-white transition-all shadow-sm"
                                                         >
@@ -584,11 +584,11 @@ export default function SeoManagement() {
                     <h3 className="text-[11px] font-black text-slate-400 uppercase tracking-[4px] px-6 mb-8">Metadata Repository ({seos.length})</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {seos.map((seo: any, idx: number) => (
-                            <motion.div 
+                            <motion.div
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: idx * 0.05 }}
-                                key={seo._id} 
+                                key={seo._id}
                                 className="bg-white p-8 rounded-[2rem] border border-slate-200 shadow-sm flex items-start gap-6 group hover:border-slate-400 transition-all hover:shadow-xl"
                             >
                                 <div className="w-14 h-14 bg-slate-50 text-slate-300 rounded-2xl flex items-center justify-center text-xl flex-shrink-0 group-hover:bg-slate-900 group-hover:text-white transition-all duration-500">

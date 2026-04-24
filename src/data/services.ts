@@ -356,7 +356,7 @@ export const servicesList: Service[] = [
             {
                 type: 'standard',
                 title: 'Frequently Asked Questions',
-                image: '/Section 4-1.png',
+                image: '/Section 4-1.webp',
                 imagePosition: 'right',
                 list: [
                     'What is insurance verification? It means checking patient insurance before treatment to prevent claim denials.',

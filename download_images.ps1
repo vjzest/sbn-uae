@@ -1,6 +1,6 @@
 
 $baseUrl = "https://sbnhealthcaresolution.com/img/"
-$images = @("logo.png", "bg1.jpg", "intro-img.jpg", "feature1.jpg", "feature2.jpg", "feature3.jpg", "service1.jpg", "service2.jpg", "service3.jpg", "service4.jpg")
+$images = @("logo.webp", "bg1.webp", "intro-img.webp", "feature1.webp", "feature2.webp", "feature3.webp", "service1.webp", "service2.webp", "service3.webp", "service4.webp")
 $outputDir = "public/img"
 
 if (!(Test-Path -Path $outputDir)) {

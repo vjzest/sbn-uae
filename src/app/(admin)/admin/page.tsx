@@ -28,17 +28,17 @@ export default function AdminLoginPage() {
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[var(--primary-color)]/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 opacity-50" />
             <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-indigo-500/10 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2 opacity-50" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[#070B14] [background:radial-gradient(circle_at_center,_#0D1424_0%,_#070B14_100%)] opacity-50" />
-            
+
             <div className="max-w-[440px] w-full relative z-10 px-4">
                 <div className="bg-[#0D1424] border border-white/5 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] rounded-3xl overflow-hidden">
                     {/* Header Banner */}
                     <div className="h-1.5 w-full bg-gradient-to-r from-[var(--primary-color)] via-[#4F46E5] to-[var(--primary-color)]" />
-                    
+
                     <div className="p-6 lg:p-8">
                         {/* Internal Branding */}
                         <div className="flex flex-col items-center mb-6">
                             <div className="w-12 h-12 relative mb-3 grayscale brightness-[1.5] group hover:grayscale-0 transition-all duration-700">
-                                <img src="/Logo.png" alt="Logo" className="w-full h-full object-cover rounded-xl border border-white/10 shadow-[0_0_15px_rgba(255,255,255,0.05)]" />
+                                <img src="/Logo.webp" alt="Logo" className="w-full h-full object-cover rounded-xl border border-white/10 shadow-[0_0_15px_rgba(255,255,255,0.05)]" />
                             </div>
                             <div className="text-center">
                                 <h1 className="text-white text-base font-black tracking-[4px] uppercase mb-1">Admin Login</h1>
@@ -47,7 +47,7 @@ export default function AdminLoginPage() {
                         </div>
 
                         {error && (
-                            <motion.div 
+                            <motion.div
                                 initial={{ opacity: 0, y: -10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 className="bg-red-500/10 border border-red-500/20 px-6 py-4 mb-8 text-red-400 text-[11px] font-black uppercase tracking-widest text-center rounded-lg"

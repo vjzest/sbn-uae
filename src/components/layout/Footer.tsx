@@ -41,7 +41,7 @@ const Footer = () => {
                             <Link href="/" className="flex items-center gap-4 no-underline group">
                                 <div className="p-2 bg-white/80 backdrop-blur-md rounded-2xl shadow-sm border border-white transition-transform group-hover:scale-105">
                                     <img
-                                        src="/Logo.png"
+                                        src="/Logo.webp"
                                         alt="SBN Healthcare Solution"
                                         className="h-[50px] md:h-[60px] w-auto mix-blend-multiply"
                                     />

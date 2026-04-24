@@ -11,7 +11,7 @@ const fadeUp: any = {
 
 const softwareList = Array.from({ length: 16 }, (_, i) => ({
     id: i + 1,
-    logo: `/img/software/software${i + 1}.jpg`
+    logo: `/img/software/software${i + 1}.webp`
 }));
 
 // Duplicate to create seamless loop

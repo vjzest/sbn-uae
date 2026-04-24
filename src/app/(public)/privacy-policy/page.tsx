@@ -16,7 +16,7 @@ const PrivacyPolicy = () => {
             {/* Banner Area */}
             <div
                 className="relative bg-cover bg-center py-[60px] text-center text-white overflow-hidden"
-                style={{ backgroundImage: "linear-gradient(rgba(11, 31, 51, 0.8), rgba(11, 31, 51, 0.9)), url('/img/bg1.jpg')" }}
+                style={{ backgroundImage: "linear-gradient(rgba(11, 31, 51, 0.8), rgba(11, 31, 51, 0.9)), url('/img/bg1.webp')" }}
             >
                 <div className="container mx-auto px-4">
                     <h1 className="text-[42px] font-extrabold m-0 text-white drop-shadow-lg tracking-tighter">Privacy Policy</h1>

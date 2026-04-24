@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   title: 'SBN Healthcare Solution | Medical Insurance Verification Service in New York',
   description: 'SBN offers professional medical insurance verification and billing services in New York. Reduce claim denials, improve cash flow, and ensure HIPAA-compliant accuracy.',
   icons: {
-    icon: '/Logo.png',
+    icon: '/Logo.webp',
   },
   verification: {
     google: 'koWn4TcdBUJq__U9GvO8JbLXvDDlBDBL2iF0ZJsTp58',

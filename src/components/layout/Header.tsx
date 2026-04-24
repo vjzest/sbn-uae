@@ -51,14 +51,14 @@ const Header = () => {
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
-            
+
             // Hide header if scrolling down and past 100px. Show if scrolling up.
             if (currentScrollY > lastScrollY && currentScrollY > 100) {
                 setIsVisible(false);
             } else {
                 setIsVisible(true);
             }
-            
+
             setLastScrollY(currentScrollY);
         };
 
@@ -77,7 +77,7 @@ const Header = () => {
     };
 
     return (
-        <header 
+        <header
             className={`fixed top-0 left-0 right-0 z-[1000] shadow-sm transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
         >
             {/* Main Header - EFFAH Style Light Theme */}
@@ -86,7 +86,7 @@ const Header = () => {
                     {/* Logo Section */}
                     <Link href="/" className="flex items-center gap-3 no-underline group py-1 flex-shrink-0 mr-4 transition-all">
                         <div className="transition-transform group-hover:scale-105">
-                            <img src="/Logo.png" alt="SBN Healthcare Solution" className="max-h-[44px] xl:max-h-[55px] w-auto mix-blend-multiply" />
+                            <img src="/Logo.webp" alt="SBN Healthcare Solution" className="max-h-[44px] xl:max-h-[55px] w-auto mix-blend-multiply" />
                         </div>
                         <div className="flex flex-col justify-center leading-none min-w-fit">
                             <span className="text-[#010614] font-black text-[15px] xl:text-[19px] tracking-tight uppercase">
@@ -107,11 +107,10 @@ const Header = () => {
                                     <li key={link.name} className="relative h-full flex items-center group">
                                         <Link
                                             href={link.href}
-                                            className={`font-bold px-[8px] 2xl:px-[12px] h-full flex items-center uppercase text-[11px] 2xl:text-[12px] transition-all duration-300 whitespace-nowrap relative group/link hover:text-[#0033e7] ${
-                                                active 
-                                                ? 'text-[#0033e7] after:content-[""] after:absolute after:bottom-[30%] after:left-[8px] after:right-[8px] after:h-[3px] after:bg-[#0033e7] after:rounded-full after:shadow-[0_2px_8px_rgba(0,51,231,0.4)]' 
-                                                : 'text-[#1a1a1b] after:content-[""] after:absolute after:bottom-[30%] after:left-[8px] after:w-0 after:h-[3px] after:bg-[#0033e7] after:rounded-full after:transition-all after:duration-300 hover:after:w-[calc(100%-16px)]'
-                                            }`}
+                                            className={`font-bold px-[8px] 2xl:px-[12px] h-full flex items-center uppercase text-[11px] 2xl:text-[12px] transition-all duration-300 whitespace-nowrap relative group/link hover:text-[#0033e7] ${active
+                                                    ? 'text-[#0033e7] after:content-[""] after:absolute after:bottom-[30%] after:left-[8px] after:right-[8px] after:h-[3px] after:bg-[#0033e7] after:rounded-full after:shadow-[0_2px_8px_rgba(0,51,231,0.4)]'
+                                                    : 'text-[#1a1a1b] after:content-[""] after:absolute after:bottom-[30%] after:left-[8px] after:w-0 after:h-[3px] after:bg-[#0033e7] after:rounded-full after:transition-all after:duration-300 hover:after:w-[calc(100%-16px)]'
+                                                }`}
                                         >
                                             <span className="relative z-10 flex items-center">
                                                 {link.name}
@@ -130,9 +129,8 @@ const Header = () => {
                                                         <li key={subLink.name}>
                                                             <Link
                                                                 href={subLink.href}
-                                                                className={`block py-[10px] px-[25px] text-[12px] font-bold border-b border-slate-50 last:border-0 transition-all duration-300 hover:bg-blue-50 hover:text-[#0033e7] hover:pl-[30px] no-underline uppercase ${
-                                                                    subActive ? 'text-[#0033e7] bg-blue-50/50 pl-[30px] border-l-4 border-l-[#0033e7]' : 'text-slate-600'
-                                                                }`}
+                                                                className={`block py-[10px] px-[25px] text-[12px] font-bold border-b border-slate-50 last:border-0 transition-all duration-300 hover:bg-blue-50 hover:text-[#0033e7] hover:pl-[30px] no-underline uppercase ${subActive ? 'text-[#0033e7] bg-blue-50/50 pl-[30px] border-l-4 border-l-[#0033e7]' : 'text-slate-600'
+                                                                    }`}
                                                             >
                                                                 {subLink.name}
                                                             </Link>
@@ -155,12 +153,12 @@ const Header = () => {
                         >
                             {isOpen ? <FaTimes /> : <FaBars />}
                         </button>
-                        
+
                         {/* Desktop action button removed as requested - nav items are already visible */}
                     </div>
                 </div>
             </div>
-            
+
             {/* Mobile Navigation - Light Theme */}
             <AnimatePresence>
                 {isOpen && (

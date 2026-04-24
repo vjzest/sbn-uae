@@ -1,6 +1,6 @@
 
 $baseUrl = "https://sbnhealthcaresolution.com/img/"
-$images = @("red-white.jpg", "white-paper.jpg", "white-paper2.jpg", "white-paper3.jpg", "white-paper1.jpg")
+$images = @("red-white.webp", "white-paper.webp", "white-paper2.webp", "white-paper3.webp", "white-paper1.webp")
 $outputDir = "public/img"
 
 foreach ($img in $images) {

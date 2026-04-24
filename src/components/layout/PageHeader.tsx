@@ -14,7 +14,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({
     title,
     subtitle,
     description,
-    bgImage = '/img/bg1.jpg'
+    bgImage = '/img/bg1.webp'
 }) => {
     return (
         <div

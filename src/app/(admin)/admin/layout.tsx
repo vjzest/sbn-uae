@@ -13,10 +13,10 @@ function DashboardLayoutContent({ children }: { children: React.ReactNode }) {
     const { logout, loading, admin } = useAdminAuth();
 
     const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
-    
+
     // Auth Guard
     const hasToken = typeof window !== 'undefined' && localStorage.getItem('adminToken');
-    
+
     if (pathname === '/admin') return <>{children}</>;
 
     if (loading && !admin && hasToken) {
@@ -54,7 +54,7 @@ function DashboardLayoutContent({ children }: { children: React.ReactNode }) {
                 <div className="pt-16 pb-12 px-8">
                     <div className="flex items-center gap-4 group cursor-pointer">
                         <div className="w-12 h-12 relative rounded-2xl overflow-hidden bg-white/5 border border-white/10 p-2.5 shadow-2xl transition-all duration-500 group-hover:border-[#0033e7]/50">
-                            <Image src="/Logo.png" alt="Logo" fill className="object-contain p-1.5" />
+                            <Image src="/Logo.webp" alt="Logo" fill className="object-contain p-1.5" />
                         </div>
                         <div className="min-w-0">
                             <h2 className="text-[18px] font-black text-white tracking-[5px] leading-none uppercase">Nexus</h2>
@@ -80,7 +80,7 @@ function DashboardLayoutContent({ children }: { children: React.ReactNode }) {
                                                 }`}
                                         >
                                             {isActive && (
-                                                <motion.div 
+                                                <motion.div
                                                     layoutId="indicator"
                                                     className="absolute left-0 w-1 h-6 bg-[#0033e7] rounded-r-full shadow-[0_0_15px_rgba(0,51,231,1)]"
                                                     initial={false}
@@ -99,11 +99,11 @@ function DashboardLayoutContent({ children }: { children: React.ReactNode }) {
 
                     <div className="space-y-10 pt-6">
                         <p className="text-[9px] font-black text-slate-500 uppercase tracking-[4px] px-6 opacity-40">Security Status</p>
-                        
+
                         <div className="px-3">
                             <div className="p-6 rounded-[1.5rem] bg-white/[0.02] border border-white/5 space-y-4 shadow-inner">
                                 <p className="text-[10px] font-black text-emerald-500 uppercase tracking-[2px] flex items-center gap-3">
-                                    <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(16,185,129,0.8)]" /> 
+                                    <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(16,185,129,0.8)]" />
                                     Connection: Active
                                 </p>
                             </div>
@@ -139,14 +139,14 @@ function DashboardLayoutContent({ children }: { children: React.ReactNode }) {
             <div className="lg:hidden fixed top-0 left-0 right-0 h-20 bg-[#0F172A]/90 backdrop-blur-2xl border-b border-white/5 z-50 px-6 flex items-center justify-between">
                 <div className="flex items-center gap-3.5">
                     <div className="w-9 h-9 relative rounded-xl overflow-hidden border border-white/10 bg-white/5 p-2">
-                        <Image src="/Logo.png" alt="Logo" fill className="object-contain p-1.5" />
+                        <Image src="/Logo.webp" alt="Logo" fill className="object-contain p-1.5" />
                     </div>
                     <div>
                         <h2 className="text-[14px] font-black text-white uppercase tracking-[3px] leading-none">Nexus</h2>
                         <p className="text-[8px] font-black text-slate-500 uppercase tracking-[2px] mt-1">Admin Dashboard</p>
                     </div>
                 </div>
-                <button 
+                <button
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                     className="w-11 h-11 flex items-center justify-center rounded-xl bg-white/5 text-white shadow-xl active:scale-90 transition-all border border-white/10"
                 >
@@ -158,14 +158,14 @@ function DashboardLayoutContent({ children }: { children: React.ReactNode }) {
             <AnimatePresence>
                 {isMobileMenuOpen && (
                     <>
-                        <motion.div 
+                        <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             onClick={() => setIsMobileMenuOpen(false)}
                             className="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-[60] lg:hidden"
                         />
-                        <motion.aside 
+                        <motion.aside
                             initial={{ x: '-100%' }}
                             animate={{ x: 0 }}
                             exit={{ x: '-100%' }}
@@ -175,7 +175,7 @@ function DashboardLayoutContent({ children }: { children: React.ReactNode }) {
                             <div className="p-8 border-b border-white/5">
                                 <div className="flex items-center gap-4">
                                     <div className="w-10 h-10 relative rounded-xl overflow-hidden border border-white/10 bg-white/5">
-                                        <Image src="/Logo.png" alt="Logo" fill className="object-contain p-2" />
+                                        <Image src="/Logo.webp" alt="Logo" fill className="object-contain p-2" />
                                     </div>
                                     <div>
                                         <h2 className="text-lg font-black text-white tracking-[4px] leading-none uppercase">Nexus</h2>
@@ -183,7 +183,7 @@ function DashboardLayoutContent({ children }: { children: React.ReactNode }) {
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <nav className="flex-grow mt-10 px-6">
                                 <ul className="space-y-4">
                                     {navItems.map((item) => {

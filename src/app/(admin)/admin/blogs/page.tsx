@@ -10,7 +10,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import dynamic from 'next/dynamic';
 
 // Dynamic import for ReactQuill to avoid SSR issues
-const ReactQuill = dynamic(() => import('react-quill-new'), { 
+const ReactQuill = dynamic(() => import('react-quill-new'), {
     ssr: false,
     loading: () => <div className="h-[200px] w-full bg-slate-50 animate-pulse rounded-2xl flex items-center justify-center text-slate-400 font-black uppercase tracking-[3px] text-[10px]">Loading Editor...</div>
 });
@@ -29,7 +29,7 @@ export default function BlogManagement() {
         excerpt: '',
         content: '',
         category: '',
-        image: '/img/bg1.jpg',
+        image: '/img/bg1.webp',
         imageAlt: '',
         readTime: '5 Min Read',
         metaTitle: '',
@@ -58,7 +58,7 @@ export default function BlogManagement() {
         toolbar: [
             [{ 'header': [1, 2, 3, false] }, { 'font': [] }],
             ['bold', 'italic', 'underline', 'strike'],
-            [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+            [{ 'list': 'ordered' }, { 'list': 'bullet' }],
             [{ 'align': [] }],
             [{ 'color': [] }, { 'background': [] }],
             ['link', 'image'],
@@ -74,7 +74,7 @@ export default function BlogManagement() {
             excerpt: '',
             content: '',
             category: '',
-            image: '/img/bg1.jpg',
+            image: '/img/bg1.webp',
             imageAlt: '',
             readTime: '5 Min Read',
             metaTitle: '',
@@ -132,7 +132,7 @@ export default function BlogManagement() {
         setIsAiGenerating(true);
         try {
             const token = localStorage.getItem('adminToken');
-            const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/ai/generate-seo`, 
+            const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/ai/generate-seo`,
                 { title: formData.title, content: formData.content },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -281,53 +281,53 @@ export default function BlogManagement() {
                     >
                         <div className="h-2 w-full bg-gradient-to-r from-[var(--primary-color)] via-indigo-500 to-[var(--primary-color)]" />
                         <div className="p-8 lg:p-12">
-                                <div className="flex flex-wrap items-center gap-6 mb-12">
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-[var(--primary-color)] border border-slate-100 shadow-sm">
-                                            <FaNewspaper size={20} />
-                                        </div>
-                                        <div>
-                                            <h2 className="text-xl font-black text-slate-900 uppercase tracking-tighter leading-none">
-                                                {formData._id ? 'Edit Blog Post' : 'New Publication'}
-                                            </h2>
-                                            <p className="text-[9px] font-black text-slate-400 uppercase tracking-[2px] mt-2">Publish high-octane RCM content</p>
-                                        </div>
+                            <div className="flex flex-wrap items-center gap-6 mb-12">
+                                <div className="flex items-center gap-4">
+                                    <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-[var(--primary-color)] border border-slate-100 shadow-sm">
+                                        <FaNewspaper size={20} />
                                     </div>
-
-                                    <div className="flex items-center gap-3 px-5 py-2.5 bg-slate-50 rounded-2xl border border-slate-100 ml-auto">
-                                        <div className="flex flex-col items-end">
-                                            <span className="text-[8px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">SEO Health</span>
-                                            <span className={`text-xs font-black uppercase tracking-widest leading-none ${seoScore > 70 ? 'text-emerald-500' : seoScore > 40 ? 'text-amber-500' : 'text-red-500'}`}>{seoScore}% Optimized</span>
-                                        </div>
-                                        <div className="w-10 h-10 rounded-full border-2 border-slate-200 flex items-center justify-center relative overflow-hidden bg-white">
-                                            <motion.div initial={{ height: 0 }} animate={{ height: `${seoScore}%` }} className={`absolute bottom-0 left-0 right-0 ${seoScore > 70 ? 'bg-emerald-500' : seoScore > 40 ? 'bg-amber-500' : 'bg-red-500'} opacity-20`} />
-                                            <span className="text-[10px] font-black">{seoScore}</span>
-                                        </div>
+                                    <div>
+                                        <h2 className="text-xl font-black text-slate-900 uppercase tracking-tighter leading-none">
+                                            {formData._id ? 'Edit Blog Post' : 'New Publication'}
+                                        </h2>
+                                        <p className="text-[9px] font-black text-slate-400 uppercase tracking-[2px] mt-2">Publish high-octane RCM content</p>
                                     </div>
+                                </div>
 
-                                    <button onClick={() => setIsEditing(false)} className="w-12 h-12 rounded-2xl bg-white text-slate-400 hover:text-red-500 hover:bg-red-50 transition-all flex items-center justify-center border border-slate-100">
-                                        <FaTimes size={18} />
+                                <div className="flex items-center gap-3 px-5 py-2.5 bg-slate-50 rounded-2xl border border-slate-100 ml-auto">
+                                    <div className="flex flex-col items-end">
+                                        <span className="text-[8px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">SEO Health</span>
+                                        <span className={`text-xs font-black uppercase tracking-widest leading-none ${seoScore > 70 ? 'text-emerald-500' : seoScore > 40 ? 'text-amber-500' : 'text-red-500'}`}>{seoScore}% Optimized</span>
+                                    </div>
+                                    <div className="w-10 h-10 rounded-full border-2 border-slate-200 flex items-center justify-center relative overflow-hidden bg-white">
+                                        <motion.div initial={{ height: 0 }} animate={{ height: `${seoScore}%` }} className={`absolute bottom-0 left-0 right-0 ${seoScore > 70 ? 'bg-emerald-500' : seoScore > 40 ? 'bg-amber-500' : 'bg-red-500'} opacity-20`} />
+                                        <span className="text-[10px] font-black">{seoScore}</span>
+                                    </div>
+                                </div>
+
+                                <button onClick={() => setIsEditing(false)} className="w-12 h-12 rounded-2xl bg-white text-slate-400 hover:text-red-500 hover:bg-red-50 transition-all flex items-center justify-center border border-slate-100">
+                                    <FaTimes size={18} />
+                                </button>
+                            </div>
+
+                            <div className="flex flex-wrap gap-2 mb-10 border-b border-slate-100 pb-2">
+                                {[
+                                    { id: 'content', label: 'Primary Content' },
+                                    { id: 'seo', label: 'Search Optimization' },
+                                    { id: 'social', label: 'Social Graph' },
+                                    { id: 'author', label: 'Author & Status' }
+                                ].map(tab => (
+                                    <button
+                                        key={tab.id}
+                                        type="button"
+                                        onClick={() => setActiveEditTab(tab.id)}
+                                        className={`px-6 py-3 rounded-t-xl text-[10px] font-black uppercase tracking-widest transition-all relative ${activeEditTab === tab.id ? 'text-slate-900' : 'text-slate-400 hover:text-slate-600'}`}
+                                    >
+                                        {tab.label}
+                                        {activeEditTab === tab.id && <motion.div layoutId="blogEditTab" className="absolute bottom-0 left-0 right-0 h-0.5 bg-[var(--primary-color)]" />}
                                     </button>
-                                </div>
-
-                                <div className="flex flex-wrap gap-2 mb-10 border-b border-slate-100 pb-2">
-                                    {[
-                                        { id: 'content', label: 'Primary Content' },
-                                        { id: 'seo', label: 'Search Optimization' },
-                                        { id: 'social', label: 'Social Graph' },
-                                        { id: 'author', label: 'Author & Status' }
-                                    ].map(tab => (
-                                        <button
-                                            key={tab.id}
-                                            type="button"
-                                            onClick={() => setActiveEditTab(tab.id)}
-                                            className={`px-6 py-3 rounded-t-xl text-[10px] font-black uppercase tracking-widest transition-all relative ${activeEditTab === tab.id ? 'text-slate-900' : 'text-slate-400 hover:text-slate-600'}`}
-                                        >
-                                            {tab.label}
-                                            {activeEditTab === tab.id && <motion.div layoutId="blogEditTab" className="absolute bottom-0 left-0 right-0 h-0.5 bg-[var(--primary-color)]" />}
-                                        </button>
-                                    ))}
-                                </div>
+                                ))}
+                            </div>
 
                             <form onSubmit={handleSubmit} className="space-y-10">
                                 <AnimatePresence mode="wait">
@@ -360,14 +360,14 @@ export default function BlogManagement() {
                                                 <div className="space-y-3">
                                                     <label className="text-[10px] font-black uppercase text-slate-500 tracking-[3px]">Featured Image</label>
                                                     <div className="relative group">
-                                                        <input 
-                                                            type="file" 
+                                                        <input
+                                                            type="file"
                                                             accept="image/*"
                                                             onChange={handleImageUpload}
-                                                            className="hidden" 
+                                                            className="hidden"
                                                             id="blog-image-upload"
                                                         />
-                                                        <label 
+                                                        <label
                                                             htmlFor="blog-image-upload"
                                                             className="flex flex-col items-center justify-center w-full h-44 border-2 border-dashed border-slate-200 rounded-2xl bg-slate-50 hover:bg-slate-100 hover:border-[var(--primary-color)] transition-all cursor-pointer overflow-hidden group/label"
                                                         >
@@ -393,7 +393,7 @@ export default function BlogManagement() {
                                                                     </div>
                                                                     <div className="flex flex-col items-center text-center">
                                                                         <span className="text-[10px] font-black uppercase tracking-widest text-slate-900">Upload Media Asset</span>
-                                                                        <span className="text-[8px] font-black uppercase tracking-widest text-slate-400 mt-1.5 leading-relaxed">High Resolution JPG, PNG, WEBP<br/>Optimized for web performance</span>
+                                                                        <span className="text-[8px] font-black uppercase tracking-widest text-slate-400 mt-1.5 leading-relaxed">High Resolution webp, webp, WEBP<br />Optimized for web performance</span>
                                                                     </div>
                                                                 </div>
                                                             )}
@@ -475,8 +475,8 @@ export default function BlogManagement() {
                                             </div>
                                             <div className="p-8 bg-slate-900 rounded-[2rem] flex flex-col md:flex-row items-center justify-between gap-8">
                                                 <div className="flex bg-white/10 p-2 rounded-2xl border border-white/10 shrink-0">
-                                                    <button type="button" onClick={() => setFormData({...formData, isPublished: true})} className={`px-8 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${formData.isPublished ? 'bg-emerald-500 text-white shadow-xl' : 'text-slate-400 hover:text-white'}`}>Live</button>
-                                                    <button type="button" onClick={() => setFormData({...formData, isPublished: false})} className={`px-8 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${!formData.isPublished ? 'bg-amber-500 text-white shadow-xl' : 'text-slate-400 hover:text-white'}`}>Draft</button>
+                                                    <button type="button" onClick={() => setFormData({ ...formData, isPublished: true })} className={`px-8 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${formData.isPublished ? 'bg-emerald-500 text-white shadow-xl' : 'text-slate-400 hover:text-white'}`}>Live</button>
+                                                    <button type="button" onClick={() => setFormData({ ...formData, isPublished: false })} className={`px-8 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${!formData.isPublished ? 'bg-amber-500 text-white shadow-xl' : 'text-slate-400 hover:text-white'}`}>Draft</button>
                                                 </div>
                                             </div>
                                         </motion.div>

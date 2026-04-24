@@ -100,6 +100,32 @@ export default function BlogManagement() {
 
     const [seoScore, setSeoScore] = useState(0);
     const [isAiGenerating, setIsAiGenerating] = useState(false);
+    const [isUploading, setIsUploading] = useState(false);
+
+    const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0];
+        if (!file) return;
+
+        const formDataUpload = new FormData();
+        formDataUpload.append('image', file);
+
+        setIsUploading(true);
+        try {
+            const token = localStorage.getItem('adminToken');
+            const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/upload`, formDataUpload, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            setFormData(prev => ({ ...prev, image: res.data.url }));
+            showStatus('success', 'Image uploaded successfully!');
+        } catch (err: any) {
+            showStatus('error', err.response?.data?.message || 'Upload failed');
+        } finally {
+            setIsUploading(false);
+        }
+    };
 
     const generateAiSeo = async () => {
         if (!formData.content) return showStatus('error', 'Add content first');
@@ -332,8 +358,47 @@ export default function BlogManagement() {
 
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                                                 <div className="space-y-3">
-                                                    <label className="text-[10px] font-black uppercase text-slate-500 tracking-[3px]">Featured Image URL</label>
-                                                    <input className="w-full px-7 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:border-[var(--primary-color)] focus:bg-white transition-all font-bold text-slate-800" placeholder="/img/blog/asset_v1.jpg" value={formData.image} onChange={(e) => setFormData({ ...formData, image: e.target.value })} />
+                                                    <label className="text-[10px] font-black uppercase text-slate-500 tracking-[3px]">Featured Image</label>
+                                                    <div className="relative group">
+                                                        <input 
+                                                            type="file" 
+                                                            accept="image/*"
+                                                            onChange={handleImageUpload}
+                                                            className="hidden" 
+                                                            id="blog-image-upload"
+                                                        />
+                                                        <label 
+                                                            htmlFor="blog-image-upload"
+                                                            className="flex flex-col items-center justify-center w-full h-44 border-2 border-dashed border-slate-200 rounded-2xl bg-slate-50 hover:bg-slate-100 hover:border-[var(--primary-color)] transition-all cursor-pointer overflow-hidden group/label"
+                                                        >
+                                                            {isUploading ? (
+                                                                <div className="flex flex-col items-center gap-3">
+                                                                    <div className="animate-spin rounded-full h-8 w-8 border-4 border-slate-200 border-t-[var(--primary-color)]"></div>
+                                                                    <span className="text-[9px] font-black uppercase tracking-[2px] text-slate-400">Uploading to Cloud...</span>
+                                                                </div>
+                                                            ) : formData.image ? (
+                                                                <div className="relative w-full h-full">
+                                                                    <img src={formData.image} alt="Preview" className="w-full h-full object-cover transition-transform duration-700 group-hover/label:scale-105" />
+                                                                    <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover/label:opacity-100 transition-all flex items-center justify-center backdrop-blur-[2px]">
+                                                                        <div className="flex flex-col items-center gap-2">
+                                                                            <FaImage className="text-white text-xl" />
+                                                                            <span className="text-[8px] font-black uppercase tracking-widest text-white">Change Image</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            ) : (
+                                                                <div className="flex flex-col items-center gap-4 p-6">
+                                                                    <div className="w-12 h-12 rounded-2xl bg-white border border-slate-100 shadow-sm flex items-center justify-center text-slate-300 group-hover/label:text-[var(--primary-color)] group-hover/label:scale-110 transition-all">
+                                                                        <FaImage size={24} />
+                                                                    </div>
+                                                                    <div className="flex flex-col items-center text-center">
+                                                                        <span className="text-[10px] font-black uppercase tracking-widest text-slate-900">Upload Media Asset</span>
+                                                                        <span className="text-[8px] font-black uppercase tracking-widest text-slate-400 mt-1.5 leading-relaxed">High Resolution JPG, PNG, WEBP<br/>Optimized for web performance</span>
+                                                                    </div>
+                                                                </div>
+                                                            )}
+                                                        </label>
+                                                    </div>
                                                 </div>
                                                 <div className="space-y-3">
                                                     <label className="text-[10px] font-black uppercase text-slate-500 tracking-[3px]">Image Alt Text (SEO)</label>

@@ -10,10 +10,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import dynamic from 'next/dynamic';
 
 // Dynamic import for ReactQuill to avoid SSR issues
-const ReactQuill = dynamic(() => import('react-quill-new'), {
+const ReactQuill = dynamic(() => 
+    // @ts-ignore
+    import('react-quill-new').then(mod => mod.default), {
     ssr: false,
     loading: () => <div className="h-[200px] w-full bg-slate-50 animate-pulse rounded-2xl flex items-center justify-center text-slate-400 font-black uppercase tracking-[3px] text-[10px]">Loading Editor...</div>
-});
+}) as any;
+// @ts-ignore
 import 'react-quill-new/dist/quill.snow.css';
 
 export default function BlogManagement() {
@@ -414,7 +417,7 @@ export default function BlogManagement() {
                                             <div className="space-y-3">
                                                 <label className="text-[10px] font-black uppercase text-slate-500 tracking-[3px]">Full Content</label>
                                                 <div className="bg-white rounded-2xl overflow-hidden border border-slate-200 min-h-[500px]">
-                                                    <ReactQuill theme="snow" value={formData.content} onChange={(content) => setFormData({ ...formData, content })} modules={quillModules} placeholder="Start writing the blog content here..." />
+                                                    <ReactQuill theme="snow" value={formData.content} onChange={(content: string) => setFormData({ ...formData, content })} modules={quillModules} placeholder="Start writing the blog content here..." />
                                                 </div>
                                             </div>
                                         </motion.div>

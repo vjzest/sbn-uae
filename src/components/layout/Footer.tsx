@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { FaLinkedin, FaTwitter, FaFacebook, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
@@ -40,10 +41,12 @@ const Footer = () => {
                         >
                             <Link href="/" className="flex items-center gap-4 no-underline group">
                                 <div className="p-2 bg-white/80 backdrop-blur-md rounded-2xl shadow-sm border border-white transition-transform group-hover:scale-105">
-                                    <img
-                                        src="/Logo.webp"
+                                    <Image
+                                        src="/img/Logo.webp"
                                         alt="SBN Healthcare Solution"
-                                        className="h-[50px] md:h-[60px] w-auto mix-blend-multiply"
+                                        width={150}
+                                        height={50}
+                                        className="h-[50px] md:h-[60px] w-auto mix-blend-multiply object-contain"
                                     />
                                 </div>
                                 <div className="flex flex-col justify-center leading-none">

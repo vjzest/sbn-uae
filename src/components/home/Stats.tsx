@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { motion, useInView, useMotionValue, useSpring } from 'framer-motion';
+import { motion, useInView, animate } from 'framer-motion';
 import { statsData } from '@/data/home';
 
 // Fade-up style identical to AOS / Hero section
@@ -11,33 +11,37 @@ const fadeUp: any = {
 };
 
 const Counter = ({ value }: { value: string }) => {
-    const ref = React.useRef<HTMLSpanElement>(null);
-    const inView = useInView(ref, { once: true, margin: "-100px" });
+    const nodeRef = React.useRef<HTMLSpanElement>(null);
+    const inView = useInView(nodeRef, { once: true, margin: "-50px" });
 
-    // Parse number and suffix (matched against starting digits)
+    // Parse number and suffix
     const numericMatch = value.match(/\d+/);
     const numericValue = numericMatch ? parseInt(numericMatch[0], 10) : 0;
     const suffix = value.replace(numericValue.toString(), '');
 
-    const motionValue = useMotionValue(0);
-    const springValue = useSpring(motionValue, { stiffness: 60, damping: 15 });
-
     React.useEffect(() => {
-        if (inView) {
-            motionValue.set(numericValue);
+        if (inView && nodeRef.current) {
+            const controls = animate(0, numericValue, {
+                duration: 2,
+                ease: "easeOut",
+                onUpdate(value) {
+                    if (nodeRef.current) {
+                        nodeRef.current.textContent = `${Math.floor(value)}${suffix}`;
+                    }
+                }
+            });
+            return () => controls.stop();
         }
-    }, [inView, motionValue, numericValue]);
+    }, [inView, numericValue, suffix]);
 
-    React.useEffect(() => {
-        return springValue.on("change", (latest) => {
-            if (ref.current) {
-                // Formatting: avoid decimals during counting
-                ref.current.textContent = `${Math.floor(latest)}${suffix}`;
-            }
-        });
-    }, [springValue, suffix]);
-
-    return <span ref={ref} className="text-4xl md:text-5xl font-extrabold mb-2 text-[#0033e7] leading-none">{0}{suffix}</span>;
+    return (
+        <span 
+            ref={nodeRef}
+            className="text-4xl md:text-5xl font-extrabold mb-2 text-[#0033e7] leading-none"
+        >
+            0{suffix}
+        </span>
+    );
 };
 
 const Stats = () => {

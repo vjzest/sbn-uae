@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FaLinkedin, FaEnvelope, FaGlobeAmericas, FaShieldAlt } from 'react-icons/fa';
 
@@ -121,9 +122,11 @@ export default function AboutClient() {
                             className="group bg-white/90 border border-blue-50 rounded-2xl overflow-hidden backdrop-blur-xl shadow-2xl flex flex-col sm:flex-row items-stretch hover:border-[#0033e7]/30 transition-all duration-500 min-h-[320px]"
                         >
                             <div className="sm:w-2/5 relative overflow-hidden bg-slate-100">
-                                <img
-                                    src="/Iftekhar Ali khan.webp"
+                                <Image
+                                    src="/Iftekhar Ali khan.png"
                                     alt="Iftikhar Ali Khan"
+                                    width={400}
+                                    height={500}
                                     className="w-full h-full object-cover transform scale-105 group-hover:scale-110 transition-transform duration-1000"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/10 hidden sm:block"></div>
@@ -147,9 +150,11 @@ export default function AboutClient() {
                             className="group bg-white/90 border border-blue-50 rounded-2xl overflow-hidden backdrop-blur-xl shadow-2xl flex flex-col sm:flex-row items-stretch hover:border-teal-400/50 transition-all duration-500 min-h-[320px]"
                         >
                             <div className="sm:w-2/5 relative overflow-hidden bg-slate-100">
-                                <img
+                                <Image
                                     src="/Nematullah.webp"
                                     alt="Md Nematullah"
+                                    width={400}
+                                    height={500}
                                     className="w-full h-full object-cover transform scale-105 group-hover:scale-110 transition-transform duration-1000"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/10 hidden sm:block"></div>

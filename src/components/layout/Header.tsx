@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { FaBars, FaTimes, FaAngleDown } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -86,7 +87,14 @@ const Header = () => {
                     {/* Logo Section */}
                     <Link href="/" className="flex items-center gap-3 no-underline group py-1 flex-shrink-0 mr-4 transition-all">
                         <div className="transition-transform group-hover:scale-105">
-                            <img src="/Logo.webp" alt="SBN Healthcare Solution" className="max-h-[44px] xl:max-h-[55px] w-auto mix-blend-multiply" />
+                            <Image 
+                                src="/img/Logo.webp" 
+                                alt="SBN Healthcare Solution" 
+                                width={180}
+                                height={55}
+                                className="max-h-[44px] xl:max-h-[55px] w-auto mix-blend-multiply object-contain" 
+                                priority
+                            />
                         </div>
                         <div className="flex flex-col justify-center leading-none min-w-fit">
                             <span className="text-[#010614] font-black text-[15px] xl:text-[19px] tracking-tight uppercase">

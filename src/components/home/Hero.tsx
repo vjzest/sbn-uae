@@ -90,7 +90,6 @@ const Hero = () => {
                                 className="w-full h-auto max-w-[850px] mx-auto shadow-2xl shadow-blue-900/10 rounded-[32px] relative z-10"
                                 priority
                                 fetchPriority="high"
-                                unoptimized
                             />
                         </div>
                     </div>

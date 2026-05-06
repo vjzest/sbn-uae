@@ -92,6 +92,7 @@ const Header = () => {
                         width={180}
                         height={55}
                         className="max-h-[44px] xl:max-h-[55px] w-auto mix-blend-multiply object-contain" 
+                        priority
                     />
                         </div>
                         <div className="flex flex-col justify-center leading-none min-w-fit">

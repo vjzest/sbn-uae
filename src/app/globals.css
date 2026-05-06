@@ -17,7 +17,7 @@
   --border: #E2E8F0;
   --radius: 1rem;
 
-  --font-family: 'Barlow', sans-serif;
+  --font-family: var(--font-asap), sans-serif;
   --max-width: 1200px;
   --header-height: 90px;
 }

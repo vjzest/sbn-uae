@@ -13,6 +13,16 @@ const nextConfig: NextConfig = {
         destination: '/contact-us',
         permanent: true,
       },
+      {
+        source: '/white-paper',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/medical-billing',
+        destination: '/services',
+        permanent: true,
+      },
     ]
   },
 };

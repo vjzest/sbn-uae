@@ -16,7 +16,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: 'blog', priority: 0.6, changeFrequency: 'weekly' },
     { url: 'security', priority: 0.5, changeFrequency: 'monthly' },
     { url: 'privacy-policy', priority: 0.3, changeFrequency: 'yearly' },
-    { url: 'white-paper', priority: 0.5, changeFrequency: 'monthly' },
   ]
 
   // 2. Specialized Content Slugs (Static-Dynamic)

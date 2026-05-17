@@ -339,7 +339,7 @@ export default function BlogManagement() {
                                         <motion.div key="content" initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 10 }} className="space-y-10">
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                                                 <div className="space-y-3">
-                                                    <label className="text-[10px] font-black uppercase text-slate-500 tracking-[3px]">Blog Title</label>
+                                                    <label className="text-[10px] font-black uppercase text-slate-500 tracking-[3px]">Blog Title (H1 Display)</label>
                                                     <input
                                                         className="w-full px-7 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:border-[var(--primary-color)] focus:bg-white transition-all font-bold text-slate-800"
                                                         placeholder="Healthcare Transformation 2022"
@@ -439,7 +439,7 @@ export default function BlogManagement() {
 
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                                                 <div className="space-y-4">
-                                                    <label className="text-[10px] font-black uppercase text-slate-500 tracking-[3px] flex justify-between">Meta Title <span>{formData.metaTitle.length}/60</span></label>
+                                                    <label className="text-[10px] font-black uppercase text-slate-500 tracking-[3px] flex justify-between">Meta Title (Search Engine Title) <span>{formData.metaTitle.length}/60</span></label>
                                                     <input className={`w-full px-7 py-4 rounded-xl bg-slate-50 border transition-all font-bold text-slate-800 ${formData.metaTitle.length > 60 ? 'border-amber-400' : 'border-slate-200'}`} placeholder="Custom SEO Title" value={formData.metaTitle} onChange={(e) => setFormData({ ...formData, metaTitle: e.target.value })} />
                                                 </div>
                                                 <div className="space-y-4">

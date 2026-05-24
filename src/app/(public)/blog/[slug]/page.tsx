@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const post = await getPost(slug);
     if (!post) return { title: 'Post Not Found' };
 
-    return constructMetadata(post, {
+    return constructMetadata(null, {
         title: post.metaTitle || post.title,
         description: post.metaDescription || post.excerpt,
         image: post.image,

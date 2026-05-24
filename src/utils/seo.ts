@@ -3,9 +3,12 @@ import { Metadata } from 'next';
 
 export const getDynamicMetadata = async (pageId: string) => {
     try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/seo/${pageId}`);
-        if (response.data.success) {
-            return response.data.data;
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/seo/${pageId}`, {
+            cache: 'no-store'
+        });
+        const data = await response.json();
+        if (data.success) {
+            return data.data;
         }
         return null;
     } catch (error) {

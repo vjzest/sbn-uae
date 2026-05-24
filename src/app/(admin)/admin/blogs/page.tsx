@@ -338,15 +338,29 @@ export default function BlogManagement() {
                                     {activeEditTab === 'content' && (
                                         <motion.div key="content" initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 10 }} className="space-y-10">
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                                                <div className="space-y-3">
-                                                    <label className="text-[10px] font-black uppercase text-slate-500 tracking-[3px]">Blog Title (H1 Display)</label>
-                                                    <input
-                                                        className="w-full px-7 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:border-[var(--primary-color)] focus:bg-white transition-all font-bold text-slate-800"
-                                                        placeholder="Healthcare Transformation 2022"
-                                                        value={formData.title}
-                                                        onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                                                        required
-                                                    />
+                                                <div className="space-y-6">
+                                                    <div className="space-y-3">
+                                                        <label className="text-[10px] font-black uppercase text-slate-500 tracking-[3px]">Blog Title (H1 Display)</label>
+                                                        <input
+                                                            className="w-full px-7 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:border-[var(--primary-color)] focus:bg-white transition-all font-bold text-slate-800"
+                                                            placeholder="Healthcare Transformation 2022"
+                                                            value={formData.title}
+                                                            onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+                                                            required
+                                                        />
+                                                    </div>
+                                                    <div className="space-y-3">
+                                                        <label className="text-[10px] font-black uppercase text-slate-500 tracking-[3px] flex justify-between items-center">
+                                                            URL Slug
+                                                            <span className="text-[8px] text-slate-400 normal-case tracking-normal font-bold">(e.g. why-medical-billing)</span>
+                                                        </label>
+                                                        <input
+                                                            className="w-full px-7 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:border-[var(--primary-color)] focus:bg-white transition-all font-bold text-slate-800"
+                                                            placeholder="my-seo-friendly-url"
+                                                            value={formData.slug}
+                                                            onChange={(e) => setFormData({ ...formData, slug: e.target.value.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '') })}
+                                                        />
+                                                    </div>
                                                 </div>
                                                 <div className="grid grid-cols-2 gap-6">
                                                     <div className="space-y-3">
@@ -521,19 +535,20 @@ export default function BlogManagement() {
                                                         </div>
                                                     </div>
                                                     <div className="flex flex-col gap-6">
-                                                        <div className="w-full aspect-[1.91/1] bg-white rounded-3xl border border-slate-200 overflow-hidden relative group shadow-inner">
-                                                            {formData.ogImage ? (
-                                                                <img src={formData.ogImage} className="w-full h-full object-cover" alt="OG Preview" />
-                                                            ) : (
-                                                                <div className="absolute inset-0 flex flex-col items-center justify-center text-slate-300">
-                                                                    <FaImage size={40} className="mb-4 opacity-10" />
-                                                                    <span className="text-[10px] font-black uppercase tracking-widest opacity-30">OG Preview</span>
-                                                                </div>
-                                                            )}
-                                                            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent pointer-events-none" />
-                                                            <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
-                                                                <div className="text-white text-[13px] font-black truncate mb-1 uppercase tracking-tight">{formData.ogTitle || formData.title || 'Preview Title'}</div>
-                                                                <div className="text-white/60 text-[10px] line-clamp-1 font-bold">{formData.ogDescription || formData.excerpt || 'Short preview description will appear here...'}</div>
+                                                        <div className="w-full bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm flex flex-col">
+                                                            <div className="w-full aspect-[1.91/1] relative bg-slate-50 overflow-hidden">
+                                                                {formData.ogImage ? (
+                                                                    <img src={formData.ogImage} className="w-full h-full object-cover" alt="OG Preview" />
+                                                                ) : (
+                                                                    <div className="absolute inset-0 flex flex-col items-center justify-center text-slate-300">
+                                                                        <FaImage size={40} className="mb-4 opacity-10" />
+                                                                        <span className="text-[10px] font-black uppercase tracking-widest opacity-30">OG Preview</span>
+                                                                    </div>
+                                                                )}
+                                                            </div>
+                                                            <div className="p-5 bg-slate-50 border-t border-slate-100">
+                                                                <div className="text-slate-900 text-[13px] font-black truncate mb-1">{formData.ogTitle || formData.title || 'Preview Title'}</div>
+                                                                <div className="text-slate-500 text-[10px] line-clamp-1 font-bold">{formData.ogDescription || formData.excerpt || 'Short preview description will appear here...'}</div>
                                                             </div>
                                                         </div>
                                                         <div className="grid grid-cols-2 gap-4">

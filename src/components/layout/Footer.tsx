@@ -126,25 +126,46 @@ const Footer = () => {
                             Get In Touch
                         </h4>
                         <div className="space-y-8">
-                            <div className="text-gray-600 text-[16px] leading-[1.8] font-medium">
-                                1309 Coffeen Avenue Ste 1200<br />
-                                Sheridan, WY 82801
+                            <div className="space-y-6">
+                                <div>
+                                    <h5 className="text-[10px] font-black uppercase text-slate-400 tracking-[2px] mb-2">US Headquarters</h5>
+                                    <div className="text-gray-600 text-[15px] leading-[1.8] font-medium">
+                                        1309 Coffeen Avenue Ste 1200<br />
+                                        Sheridan, WY 82801
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5 className="text-[10px] font-black uppercase text-slate-400 tracking-[2px] mb-2">Middle East Office</h5>
+                                    <div className="text-gray-600 text-[14px] leading-[1.8] font-medium">
+                                        Office C1-1F-SF8562, Ajman Free Zone<br />
+                                        Makani No. 4442612247, UAE
+                                    </div>
+                                </div>
                             </div>
                             <div className="space-y-4">
                                 <a
                                     href="tel:8054264609"
                                     className="text-gray-600 text-[15px] flex items-center gap-4 transition-all hover:text-[#0033e7] group no-underline"
                                 >
-                                    <div className="w-8 h-8 rounded-lg bg-blue-600/10 flex items-center justify-center text-[#0033e7] group-hover:bg-[#0033e7] group-hover:text-white transition-all">
+                                    <div className="w-8 h-8 rounded-lg bg-blue-600/10 flex items-center justify-center text-[#0033e7] group-hover:bg-[#0033e7] group-hover:text-white transition-all shrink-0">
                                         <FaPhoneAlt size={12} />
                                     </div>
-                                    <span className="font-bold">+1 (805) 426-4609</span>
+                                    <span className="font-bold">US: +1 (805) 426-4609</span>
+                                </a>
+                                <a
+                                    href="tel:+971509234437"
+                                    className="text-gray-600 text-[15px] flex items-center gap-4 transition-all hover:text-[#0033e7] group no-underline"
+                                >
+                                    <div className="w-8 h-8 rounded-lg bg-blue-600/10 flex items-center justify-center text-[#0033e7] group-hover:bg-[#0033e7] group-hover:text-white transition-all shrink-0">
+                                        <FaPhoneAlt size={12} />
+                                    </div>
+                                    <span className="font-bold">ME: +971 50 923 4437</span>
                                 </a>
                                 <a
                                     href="mailto:info@sbnhealthcaresolution.com"
                                     className="text-gray-600 text-[15px] flex items-center gap-4 transition-all hover:text-[#0033e7] group no-underline"
                                 >
-                                    <div className="w-8 h-8 rounded-lg bg-blue-600/10 flex items-center justify-center text-[#0033e7] group-hover:bg-[#0033e7] group-hover:text-white transition-all">
+                                    <div className="w-8 h-8 rounded-lg bg-blue-600/10 flex items-center justify-center text-[#0033e7] group-hover:bg-[#0033e7] group-hover:text-white transition-all shrink-0">
                                         <FaEnvelope size={12} />
                                     </div>
                                     <span className="font-bold break-all">info@sbnhealthcaresolution.com</span>

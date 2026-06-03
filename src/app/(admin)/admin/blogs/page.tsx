@@ -234,7 +234,15 @@ export default function BlogManagement() {
         <div className="max-w-7xl mx-auto space-y-10">
             {/* Custom Quill Styles */}
             <style jsx global>{`
-                .ql-editor { min-height: 400px; font-size: 16px; }
+                .ql-editor { 
+                    min-height: 400px; 
+                    font-size: 16px; 
+                    word-break: normal !important;
+                    overflow-wrap: break-word !important;
+                }
+                .ql-editor * {
+                    word-break: normal !important;
+                }
                 .ql-container.ql-snow { border-bottom-left-radius: 1rem; border-bottom-right-radius: 1rem; border: 1px solid #e2e8f0 !important; }
                 .ql-toolbar.ql-snow { border-top-left-radius: 1rem; border-top-right-radius: 1rem; border: 1px solid #e2e8f0 !important; background: #f8fafc; margin-top: 10px; }
             `}</style>

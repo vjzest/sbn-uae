@@ -179,7 +179,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                                 <div className="max-w-none break-normal overflow-x-hidden">
                                     <div 
                                         className="blog-content prose prose-slate prose-lg max-w-none text-slate-700 leading-relaxed font-medium text-base lg:text-lg"
-                                        dangerouslySetInnerHTML={{ __html: post.content }}
+                                        dangerouslySetInnerHTML={{ __html: post.content.replace(/&nbsp;/g, ' ') }}
                                     />
 
                                     {/* Author Box */}

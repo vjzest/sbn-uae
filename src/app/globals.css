@@ -333,8 +333,4 @@ button {
   @apply bg-slate-50 font-black uppercase text-[10px] tracking-widest text-slate-400;
 }
 
-/* Fix for aggressive word breaking on mobile */
-.blog-content, .blog-content * {
-  word-break: normal !important;
-  overflow-wrap: break-word !important;
-}
+/* No aggressive word breaking rules */

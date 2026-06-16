@@ -1,1 +1,58 @@
-llm file
+# SBN Healthcare Solution - Frontend Architecture & Detail
+
+## 1. Project Overview
+This project is the frontend for SBN Healthcare Solutions, a premium Revenue Cycle Management (RCM) and medical billing service provider. The website is built to be modern, highly interactive, fast, and fully bilingual (English and Arabic).
+
+## 2. Tech Stack
+- **Framework**: Next.js (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS, PostCSS
+- **Animations**: Framer Motion
+- **Icons**: React-Icons
+- **State Management**: React Context API (`LanguageContext`)
+
+## 3. Localization Architecture (English & Arabic)
+The entire frontend is built on a bilingual architecture:
+- **LanguageContext.tsx**: Manages the global language state (`en` or `ar`). It provides the `t(key)` function to translate text globally.
+- **translations.json**: The master dictionary file located in `src/data/translations.json`. It maps all English keys to their corresponding Arabic text for static sections (Home, About, Contact, Pricing, Blog, etc.).
+- **Dynamic Content Localization**: 
+  - `src/data/services.ts`: Contains the English content array for all dynamic Services and Specialties pages.
+  - `src/data/services_ar.ts`: Contains the fully translated Arabic content array.
+  - The dynamic components (`ServiceDetailClient.tsx` & `SpecialtyDetailClient.tsx`) conditionally import and render the correct data array based on the active language state.
+- **RTL/LTR Support**: The layout adapts dynamically when switching between languages.
+
+## 4. Folder Structure & Routing
+The application utilizes the Next.js `src/app` App Router pattern.
+
+### Key Routes (Public)
+- `/` - **Home Page**: Features animated sections including Hero, Stats, What We Do, Problem We Solve, Pricing, FAQ, and Testimonials.
+- `/about-us` - **About Page**: Information about the company, focus areas, and case studies.
+- `/services/[slug]` - **Service Details**: Dynamic page for services (Eligibility Verification, Prior Authorization, Exclusion Check, etc.).
+- `/specialties/[slug]` - **Specialty Details**: Dynamic page for medical specialties (Behavioral Health, DME/Orthopedics, Urgent Care, etc.).
+- `/pricing` - **Pricing Page**: Detailed breakdowns of various pricing models.
+- `/rcm-calculator` - **RCM Calculator**: Interactive tool for practices to calculate revenue leakage and potential ROI.
+- `/contact-us` - **Contact**: Form and contact details.
+- `/career` - **Career**: Job openings and career information.
+- `/blog` & `/blog/[slug]` - **Blog**: Insights and articles related to healthcare billing.
+- `/resources` - **Whitepapers/Resources**: Downloadable content for healthcare providers.
+- `/privacy-policy` & `/security` - **Legal/Compliance**: Static legal content pages.
+
+## 5. Component Architecture
+Most pages are structured with a Server Component wrapper (`page.tsx`) that handles SEO/Metadata generation, and a Client Component (`[PageName]Client.tsx`) that handles the UI, Framer Motion animations, and `useLanguage` localization.
+
+### Key Reusable UI Components
+- **PageHeader**: Reusable header section for sub-pages.
+- **WorkflowVisual**: Step-by-step interactive workflow component.
+- **ProblemSnapshot**: Component displaying pain points and challenges.
+- **KPIMetrics**: Animated stats and metrics display.
+- **ComplianceShield**: Visual representation of HIPAA compliance and security.
+
+## 6. SEO & Metadata
+- Implemented robust SEO handling using `generateMetadata` in `page.tsx` files.
+- Uses `src/utils/seo.ts` to construct metadata and OpenGraph details dynamically.
+- JSON-LD structured data is injected into pages (like Blog Details) to improve Search Engine Indexing.
+
+## 7. Current State & Known Behaviors
+- **Backend Connection**: The frontend is fully capable of running completely independently using local static data (`services.ts`, `services_ar.ts`, `translations.json`). Previously there was a MongoDB Atlas connection issue, so the site defaults to frontend static content for stability.
+- **Build Quality**: All TypeScript and Next.js build errors (like hydration issues or missing parameters) have been resolved. The project builds cleanly via `npm run build`.
+- **Client/Server boundaries**: The application strictly respects `'use client'` boundaries for anything requiring `useLanguage()`, React state, or Framer Motion hooks.

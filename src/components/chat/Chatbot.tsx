@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaRobot, FaTimes, FaPaperPlane, FaBolt } from 'react-icons/fa';
 import axios from 'axios';
+import { useLanguage } from '@/context/LanguageContext';
 
 interface Message {
     role: 'user' | 'model';
@@ -11,6 +12,7 @@ interface Message {
 }
 
 const Chatbot = () => {
+    const { language } = useLanguage();
     const [isOpen, setIsOpen] = useState(false);
     const [message, setMessage] = useState('');
     const [chatHistory, setChatHistory] = useState<Message[]>([]);
@@ -63,7 +65,7 @@ const Chatbot = () => {
                 {isOpen ? <FaTimes size={24} /> : (
                     <div className="flex items-center gap-3">
                         <FaRobot size={26} className="text-[#60a5fa] group-hover:text-white transition-colors" />
-                        <span className="text-[11px] font-black uppercase tracking-[3px] pr-2 hidden md:block">AI Assistant</span>
+                        <span className="text-[11px] font-black uppercase tracking-[3px] pr-2 hidden md:block">{language === 'ar' ? 'مساعد الذكاء الاصطناعي' : 'AI Assistant'}</span>
                     </div>
                 )}
                 {!isOpen && (
@@ -92,7 +94,7 @@ const Chatbot = () => {
                                     <h3 className="text-[17px] font-extrabold tracking-tight leading-tight text-white">SBN Intelligence Core</h3>
                                     <div className="flex items-center gap-2 mt-1">
                                         <span className="w-1.5 h-1.5 bg-green-400 rounded-full shadow-[0_0_8px_rgba(74,222,128,0.8)]"></span>
-                                        <p className="text-[10px] text-slate-400 font-bold uppercase tracking-[2px]">Systems Online</p>
+                                        <p className="text-[10px] text-slate-400 font-bold uppercase tracking-[2px]">{language === 'ar' ? 'الأنظمة متصلة' : 'Systems Online'}</p>
                                     </div>
                                 </div>
                             </div>
@@ -107,7 +109,7 @@ const Chatbot = () => {
                                     </div>
                                     <p className="text-slate-900 font-extrabold text-[17px] mb-2 tracking-tight">Enterprise RCM AI</p>
                                     <p className="text-slate-600 text-[14px] font-medium leading-[1.7]">
-                                        How can I assist your practice with high-octane revenue cycle management today?
+                                        {language === 'ar' ? 'كيف يمكنني مساعدة عيادتك في إدارة دورة الإيرادات عالية الأوكتان اليوم؟' : 'How can I assist your practice with high-octane revenue cycle management today?'}
                                     </p>
                                 </div>
                             )}
@@ -128,7 +130,7 @@ const Chatbot = () => {
                                         <span className="w-1.5 h-1.5 bg-[#0033e7] rounded-full animate-bounce [animation-delay:-0.15s]"></span>
                                         <span className="w-1.5 h-1.5 bg-[#0033e7] rounded-full animate-bounce"></span>
                                     </div>
-                                    <span className="text-[10px] font-bold uppercase tracking-[2px] text-slate-400">Processing</span>
+                                    <span className="text-[10px] font-bold uppercase tracking-[2px] text-slate-400">{language === 'ar' ? 'جاري المعالجة' : 'Processing'}</span>
                                 </div>
                             )}
                         </div>
@@ -140,8 +142,8 @@ const Chatbot = () => {
                                     type="text"
                                     value={message}
                                     onChange={(e) => setMessage(e.target.value)}
-                                    placeholder="Type your inquiry..."
-                                    className="flex-grow px-3 py-2 bg-transparent text-[14px] focus:outline-none font-medium text-slate-800 placeholder:text-slate-400"
+                                    placeholder={language === 'ar' ? 'اكتب استفسارك...' : 'Type your inquiry...'}
+                                    className={`flex-grow px-3 py-2 bg-transparent text-[14px] focus:outline-none font-medium text-slate-800 placeholder:text-slate-400 ${language === 'ar' ? 'text-right' : ''}`}
                                 />
                                 <button
                                     type="submit"
@@ -152,7 +154,7 @@ const Chatbot = () => {
                                 </button>
                             </form>
                             <p className="text-[10px] text-center text-slate-400 font-bold uppercase tracking-[2px] mt-4 flex items-center justify-center gap-1.5">
-                                <FaBolt className="text-[#0033e7]/50" /> HIPAA Compliant Environment
+                                <FaBolt className="text-[#0033e7]/50" /> {language === 'ar' ? 'بيئة متوافقة مع HIPAA' : 'HIPAA Compliant Environment'}
                             </p>
                         </div>
                     </motion.div>

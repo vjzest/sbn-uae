@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useLanguage } from '@/context/LanguageContext';
 
 const fadeUp: any = {
     hidden: { opacity: 0, y: 30 },
@@ -82,6 +83,7 @@ const faqs = [
 ];
 
 export default function PricingPageClient() {
+    const { t } = useLanguage();
     return (
         <main className="bg-[#f8faff] relative selection:bg-[#0033e7] selection:text-white pb-20">
             {/* Custom Premium Hero */}
@@ -100,13 +102,13 @@ export default function PricingPageClient() {
                     <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }}>
                         <div className="inline-flex items-center gap-2 bg-white/40 border border-white text-[#0033e7] font-black uppercase text-[11px] tracking-[4px] mb-8 px-6 py-2.5 rounded-full shadow-2xl">
                             <span className="w-2 h-2 bg-[#0033e7] rounded-full animate-ping shadow-[0_0_10px_rgba(0,51,231,0.5)]"></span>
-                            Transparent Models | Performance-Focused
+                            {t('pricing_page.tag')}
                         </div>
                         <h1 className="text-4xl md:text-[4rem] lg:text-[4.5rem] font-black text-slate-900 leading-[1] mb-8 tracking-tighter">
-                            Pricing Philosophy <br /> Built for <span className="text-[#0033e7]">Growth</span>
+                            {t('pricing_page.title_1')} <br /> {t('pricing_page.title_2')} <span className="text-[#0033e7]">{t('pricing_page.title_3')}</span>
                         </h1>
                         <p className="text-[18px] md:text-[22px] text-slate-600 font-bold leading-[1.6] max-w-3xl mx-auto tracking-tight opacity-80">
-                            Let’s be real — pricing should never feel like a burden. It should support your growth, not slow it down.
+                            {t('pricing_page.desc')}
                         </p>
                     </motion.div>
                 </div>
@@ -117,22 +119,22 @@ export default function PricingPageClient() {
                 <div className="container mx-auto px-4 max-w-5xl relative z-10">
                     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-20 bg-white/60 backdrop-blur-3xl rounded-[3rem] p-12 md:p-20 border border-white shadow-[0_20px_50px_rgba(0,0,0,0.02)]">
                         <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-[1.1] tracking-tighter mb-10 uppercase">
-                            Flexible Pricing Built Around <br /> Your Revenue Performance
+                            {t('pricing_page.overview_title_1')} <br /> {t('pricing_page.overview_title_2')}
                         </h2>
                         <div className="w-24 h-2 bg-[#0033e7] mx-auto rounded-full mb-10"></div>
                         <p className="text-xl text-slate-600 font-bold max-w-3xl mx-auto mb-12 opacity-80 italic">
-                            Our pricing philosophy is simple: align costs with performance so you only pay for real outcomes. Whether you're exploring different pricing strategies or looking for practical models, we focus on what actually works.
+                            {t('pricing_page.overview_desc')}
                         </p>
                         <Link href="/contact-us" className="inline-block bg-[#0033e7] text-white px-12 py-5 rounded-2xl font-black uppercase tracking-[2px] transition-all hover:bg-black hover:-translate-y-1 shadow-[0_20px_40px_rgba(0,51,231,0.2)]">
-                            Request Pricing Consultation
+                            {t('pricing_page.overview_btn')}
                         </Link>
                     </motion.div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {[
-                          { h: "No One-Size Approach", p: "Every model is tailored" },
-                          { h: "Built Around Operations", p: "Aligned with your workflows" },
-                          { h: "Focus on ROI", p: "Actual returns over cost" }
+                          { h: t('pricing_page.card_1_h'), p: t('pricing_page.card_1_p') },
+                          { h: t('pricing_page.card_2_h'), p: t('pricing_page.card_2_p') },
+                          { h: t('pricing_page.card_3_h'), p: t('pricing_page.card_3_p') }
                         ].map((card, i) => (
                            <div key={i} className="bg-white/80 p-10 rounded-[2.5rem] shadow-sm border border-blue-50 text-center hover:shadow-2xl hover:border-blue-100 transition-all duration-500 hover:-translate-y-2">
                               <h3 className="text-xl font-black text-slate-900 mb-4 tracking-tight uppercase leading-tight">{card.h}</h3>
@@ -147,14 +149,14 @@ export default function PricingPageClient() {
             <section className="py-24 relative overflow-hidden bg-gradient-to-b from-white/40 to-[#f8faff]/80">
                 <div className="container mx-auto px-4 max-w-7xl relative z-10">
                     <div className="text-center mb-20">
-                        <span className="text-[#0033e7] font-black tracking-[6px] uppercase text-[12px] mb-6 block">Scalable Options</span>
-                        <h2 className="text-5xl md:text-6xl font-black mb-6 tracking-tighter text-slate-900 uppercase">Model Selection</h2>
+                        <span className="text-[#0033e7] font-black tracking-[6px] uppercase text-[12px] mb-6 block">{t('pricing_page.models_tag')}</span>
+                        <h2 className="text-5xl md:text-6xl font-black mb-6 tracking-tighter text-slate-900 uppercase">{t('pricing_page.models_title')}</h2>
                         <div className="w-24 h-1.5 bg-[#0033e7] mx-auto rounded-full mb-8"></div>
-                        <p className="text-slate-500 font-bold text-lg max-w-2xl mx-auto opacity-70">Not every practice needs the same structure. Here are the three models we offer.</p>
+                        <p className="text-slate-500 font-bold text-lg max-w-2xl mx-auto opacity-70">{t('pricing_page.models_desc')}</p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-                        {pricingModels.map((item, idx) => (
+                        {(Array.isArray(t('pricing_page.pricingModels')) ? t('pricing_page.pricingModels') as any : pricingModels).map((item: any, idx: number) => (
                             <motion.div 
                                 key={idx}
                                 initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -171,7 +173,7 @@ export default function PricingPageClient() {
                                 </div>
 
                                 <ul className="space-y-5 mb-10 flex-grow">
-                                    {item.points.map((pt, pIdx) => (
+                                    {item.points.map((pt: string, pIdx: number) => (
                                         <li key={pIdx} className="flex gap-4 text-slate-700 font-bold items-start group/li">
                                             <div className="w-6 h-6 rounded-lg bg-blue-50 text-[#0033e7] flex items-center justify-center flex-shrink-0 text-[10px] group-hover/li:bg-[#0033e7] group-hover/li:text-white transition-colors">✔</div> 
                                             <span className="text-[15px] opacity-80 group-hover/li:opacity-100 transition-opacity">{pt}</span>
@@ -195,11 +197,11 @@ export default function PricingPageClient() {
                         
                         {/* What You Get */}
                         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-                            <h2 className="text-4xl font-black text-slate-900 mb-8 tracking-tighter uppercase underline decoration-[#0033e7] decoration-[6px] underline-offset-8">Base Inclusions</h2>
-                            <p className="text-slate-600 mb-12 font-bold text-lg opacity-70">No matter which model you choose, some things remain constant in our service architecture. </p>
+                            <h2 className="text-4xl font-black text-slate-900 mb-8 tracking-tighter uppercase underline decoration-[#0033e7] decoration-[6px] underline-offset-8">{t('pricing_page.base_inclusions')}</h2>
+                            <p className="text-slate-600 mb-12 font-bold text-lg opacity-70">{t('pricing_page.base_desc')}</p>
                             
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                                {includedBenefits.map((ben, idx) => (
+                                {(Array.isArray(t('pricing_page.includedBenefits')) ? t('pricing_page.includedBenefits') as any : includedBenefits).map((ben: any, idx: number) => (
                                     <div key={idx} className="bg-white p-7 rounded-[2rem] border border-blue-50 shadow-sm flex flex-col justify-center transition-all duration-500 hover:shadow-2xl hover:border-[#0033e7]/10 hover:-translate-y-1 group">
                                         <h4 className="font-black text-[#0033e7] mb-2 leading-snug uppercase tracking-tight text-[16px] group-hover:scale-105 transition-transform">{ben.title}</h4>
                                         <p className="text-slate-400 text-sm font-bold italic group-hover:text-slate-600 transition-colors">{ben.desc}</p>
@@ -210,13 +212,13 @@ export default function PricingPageClient() {
 
                         {/* Financial Outcomes */}
                         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-                            <h2 className="text-4xl font-black text-slate-900 mb-8 tracking-tighter uppercase underline decoration-teal-400 decoration-[6px] underline-offset-8">Financial ROI</h2>
+                            <h2 className="text-4xl font-black text-slate-900 mb-8 tracking-tighter uppercase underline decoration-teal-400 decoration-[6px] underline-offset-8">{t('pricing_page.financial_roi')}</h2>
                             <p className="text-slate-600 mb-12 font-bold text-lg opacity-70">
-                                Pricing only matters if it delivers results. We orient our strategy around improving your financial performance, not just billing tasks.
+                                {t('pricing_page.financial_desc')}
                             </p>
 
                             <div className="space-y-5">
-                                {financialOutcomes.map((out, idx) => (
+                                {(Array.isArray(t('pricing_page.financialOutcomes')) ? t('pricing_page.financialOutcomes') as any : financialOutcomes).map((out: any, idx: number) => (
                                     <div key={idx} className="flex gap-6 items-center bg-white p-8 rounded-[2.5rem] border border-blue-50 shadow-sm transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 group">
                                         <div className="w-16 h-16 rounded-[1.5rem] bg-blue-50 text-[#0033e7] flex items-center justify-center font-black text-2xl flex-shrink-0 group-hover:bg-[#0033e7] group-hover:text-white transition-all duration-500 shadow-inner">
                                             $
@@ -242,9 +244,9 @@ export default function PricingPageClient() {
                             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
                                 <div className="bg-gradient-to-br from-[#0033e7] to-[#0A1F33] rounded-[3.5rem] p-12 md:p-16 text-white shadow-2xl relative overflow-hidden h-full">
                                     <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full blur-[80px] -mr-40 -mt-40 pointer-events-none"></div>
-                                    <h3 className="text-4xl font-black mb-12 relative z-10 tracking-tighter uppercase italic">Quick <span className="text-teal-300">Takeaways</span></h3>
+                                    <h3 className="text-4xl font-black mb-12 relative z-10 tracking-tighter uppercase italic">{t('pricing_page.takeaways_q')} <span className="text-teal-300">{t('pricing_page.takeaways_title')}</span></h3>
                                     <ul className="space-y-8 relative z-10">
-                                        {takeaways.map((item, idx) => (
+                                        {(Array.isArray(t('pricing_page.takeaways')) ? t('pricing_page.takeaways') as any : takeaways).map((item: any, idx: number) => (
                                             <li key={idx} className="flex items-center gap-6 text-[19px] font-bold tracking-tight">
                                                 <div className="w-10 h-10 rounded-2xl bg-white/10 flex items-center justify-center flex-shrink-0 shadow-lg">
                                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" className="text-teal-300"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
@@ -259,9 +261,9 @@ export default function PricingPageClient() {
                             {/* FAQs */}
                             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
                                 <div className="h-full">
-                                    <h3 className="text-4xl font-black text-slate-900 mb-12 tracking-tighter uppercase underline decoration-[#0033e7] decoration-[6px] underline-offset-8">Information Center</h3>
+                                    <h3 className="text-4xl font-black text-slate-900 mb-12 tracking-tighter uppercase underline decoration-[#0033e7] decoration-[6px] underline-offset-8">{t('pricing_page.info_center')}</h3>
                                     <div className="space-y-6">
-                                        {faqs.map((faq, idx) => (
+                                        {(Array.isArray(t('pricing_page.faqs')) ? t('pricing_page.faqs') as any : faqs).map((faq: any, idx: number) => (
                                             <div key={idx} className="bg-white p-8 rounded-[2.5rem] border border-blue-50 shadow-sm hover:shadow-xl transition-all group">
                                                 <h4 className="text-lg font-black text-slate-900 mb-3 group-hover:text-[#0033e7] transition-colors">{faq.q}</h4>
                                                 <p className="text-slate-500 font-bold opacity-80 leading-relaxed italic">{faq.a}</p>
@@ -279,13 +281,13 @@ export default function PricingPageClient() {
                    <div className="container mx-auto px-4 max-w-4xl relative z-10">
                         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
                             <h2 className="text-5xl md:text-6xl font-black text-slate-900 leading-[1] tracking-tighter mb-10 uppercase">
-                                Let’s Align Your <br/> <span className="text-[#0033e7]">Revenue Model</span>
+                                {t('pricing_page.cta_title_1')} <br/> <span className="text-[#0033e7]">{t('pricing_page.cta_title_2')}</span>
                             </h2>
                             <p className="text-xl text-slate-600 font-bold mb-12 max-w-2xl mx-auto opacity-70">
-                                If your pricing model isn’t aligned with your operations, you’re either overpaying… or underperforming. Build a smarter strategy that grows with you.
+                                {t('pricing_page.cta_desc')}
                             </p>
                             <Link href="/contact-us" className="inline-block bg-black text-white px-14 py-6 rounded-2xl font-black uppercase tracking-[2px] transition-all hover:bg-[#0033e7] hover:-translate-y-2 shadow-2xl">
-                                Schedule a Consultation
+                                {t('pricing_page.cta_btn')}
                             </Link>
                         </motion.div>
                    </div>

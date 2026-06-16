@@ -5,9 +5,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { FaLinkedin, FaTwitter, FaFacebook, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 import { usePathname } from 'next/navigation';
+import { useLanguage } from '@/context/LanguageContext';
 
 const Footer = () => {
     const pathname = usePathname();
+    const { t } = useLanguage();
 
     // Hide footer on admin pages
     if (pathname?.startsWith('/admin')) {
@@ -48,7 +50,7 @@ const Footer = () => {
                             </Link>
                         </div>
                         <p className="text-gray-600 text-[16px] leading-[1.8] mb-10 max-w-[340px] font-medium tracking-tight">
-                            Next-generation RCM infrastructure engineered to accelerate cash flow and eliminate administrative friction for modern medical practices.
+                            {t('footer.desc')}
                         </p>
                         <div className="flex gap-4">
                             {[
@@ -71,15 +73,15 @@ const Footer = () => {
                     {/* Solutions */}
                     <div className="lg:col-span-3 lg:ml-auto">
                         <h4 className="text-[11px] font-black uppercase tracking-[4px] text-[#0033e7] mb-10 border-b-2 border-blue-600/10 pb-2 inline-block relative after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:w-1/2 after:h-[2px] after:bg-[#0033e7]">
-                            Platform Solutions
+                            {t('footer.solutions')}
                         </h4>
                         <ul className="flex flex-col gap-5 p-0 list-none">
                             {[
-                                { name: 'Eligibility Verification', href: '/services/eligibility-verification' },
-                                { name: 'Benefits Check', href: '/services/benefits-check' },
-                                { name: 'Prior Authorization', href: '/services/prior-authorization' },
-                                { name: 'Exclusion Check', href: '/services/exclusion-check' },
-                                { name: 'Privacy & Security', href: '/security' }
+                                { name: 'Eligibility Verification', tKey: 'nav.eligibility_front_office', href: '/services/eligibility-verification' },
+                                { name: 'Benefits Check', tKey: 'nav.benefits_check', href: '/services/benefits-check' },
+                                { name: 'Prior Authorization', tKey: 'nav.prior_authorization', href: '/services/prior-authorization' },
+                                { name: 'Exclusion Check', tKey: 'nav.exclusion_check', href: '/services/exclusion-check' },
+                                { name: 'Privacy & Security', tKey: 'nav.compliance', href: '/security' }
                             ].map((item, idx) => (
                                 <li key={item.name}>
                                     <Link
@@ -87,7 +89,7 @@ const Footer = () => {
                                         className="text-gray-600 text-[15px] font-bold hover:text-[#0033e7] transition-all flex items-center gap-3 group no-underline hover:translate-x-1"
                                     >
                                         <span className="w-1 h-4 rounded-full bg-blue-600/0 group-hover:bg-[#0033e7] transition-all"></span>
-                                        {item.name}
+                                        {item.tKey ? t(item.tKey) : item.name}
                                     </Link>
                                 </li>
                             ))}
@@ -97,15 +99,15 @@ const Footer = () => {
                     {/* Corporate */}
                     <div className="lg:col-span-2 lg:ml-auto">
                         <h4 className="text-[11px] font-black uppercase tracking-[4px] text-[#0033e7] mb-10 border-b-2 border-blue-600/10 pb-2 inline-block relative after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:w-1/2 after:h-[2px] after:bg-[#0033e7]">
-                            Company
+                            {t('footer.company')}
                         </h4>
                         <ul className="flex flex-col gap-5 p-0 list-none">
                             {[
-                                { name: 'About Us', href: '/about-us' },
-                                { name: 'Blog', href: '/blog' },
-                                { name: 'RCM Tool', href: '/rcm-calculator' },
-                                { name: 'Pricing', href: '/pricing' },
-                                { name: 'Contact Us', href: '/contact-us' }
+                                { name: 'About Us', tKey: 'nav.about_us', href: '/about-us' },
+                                { name: 'Blog', tKey: 'nav.blog', href: '/blog' },
+                                { name: 'RCM Tool', tKey: 'nav.rcm_calculator', href: '/rcm-calculator' },
+                                { name: 'Pricing', tKey: 'nav.pricing', href: '/pricing' },
+                                { name: 'Contact Us', tKey: 'nav.contact_us', href: '/contact-us' }
                             ].map((item, idx) => (
                                 <li key={item.name}>
                                     <Link
@@ -113,7 +115,7 @@ const Footer = () => {
                                         className="text-gray-600 text-[15px] font-bold hover:text-[#0033e7] transition-all flex items-center gap-3 group no-underline hover:translate-x-1"
                                     >
                                         <span className="w-1 h-4 rounded-full bg-blue-600/0 group-hover:bg-[#0033e7] transition-all"></span>
-                                        {item.name}
+                                        {item.tKey ? t(item.tKey) : item.name}
                                     </Link>
                                 </li>
                             ))}
@@ -123,19 +125,19 @@ const Footer = () => {
                     {/* HQ */}
                     <div className="lg:col-span-3 lg:ml-auto">
                         <h4 className="text-[11px] font-black uppercase tracking-[4px] text-[#0033e7] mb-10 border-b-2 border-blue-600/10 pb-2 inline-block relative after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:w-1/2 after:h-[2px] after:bg-[#0033e7]">
-                            Get In Touch
+                            {t('footer.get_in_touch')}
                         </h4>
                         <div className="space-y-8">
                             <div className="space-y-6">
                                 <div>
-                                    <h5 className="text-[10px] font-black uppercase text-slate-400 tracking-[2px] mb-2">US Headquarters</h5>
+                                    <h5 className="text-[10px] font-black uppercase text-slate-400 tracking-[2px] mb-2">{t('footer.us_hq')}</h5>
                                     <div className="text-gray-600 text-[15px] leading-[1.8] font-medium">
                                         1309 Coffeen Avenue Ste 1200<br />
                                         Sheridan, WY 82801
                                     </div>
                                 </div>
                                 <div>
-                                    <h5 className="text-[10px] font-black uppercase text-slate-400 tracking-[2px] mb-2">Middle East Office</h5>
+                                    <h5 className="text-[10px] font-black uppercase text-slate-400 tracking-[2px] mb-2">{t('footer.me_office')}</h5>
                                     <div className="text-gray-600 text-[14px] leading-[1.8] font-medium">
                                         Office C1-1F-SF8562, Ajman Free Zone<br />
                                         Makani No. 4442612247, UAE
@@ -179,10 +181,10 @@ const Footer = () => {
             <div className="border-t border-slate-200/50 pt-10 pb-10 text-center relative z-10 bg-white/30 backdrop-blur-sm">
                 <div className="container mx-auto px-4">
                     <p className="text-slate-500 text-[11px] font-black uppercase tracking-[3px] mb-2">
-                        &copy; 2026 SBN Healthcare Solution. All Rights Reserved.
+                        {t('footer.rights')}
                     </p>
                     <p className="text-slate-400 text-[9px] font-bold uppercase tracking-[2px]">
-                        ENGINEERED FOR EXCELLENCE IN HEALTHCARE REVENUE CYCLE MANAGEMENT
+                        {t('footer.engineered')}
                     </p>
                 </div>
             </div>

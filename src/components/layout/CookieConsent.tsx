@@ -2,8 +2,10 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLanguage } from '@/context/LanguageContext';
 
 const CookieConsent = () => {
+    const { language } = useLanguage();
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
@@ -51,8 +53,10 @@ const CookieConsent = () => {
                             </div>
                             <div className="text-slate-300 text-[13px] leading-relaxed font-medium mt-1">
                                 <p>
-                                    We use cookies to enhance your experience and analyze traffic.
-                                    <a href="/privacy-policy" className="text-[#60a5fa] ml-1.5 hover:text-white transition-colors font-bold underline decoration-[#60a5fa]/40 underline-offset-2">Policy</a>
+                                    {language === 'ar' ? 'نحن نستخدم ملفات تعريف الارتباط لتحسين تجربتك وتحليل حركة المرور.' : 'We use cookies to enhance your experience and analyze traffic.'}
+                                    <a href="/privacy-policy" className="text-[#60a5fa] mx-1.5 hover:text-white transition-colors font-bold underline decoration-[#60a5fa]/40 underline-offset-2">
+                                        {language === 'ar' ? 'سياسة' : 'Policy'}
+                                    </a>
                                 </p>
                             </div>
                         </div>
@@ -62,13 +66,13 @@ const CookieConsent = () => {
                                 onClick={handleAccept}
                                 className="flex-1 bg-[#0033e7] text-white text-xs font-extrabold py-3.5 rounded-xl transition-all hover:bg-blue-800 hover:shadow-[0_10px_20px_rgba(0,51,231,0.3)] active:scale-95 uppercase tracking-[2px]"
                             >
-                                Accept All
+                                {language === 'ar' ? 'قبول الكل' : 'Accept All'}
                             </button>
                             <button
                                 onClick={handlePreferences}
                                 className="px-5 bg-white/5 text-slate-300 border border-white/10 text-xs font-bold py-3.5 rounded-xl transition-all hover:bg-white/10 hover:text-white active:scale-95"
                             >
-                                Settings
+                                {language === 'ar' ? 'الإعدادات' : 'Settings'}
                             </button>
                         </div>
                     </div>

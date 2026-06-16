@@ -2,8 +2,10 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function ContactDetails() {
+    const { t } = useLanguage();
     return (
         <div className="flex flex-col justify-center">
             <div className="max-w-[500px]">
@@ -20,13 +22,13 @@ export default function ContactDetails() {
                             whileInView={{ opacity: 1 }}
                             className="bg-blue-50 text-[#0033e7] font-black text-[11px] tracking-[4px] uppercase px-4 py-1.5 rounded-full inline-block"
                         >
-                            Professional Advisory
+                            {t('contact_details.tag')}
                         </motion.span>
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 leading-[1] tracking-tighter">
-                            Bridging the Gap to <br className="hidden md:block"/> <span className="text-[#0033e7]">Financial Stability.</span>
+                            {t('contact_details.title_1')} <br className="hidden md:block"/> <span className="text-[#0033e7]">{t('contact_details.title_2')}</span>
                         </h2>
                         <p className="text-slate-600 font-bold leading-[1.7] text-[17px] md:text-[19px] tracking-tight">
-                            Our RCM specialists don't just process billing; we architect resilient financial systems. Unlock the secrets to reducing leakage and stabilizing your practice's income today.
+                            {t('contact_details.desc')}
                         </p>
                     </div>
 
@@ -37,7 +39,7 @@ export default function ContactDetails() {
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
                             </div>
                             <div>
-                                <h4 className="text-[11px] font-extrabold text-slate-500 uppercase tracking-widest mb-1.5">Email Address</h4>
+                                <h4 className="text-[11px] font-extrabold text-slate-500 uppercase tracking-widest mb-1.5">{t('contact_details.email')}</h4>
                                 <p className="text-lg font-black text-slate-900 leading-tight">info@sbnhealthcaresolution.com</p>
                             </div>
                         </div>
@@ -49,11 +51,11 @@ export default function ContactDetails() {
                             </div>
                             <div className="flex flex-col gap-3">
                                 <div>
-                                    <h4 className="text-[11px] font-extrabold text-slate-500 uppercase tracking-widest mb-1.5">US Phone Support</h4>
+                                    <h4 className="text-[11px] font-extrabold text-slate-500 uppercase tracking-widest mb-1.5">{t('contact_details.us_support')}</h4>
                                     <p className="text-lg font-black text-slate-900 leading-tight">+1 (805) 426-4609</p>
                                 </div>
                                 <div>
-                                    <h4 className="text-[11px] font-extrabold text-slate-500 uppercase tracking-widest mb-1.5">Middle East Support</h4>
+                                    <h4 className="text-[11px] font-extrabold text-slate-500 uppercase tracking-widest mb-1.5">{t('contact_details.me_support')}</h4>
                                     <p className="text-lg font-black text-slate-900 leading-tight">+971 50 923 4437</p>
                                 </div>
                             </div>
@@ -66,14 +68,14 @@ export default function ContactDetails() {
                             </div>
                             <div className="flex flex-col gap-4">
                                 <div>
-                                    <h4 className="text-[11px] font-extrabold text-slate-500 uppercase tracking-widest mb-1.5">US Headquarters</h4>
+                                    <h4 className="text-[11px] font-extrabold text-slate-500 uppercase tracking-widest mb-1.5">{t('contact_details.us_hq')}</h4>
                                     <p className="text-[16px] md:text-lg font-bold text-slate-900 leading-snug">
                                         1309 Coffeen Avenue Ste 1200<br />
                                         Sheridan, WY 82801
                                     </p>
                                 </div>
                                 <div>
-                                    <h4 className="text-[11px] font-extrabold text-slate-500 uppercase tracking-widest mb-1.5">Middle East Office</h4>
+                                    <h4 className="text-[11px] font-extrabold text-slate-500 uppercase tracking-widest mb-1.5">{t('contact_details.me_office')}</h4>
                                     <p className="text-[15px] font-bold text-slate-900 leading-snug">
                                         Office C1-1F-SF8562, Ajman Free Zone<br />
                                         Makani No. 4442612247, UAE

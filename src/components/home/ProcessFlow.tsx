@@ -1,13 +1,16 @@
 'use client';
 
 import React from 'react';
+import { useLanguage } from '@/context/LanguageContext';
 
 const ProcessFlow = () => {
+    const { t } = useLanguage();
+
     const culprits = [
-        { title: "Missed claim deadlines" },
-        { title: "Incorrect codes" },
-        { title: "Denied claims with no follow-up" },
-        { title: "Eligibility errors caught too late" }
+        { title: t('process_flow.c1') },
+        { title: t('process_flow.c2') },
+        { title: t('process_flow.c3') },
+        { title: t('process_flow.c4') }
     ];
 
     return (
@@ -16,17 +19,17 @@ const ProcessFlow = () => {
                 <div className="max-w-4xl mx-auto text-center mb-16">
                     <div className="inline-flex items-center gap-2 bg-blue-100/50 border border-blue-200 text-[#0033e7] font-semibold uppercase text-xs tracking-[2px] mb-6 px-5 py-2 rounded-full">
                         <span className="w-2 h-2 bg-[#0033e7] rounded-full animate-pulse"></span>
-                        The Problem We Solve
+                        {t('process_flow.tag')}
                     </div>
 
                     <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold text-gray-900 tracking-tight leading-[1.2] mb-8">
-                        Is Your Practice Losing Revenue Without Even Knowing It?
+                        {t('process_flow.title')}
                     </h2>
                     <p className="text-gray-600 text-[1.1rem] md:text-[1.2rem] max-w-3xl mx-auto leading-relaxed font-medium mb-12">
-                        Many healthcare providers are leaving thousands of dollars on the table every month — not because of poor care, but because of billing gaps that quietly drain their revenue.
+                        {t('process_flow.desc1')}
                     </p>
                     <p className="text-gray-900 text-lg font-bold mb-8">
-                        The culprits are often invisible until it’s too late:
+                        {t('process_flow.desc2')}
                     </p>
                 </div>
 
@@ -48,8 +51,8 @@ const ProcessFlow = () => {
 
                 <div className="max-w-4xl mx-auto text-center">
                     <p className="text-gray-600 text-[1.1rem] md:text-[1.2rem] max-w-3xl mx-auto leading-relaxed font-medium">
-                        These are not small problems. They add up fast. That’s where SBN comes in. <br/><br/>
-                        <span className="text-gray-900 font-bold">Our fully outsourced billing services are designed to close every one of those gaps</span> — from the moment a patient books an appointment to the day the payment hits your account. No leakage. No guesswork. No surprises.
+                        {t('process_flow.footer1')} <br/><br/>
+                        <span className="text-gray-900 font-bold">{t('process_flow.footer2')}</span> {t('process_flow.footer3')}
                     </p>
                 </div>
             </div>

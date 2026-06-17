@@ -23,18 +23,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const serviceSlugs = servicesList.map(s => s.slug)
   const specialtySlugs = specialtiesList.map(s => s.slug)
 
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+  let dynamicEntries: any[] = [];
+  let blogEntries: any[] = [];
+
   try {
     // 3. Dynamic SEO Entries from Database
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/seo`, { next: { revalidate: 3600 } })
-    const json = await res.json()
-    const dbEntries = json?.data || []
+    if (apiUrl && apiUrl.startsWith('http')) {
+      const res = await fetch(`${apiUrl}/seo`, { next: { revalidate: 3600 } })
+      const json = await res.json()
+      const dbEntries = json?.data || []
 
-    const dynamicEntries = Array.isArray(dbEntries) ? dbEntries.map((seo: any) => ({
-      url: `${baseUrl}/${seo.page === 'home' ? '' : seo.page}`,
-      lastModified: new Date(seo.updatedAt || Date.now()),
-      changeFrequency: 'weekly' as const,
-      priority: seo.page === 'home' ? 1.0 : 0.8,
-    })) : []
+      dynamicEntries = Array.isArray(dbEntries) ? dbEntries.map((seo: any) => ({
+        url: `${baseUrl}/${seo.page === 'home' ? '' : seo.page}`,
+        lastModified: new Date(seo.updatedAt || Date.now()),
+        changeFrequency: 'weekly' as const,
+        priority: seo.page === 'home' ? 1.0 : 0.8,
+      })) : []
+    }
 
     const coreEntries = staticPages.map(page => ({
       url: `${baseUrl}/${page.url}`,
@@ -58,14 +64,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }))
 
     // 4. Dynamic Blog Entries from Database
-    const blogsRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blogs`, { next: { revalidate: 3600 } })
-    const blogsJson = await blogsRes.json()
-    const blogEntries = (blogsJson?.data || []).filter((b: any) => b.isPublished !== false).map((blog: any) => ({
+    if (apiUrl && apiUrl.startsWith('http')) {
+      const blogsRes = await fetch(`${apiUrl}/blogs`, { next: { revalidate: 3600 } })
+      const blogsJson = await blogsRes.json()
+      blogEntries = (blogsJson?.data || []).filter((b: any) => b.isPublished !== false).map((blog: any) => ({
       url: `${baseUrl}/blog/${blog.slug}`,
       lastModified: new Date(blog.updatedAt || blog.date || Date.now()),
       changeFrequency: 'weekly' as const,
       priority: 0.7,
-    }))
+      }))
+    }
 
     // Merge everything, removing duplicates based on URL
     const allEntries = [...coreEntries, ...serviceEntries, ...specialtyEntries, ...dynamicEntries, ...blogEntries]

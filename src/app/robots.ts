@@ -4,8 +4,10 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
   let robotsContent = 'User-agent: *\nAllow: /'
   
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/settings/robots_txt`, { next: { revalidate: 3600 } })
-    if (res.ok) {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    if (apiUrl && apiUrl.startsWith('http')) {
+      const res = await fetch(`${apiUrl}/settings/robots_txt`, { next: { revalidate: 3600 } })
+      if (res.ok) {
       const data = await res.json()
       if (data?.success) {
         robotsContent = data.data.value

@@ -32,7 +32,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={asap.variable}>
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-RZPTMXGFDF"
+          src="https://www.googletagmanager.com/gtag/js?id=G-QR6MRMK47G"
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -40,7 +40,7 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-RZPTMXGFDF');
+            gtag('config', 'G-QR6MRMK47G');
           `}
         </Script>
         <ReduxProvider>

@@ -13,6 +13,7 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
         robotsContent = data.data.value
       }
     }
+    }
   } catch (error) {
     console.warn('Failed to fetch robots.txt settings:', error)
   }

@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { useLanguage } from '@/context/LanguageContext';
 
 const Counter = ({ value }: { value: string }) => {
     return (
@@ -12,12 +11,11 @@ const Counter = ({ value }: { value: string }) => {
 };
 
 const Stats = () => {
-    const { t } = useLanguage();
     const customStats = [
-        { value: t('stats_section.s1_v'), label: t('stats_section.s1_l'), desc: t('stats_section.s1_d') },
-        { value: t('stats_section.s2_v'), label: t('stats_section.s2_l'), desc: t('stats_section.s2_d') },
-        { value: t('stats_section.s3_v'), label: t('stats_section.s3_l'), desc: t('stats_section.s3_d') },
-        { value: t('stats_section.s4_v'), label: t('stats_section.s4_l'), desc: t('stats_section.s4_d') }
+        { value: "20%", label: "Average Revenue Improvement", desc: "Increase in overall collected revenue" },
+        { value: "40%", label: "Reduction in Operational Costs", desc: "Decrease in overhead and administrative expenses" },
+        { value: "35%", label: "Reduction in A/R Days", desc: "Faster turnaround on accounts receivable" },
+        { value: "$1.2M+", label: "Revenue Recovered", desc: "Recovered for a single pediatric group" }
     ];
 
     return (
@@ -26,14 +24,14 @@ const Stats = () => {
                 <div className="max-w-4xl mx-auto text-center mb-16">
                     <div className="inline-flex items-center gap-2 bg-blue-100/50 border border-blue-200 text-[#0033e7] font-semibold uppercase text-xs tracking-[2px] mb-6 px-5 py-2 rounded-full backdrop-blur-sm">
                         <span className="w-2 h-2 bg-[#0033e7] rounded-full animate-pulse"></span>
-                        {t('stats_section.tag')}
+                        Results Our Clients Have Seen
                     </div>
                     
                     <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold text-gray-900 tracking-tight leading-[1.2] mb-8">
-                        {t('stats_section.title')}
+                        Real Practices. Real Results.
                     </h2>
                     <p className="text-gray-600 text-[1.1rem] md:text-[1.2rem] max-w-3xl mx-auto leading-relaxed font-medium">
-                        {t('stats_section.desc')}
+                        Our clients don’t just get better billing — they get measurable outcomes:
                     </p>
                 </div>
 

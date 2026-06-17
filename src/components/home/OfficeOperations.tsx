@@ -4,10 +4,8 @@ import React, { useRef, useState, useEffect } from 'react';
 import { FaPlay, FaPause, FaExpand } from 'react-icons/fa';
 import Image from 'next/image';
 import { useNativeInView } from '@/hooks/useNativeInView';
-import { useLanguage } from '@/context/LanguageContext';
 
 const OfficeOperations = () => {
-    const { t } = useLanguage();
     const videoRef = useRef<HTMLVideoElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const [isPlaying, setIsPlaying] = useState(true);
@@ -56,15 +54,15 @@ const OfficeOperations = () => {
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center gap-2 bg-blue-100/50 border border-blue-200 text-[#0033e7] font-semibold uppercase text-xs tracking-[2px] mb-6 px-5 py-2 rounded-full backdrop-blur-sm">
                         <span className="w-2 h-2 bg-[#0033e7] rounded-full animate-pulse"></span>
-                        {t('office_operations.tag')}
+                        Why Providers Choose SBN
                     </div>
 
                     <h2 className="text-4xl md:text-5xl lg:text-5xl font-extrabold text-gray-900 tracking-tight mb-8 leading-[1.2]">
-                        {t('office_operations.title')}
+                        We Treat Your Revenue Like Our Own
                     </h2>
 
                     <p className="text-lg text-gray-600 font-medium max-w-3xl mx-auto leading-relaxed">
-                        {t('office_operations.desc')}
+                        There are many billing companies out there. Here’s why healthcare providers across the USA choose SBN — and stay with us:
                     </p>
                 </div>
 
@@ -103,7 +101,7 @@ const OfficeOperations = () => {
                                     {isPlaying ? <FaPause size={14} /> : <FaPlay size={14} className="ml-0.5" />}
                                 </button>
                                 <span className="text-white text-[9px] md:text-[11px] font-black uppercase tracking-[3px] opacity-90 drop-shadow-md">
-                                    {t('office_operations.watermark')}
+                                    SBN Global Center
                                 </span>
                             </div>
                             <button
@@ -124,13 +122,13 @@ const OfficeOperations = () => {
                 {/* Reasons List Below Video */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16 max-w-6xl mx-auto">
                     {[
-                        { title: t('office_operations.r1_t'), desc: t('office_operations.r1_d') },
-                        { title: t('office_operations.r2_t'), desc: t('office_operations.r2_d') },
-                        { title: t('office_operations.r3_t'), desc: t('office_operations.r3_d') },
-                        { title: t('office_operations.r4_t'), desc: t('office_operations.r4_d') },
-                        { title: t('office_operations.r5_t'), desc: t('office_operations.r5_d') },
-                        { title: t('office_operations.r6_t'), desc: t('office_operations.r6_d') },
-                        { title: t('office_operations.r7_t'), desc: t('office_operations.r7_d') },
+                        { title: '14+ Years of Hands-On Experience', desc: 'We’ve seen every billing scenario' },
+                        { title: '200+ Dedicated Billing Specialists', desc: 'Real experts on your claims, not just software' },
+                        { title: '98% First-Pass Claim Acceptance Rate', desc: 'Fewer rejections, faster payments' },
+                        { title: 'Claims Submitted Within 48 Hours', desc: 'No delays, no backlogs' },
+                        { title: 'Compatible with 50+ EMR/EHR Platforms', desc: 'Seamless integration with your systems' },
+                        { title: 'Full Transparency and Reporting', desc: 'You always know where your money stands' },
+                        { title: 'HIPAA-Compliant Operations', desc: 'Your patient data is always protected' },
                     ].map((reason, i) => (
                         <div key={i} className="flex flex-col p-6 bg-white rounded-2xl shadow-sm border border-slate-100 items-start text-left hover:shadow-md transition-shadow">
                             <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-[#0033e7] mb-4">

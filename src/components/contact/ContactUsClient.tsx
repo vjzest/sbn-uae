@@ -5,10 +5,8 @@ import { motion } from 'framer-motion';
 import ContactDetails from '@/components/contact/ContactDetails';
 import ContactForm from '@/components/contact/ContactForm';
 import Image from 'next/image';
-import { useLanguage } from '@/context/LanguageContext';
 
 export default function ContactUsClient() {
-    const { t } = useLanguage();
     return (
         <main className="bg-[#f8faff] relative selection:bg-[#0033e7] selection:text-white">
             {/* Custom Premium Hero (Light Theme) */}
@@ -29,14 +27,14 @@ export default function ContactUsClient() {
                     >
                         <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 text-[#0033e7] font-bold uppercase text-[11px] tracking-[3px] mb-8 px-5 py-2 rounded-full shadow-sm">
                             <span className="w-2 h-2 bg-[#0033e7] rounded-full animate-pulse shadow-[0_0_10px_rgba(0,51,231,0.5)]"></span>
-                            {t('contact_us_page.tag')}
+                            Contact Us
                         </div>
                         <h1 className="text-4xl md:text-[3.5rem] lg:text-[4.5rem] font-black text-slate-900 leading-[1.1] mb-8 tracking-tighter">
-                            {t('contact_us_page.title_1')} <br className="hidden md:block" />
-                            <span className="text-[#0033e7]">{t('contact_us_page.title_2')}</span>
+                            Unlock Your Practice's <br className="hidden md:block" />
+                            <span className="text-[#0033e7]">Financial Potential</span>
                         </h1>
                         <p className="text-[17px] md:text-xl text-slate-600 font-bold leading-[1.7] max-w-3xl mx-auto tracking-tight">
-                            {t('contact_us_page.desc')}
+                            Stop the revenue leakage. Get the expert guide to structured RCM workflows and start improving your cash flow predictability today.
                         </p>
                     </motion.div>
                 </div>

@@ -4,10 +4,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { motion } from 'framer-motion';
 import { FaCheckCircle } from 'react-icons/fa';
-import { useLanguage } from '@/context/LanguageContext';
 
 export default function ContactForm() {
-    const { t } = useLanguage();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -54,18 +52,18 @@ export default function ContactForm() {
 
             <div className="mb-12">
                 <h3 className="text-3xl md:text-4xl font-black text-slate-900 mb-5 tracking-tighter">
-                    {t('contact_form.title_1')} <span className="text-[#0033e7]">{t('contact_form.title_2')}</span>
+                    Get Instant Access to <span className="text-[#0033e7]">the Guide</span>
                 </h3>
                 <p className="text-slate-600 font-bold text-lg leading-relaxed mb-8 tracking-tight">
-                    {t('contact_form.desc')}
+                    Identify hidden revenue gaps and understand how structured RCM workflows can improve your financial performance.
                 </p>
 
                 {/* 3 Quick Benefit Bullets */}
                 <div className="space-y-4 mb-4">
                     {[
-                        t('contact_form.benefit_1'),
-                        t('contact_form.benefit_2'),
-                        t('contact_form.benefit_3')
+                        "Identify revenue leakage points",
+                        "Understand denial impact",
+                        "Improve cash flow predictability"
                     ].map((benefit, i) => (
                         <div key={i} className="flex items-center gap-4 text-slate-900 font-extrabold text-[15px] tracking-tight">
                             <div className="w-5 h-5 rounded-lg bg-blue-50 text-[#0033e7] flex items-center justify-center flex-shrink-0 group-hover:bg-[#0033e7] group-hover:text-white transition-all duration-300">
@@ -92,7 +90,7 @@ export default function ContactForm() {
             <form onSubmit={handleSubmit} className="space-y-8">
                 {/* 1. Full Name */}
                 <div className="space-y-3">
-                    <label htmlFor="name" className="block text-[12px] font-black uppercase text-[#0033e7]/60 tracking-[3px] ml-1">{t('contact_form.fullname')}</label>
+                    <label htmlFor="name" className="block text-[12px] font-black uppercase text-[#0033e7]/60 tracking-[3px] ml-1">Full Name</label>
                     <input
                         type="text"
                         id="name"
@@ -107,7 +105,7 @@ export default function ContactForm() {
 
                 {/* 2. Work Email */}
                 <div className="space-y-3">
-                    <label htmlFor="email" className="block text-[12px] font-black uppercase text-[#0033e7]/60 tracking-[3px] ml-1">{t('contact_form.work_email')}</label>
+                    <label htmlFor="email" className="block text-[12px] font-black uppercase text-[#0033e7]/60 tracking-[3px] ml-1">Work Email</label>
                     <input
                         type="email"
                         id="email"
@@ -122,7 +120,7 @@ export default function ContactForm() {
 
                 {/* 3. Practice Name */}
                 <div className="space-y-3">
-                    <label htmlFor="practiceName" className="block text-[12px] font-black uppercase text-[#0033e7]/60 tracking-[3px] ml-1">{t('contact_form.practice_name')}</label>
+                    <label htmlFor="practiceName" className="block text-[12px] font-black uppercase text-[#0033e7]/60 tracking-[3px] ml-1">Practice Name</label>
                     <input
                         type="text"
                         id="practiceName"
@@ -138,8 +136,8 @@ export default function ContactForm() {
                 {/* 4. Monthly Claim Volume (Optional) */}
                 <div className="space-y-3">
                     <div className="flex justify-between items-center ml-1">
-                        <label htmlFor="claimVolume" className="block text-[12px] font-black uppercase text-[#0033e7]/60 tracking-[3px]">{t('contact_form.claim_volume')}</label>
-                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{t('contact_form.optional')}</span>
+                        <label htmlFor="claimVolume" className="block text-[12px] font-black uppercase text-[#0033e7]/60 tracking-[3px]">Monthly Claim Volume</label>
+                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Optional</span>
                     </div>
                     <input
                         type="text"
@@ -158,7 +156,7 @@ export default function ContactForm() {
                         disabled={status.type === 'loading'}
                         className="w-full flex items-center justify-center gap-3 bg-[#0033e7] text-white font-black py-6 rounded-xl uppercase tracking-[4px] text-[13px] transition-all hover:bg-blue-800 hover:shadow-[0_10px_25px_rgba(0,51,231,0.2)] hover:-translate-y-0.5 active:scale-[0.99] disabled:opacity-50 group no-underline"
                     >
-                        {status.type === 'loading' ? t('contact_form.btn_loading') : t('contact_form.btn_submit')}
+                        {status.type === 'loading' ? 'Encrypting Access...' : 'Unlock Insights'}
                         {!status.type && (
                             <motion.div
                                 animate={{ x: [0, 5, 0] }}
@@ -173,8 +171,8 @@ export default function ContactForm() {
                     
                     {/* Advanced Trust Line */}
                     <p className="mt-8 text-center text-slate-400 font-bold text-[12px] tracking-tight">
-                        {t('contact_form.trust_1')} <br />
-                        <span className="opacity-50 font-medium">{t('contact_form.trust_2')}</span>
+                        “Access will be sent instantly to your email” <br />
+                        <span className="opacity-50 font-medium">No credit card required • GDPR Compliant • Secure Access</span>
                     </p>
                 </div>
             </form>

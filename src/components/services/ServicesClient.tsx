@@ -6,7 +6,6 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { servicesList, specialtiesList } from '@/data/services';
 import { FaArrowRight, FaCheckCircle, FaProjectDiagram, FaShieldAlt, FaChartLine, FaRegCheckCircle, FaClock } from 'react-icons/fa';
-import { useLanguage } from '@/context/LanguageContext';
 
 const fadeUp: any = {
     hidden: { opacity: 0, y: 30 },
@@ -14,7 +13,6 @@ const fadeUp: any = {
 };
 
 export default function ServicesClient() {
-    const { t } = useLanguage();
     return (
         <main 
             className="relative selection:bg-[#0033e7] selection:text-white overflow-hidden"
@@ -52,14 +50,14 @@ export default function ServicesClient() {
                     >
                         <div className="inline-flex items-center gap-2 bg-white/40 backdrop-blur-md border border-white/40 text-[#0033e7] font-black uppercase text-[10px] md:text-[11px] tracking-[5px] mb-10 px-8 py-3 rounded-full shadow-2xl">
                             <span className="w-2 h-2 bg-[#0033e7] rounded-full animate-ping"></span>
-                            {t('services_page.tag')}
+                            Primary Keywords • More Solutions
                         </div>
                         <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-black tracking-tighter leading-[0.9] mb-10 text-slate-900">
-                            {t('services_page.title_1')} <br className="hidden md:block" />
-                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#0033e7] to-teal-500">{t('services_page.title_2')}</span>
+                            More Solutions for <br className="hidden md:block" />
+                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#0033e7] to-teal-500">Complete Revenue Cycle Management</span>
                         </h1>
                         <p className="text-xl md:text-2xl text-slate-600 font-bold leading-relaxed max-w-3xl mx-auto tracking-tight">
-                            {t('services_page.hero_desc')}
+                            Today, healthcare providers need more solutions than just basic billing. A simple system is not enough. If your process is not connected, it can cause delays, errors, and lost revenue.
                         </p>
                     </motion.div>
                 </div>
@@ -77,15 +75,14 @@ export default function ServicesClient() {
                     >
                         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[80px] -mr-20 -mt-20 group-hover:bg-blue-500/10 transition-all duration-700"></div>
                         
-                        <p 
-                            className="text-2xl md:text-3xl text-slate-800 leading-[1.6] font-black tracking-tighter mb-10 text-center relative z-10"
-                            dangerouslySetInnerHTML={{ __html: t('services_page.intro_1') }}
-                        ></p>
+                        <p className="text-2xl md:text-3xl text-slate-800 leading-[1.6] font-black tracking-tighter mb-10 text-center relative z-10">
+                            Our approach is easy to understand and easy to use. We manage the <span className="text-[#0033e7]">full revenue cycle</span> from start to finish. 
+                        </p>
                         <div className="w-24 h-1.5 bg-gradient-to-r from-[#0033e7] to-teal-400 mx-auto rounded-full mb-12"></div>
                         <p className="text-lg md:text-xl text-slate-600 leading-[1.8] font-bold tracking-tight text-center relative z-10">
-                            {t('services_page.intro_2')}
+                            From patient entry to final payment, every step is handled in a clear and simple way. This is how we provide more solutions to sticky problems in billing.
                             <br /><br />
-                            <span dangerouslySetInnerHTML={{ __html: t('services_page.intro_3') }}></span>
+                            Some people look for answers like <em className="text-blue-600 font-black italic">"can you suggest more solutions for managing remote work productivity?"</em> In healthcare, the real need is different. You need systems that connect your team, reduce mistakes, and improve income. That is where our <span className="text-[#0033e7] font-black">more health solutions</span> approach helps.
                         </p>
                     </motion.div>
                 </div>
@@ -100,19 +97,19 @@ export default function ServicesClient() {
                             whileInView={{ opacity: 1 }}
                             className="bg-[#0033e7]/5 text-[#0033e7] font-black uppercase text-[11px] tracking-[6px] px-6 py-2 rounded-full inline-block mb-6"
                         >
-                            {t('services_page.wwd_tag')}
+                            Streamlined Operations
                         </motion.span>
-                        <h2 className="text-5xl md:text-6xl font-black text-slate-900 tracking-tighter mb-6 uppercase">{t('services_page.wwd_title')}</h2>
+                        <h2 className="text-5xl md:text-6xl font-black text-slate-900 tracking-tighter mb-6 uppercase">What We Do</h2>
                         <div className="w-24 h-2 bg-[#0033e7] mx-auto rounded-full mb-8 shadow-sm"></div>
-                        <p className="text-slate-500 font-bold text-xl max-w-2xl mx-auto leading-relaxed opacity-70">{t('services_page.wwd_desc')}</p>
+                        <p className="text-slate-500 font-bold text-xl max-w-2xl mx-auto leading-relaxed opacity-70">We take care of your complete billing process with a structured, connected approach.</p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                         {[
-                            { title: t('services_page.wwd_c1_title'), desc: t('services_page.wwd_c1_desc') },
-                            { title: t('services_page.wwd_c2_title'), desc: t('services_page.wwd_c2_desc') },
-                            { title: t('services_page.wwd_c3_title'), desc: t('services_page.wwd_c3_desc') },
-                            { title: t('services_page.wwd_c4_title'), desc: t('services_page.wwd_c4_desc') },
+                            { title: 'Eligibility & Benefits', desc: 'Pre-service verification to secure your payments early.' },
+                            { title: 'Medical Coding', desc: 'Expert ICD-10 & CPT coding to maximize claim accuracy.' },
+                            { title: 'Denial Management', desc: 'Aggressive follow-up to recover every dollar possible.' },
+                            { title: 'Payment Posting', desc: 'Accurate reconciliation and rapid database matching.' },
                         ].map((item, i) => (
                             <motion.div
                                 key={i}
@@ -141,7 +138,7 @@ export default function ServicesClient() {
                 <div className="container mx-auto px-4 max-w-7xl">
                     <div className="flex flex-col md:flex-row items-center gap-6 mb-20">
                         <div className="w-24 h-[1px] bg-[#0033e7]"></div>
-                        <h2 className="text-[13px] font-black text-slate-900 uppercase tracking-[10px] text-center">{t('services_page.specific_title')}</h2>
+                        <h2 className="text-[13px] font-black text-slate-900 uppercase tracking-[10px] text-center">Specific Solutions</h2>
                         <div className="flex-grow h-[1px] bg-gradient-to-r from-[#0033e7] to-transparent"></div>
                     </div>
 
@@ -166,10 +163,10 @@ export default function ServicesClient() {
                                             <FaCheckCircle size={32} />
                                         </div>
                                         <div className="flex-grow text-center md:text-left">
-                                            <h3 className="text-4xl font-black text-slate-900 mb-6 tracking-tighter group-hover:text-[#0033e7] transition-colors uppercase">{t(`services_page.services_data.${service.slug}.title`) || service.title}</h3>
-                                            <p className="text-slate-500 font-bold leading-relaxed text-[17px] mb-8 tracking-tight italic opacity-80">{t(`services_page.services_data.${service.slug}.desc`) || service.description}</p>
+                                            <h3 className="text-4xl font-black text-slate-900 mb-6 tracking-tighter group-hover:text-[#0033e7] transition-colors uppercase">{service.title}</h3>
+                                            <p className="text-slate-500 font-bold leading-relaxed text-[17px] mb-8 tracking-tight italic opacity-80">{service.description}</p>
                                             <div className="inline-flex items-center gap-4 text-[#0033e7] font-black text-[13px] uppercase tracking-[4px] bg-blue-50 px-8 py-4 rounded-2xl group-hover:bg-[#0033e7] group-hover:text-white transition-all duration-500 shadow-inner">
-                                                {t('services_page.deep_dive')} <FaArrowRight className="group-hover:translate-x-3 transition-transform duration-500" />
+                                                Deep Dive <FaArrowRight className="group-hover:translate-x-3 transition-transform duration-500" />
                                             </div>
                                         </div>
                                     </div>
@@ -191,17 +188,12 @@ export default function ServicesClient() {
                                 transition={{ duration: 1 }}
                                 className="h-2 bg-[#0033e7] mb-8 rounded-full"
                             />
-                            <h2 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter mb-10 uppercase">{t('services_page.why_title_1')} <span className="text-[#0033e7] italic">{t('services_page.why_title_2')}</span></h2>
+                            <h2 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter mb-10 uppercase">Why This <span className="text-[#0033e7] italic">Matters.</span></h2>
                             <p className="text-2xl text-slate-600 font-bold leading-relaxed mb-12 tracking-tight">
-                                {t('services_page.why_desc')}
+                                A simple and connected system makes a big difference. It saves time and improves results.
                             </p>
                             <div className="space-y-4">
-                                {[
-                                    t('services_page.why_p1'), 
-                                    t('services_page.why_p2'), 
-                                    t('services_page.why_p3'), 
-                                    t('services_page.why_p4')
-                                ].map((point, i) => (
+                                {['Reduce billing errors', 'Avoid revenue loss', 'Understand your finances clearly', 'Keep your workflow smooth'].map((point, i) => (
                                     <motion.div 
                                         key={i} 
                                         initial={{ opacity: 0, x: -20 }}
@@ -226,15 +218,15 @@ export default function ServicesClient() {
                             className="bg-white/80 backdrop-blur-3xl p-12 md:p-16 rounded-[3.5rem] shadow-[0_50px_100px_rgba(0,0,0,0.03)] relative overflow-hidden border border-blue-50"
                         >
                             <div className="absolute top-0 right-0 w-80 h-80 bg-[#0033e7]/5 rounded-full blur-[100px] -mr-40 -mt-40"></div>
-                            <h3 className="text-4xl text-slate-900 font-black tracking-tighter mb-10 text-center uppercase">{t('services_page.what_get_title_1')} <span className="text-[#0033e7]">{t('services_page.what_get_title_2')}</span></h3>
-                            <p className="text-slate-500 font-bold mb-12 italic text-center text-lg leading-relaxed opacity-70">{t('services_page.what_get_desc')}</p>
+                            <h3 className="text-4xl text-slate-900 font-black tracking-tighter mb-10 text-center uppercase">What You <span className="text-[#0033e7]">Get</span></h3>
+                            <p className="text-slate-500 font-bold mb-12 italic text-center text-lg leading-relaxed opacity-70">Our system helps your practice run better every day. </p>
                             
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 relative z-10">
                                 {[
-                                    { title: t('services_page.what_get_c1'), icon: FaChartLine, color: 'text-blue-500' },
-                                    { title: t('services_page.what_get_c2'), icon: FaClock, color: 'text-teal-500' },
-                                    { title: t('services_page.what_get_c3'), icon: FaShieldAlt, color: 'text-indigo-500' },
-                                    { title: t('services_page.what_get_c4'), icon: FaProjectDiagram, color: 'text-sky-500' }
+                                    { title: 'Faster Payments', icon: FaChartLine, color: 'text-blue-500' },
+                                    { title: 'Fewer Delays', icon: FaClock, color: 'text-teal-500' },
+                                    { title: 'Financial Control', icon: FaShieldAlt, color: 'text-indigo-500' },
+                                    { title: 'Stable Cash Flow', icon: FaProjectDiagram, color: 'text-sky-500' }
                                 ].map((item, i) => (
                                     <motion.div 
                                         key={i} 
@@ -254,7 +246,7 @@ export default function ServicesClient() {
                                 className="mt-16 p-10 bg-gradient-to-r from-[#0033e7] to-[#0A1F33] rounded-[2.5rem] text-center shadow-2xl border border-white/20"
                             >
                                 <p className="font-black text-white uppercase tracking-[4px] text-[15px] leading-relaxed mb-0">
-                                    {t('services_page.what_get_footer_1')} <br/> <span className="text-teal-300">{t('services_page.what_get_footer_2')}</span>
+                                    Our system keeps your billing <br/> <span className="text-teal-300">simple, clear, and effective</span>
                                 </p>
                             </motion.div>
                         </motion.div>

@@ -5,65 +5,51 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { FaBars, FaTimes, FaAngleDown } from 'react-icons/fa';
-import LanguageSwitcher from './LanguageSwitcher';
-import { useLanguage } from '@/context/LanguageContext';
 
 const navLinks = [
-    { name: 'Home', tKey: 'nav.home', href: '/' },
-    { name: 'About Us', tKey: 'nav.about_us', href: '/about-us' },
+    { name: 'Home', href: '/' },
+    { name: 'About Us', href: '/about-us' },
     {
         name: 'Solutions',
-        tKey: 'nav.solutions',
         href: '#',
         dropdown: [
-            { name: 'Eligibility & Front Office', tKey: 'nav.eligibility_front_office', href: '/services/eligibility-verification' },
-            { name: 'Benefits Check', tKey: 'nav.benefits_check', href: '/services/benefits-check' },
-            { name: 'Prior Authorization', tKey: 'nav.prior_authorization', href: '/services/prior-authorization' },
-            { name: 'Exclusion Check', tKey: 'nav.exclusion_check', href: '/services/exclusion-check' },
-            { name: 'Patient Collection & AR Recovery', tKey: 'nav.patient_collections', href: '/services/patient-collections-ar-recovery' },
-            { name: 'Consulting', tKey: 'nav.consulting', href: '/services/consulting' },
-            { name: 'More Solutions', tKey: 'nav.more_solutions', href: '/services' },
+            { name: 'Eligibility & Front Office', href: '/services/eligibility-verification' },
+            { name: 'Benefits Check', href: '/services/benefits-check' },
+            { name: 'Prior Authorization', href: '/services/prior-authorization' },
+            { name: 'Exclusion Check', href: '/services/exclusion-check' },
+            { name: 'Patient Collection & AR Recovery', href: '/services/patient-collections-ar-recovery' },
+            { name: 'Consulting', href: '/services/consulting' },
+            { name: 'More Solutions', href: '/services' },
         ]
     },
     {
         name: 'Specialties',
-        tKey: 'nav.specialties',
         href: '#',
         dropdown: [
-            { name: 'Behavioral Health', tKey: 'nav.behavioral_health', href: '/specialties/behavioral-health' },
-            { name: 'DME / Orthopedics', tKey: 'nav.dme_orthopedics', href: '/specialties/dme-orthopedics' },
-            { name: 'Urgent Care & Telehealth', tKey: 'nav.urgent_care', href: '/specialties/urgent-care-telehealth' },
-            { name: 'Small–Mid Practices', tKey: 'nav.small_mid_practices', href: '/specialties/small-mid-practices' },
-            { name: 'Multi-Speciality Hospitals', tKey: 'nav.multi_speciality', href: '/specialties/multi-speciality-hospitals' },
+            { name: 'Behavioral Health', href: '/specialties/behavioral-health' },
+            { name: 'DME / Orthopedics', href: '/specialties/dme-orthopedics' },
+            { name: 'Urgent Care & Telehealth', href: '/specialties/urgent-care-telehealth' },
+            { name: 'Small–Mid Practices', href: '/specialties/small-mid-practices' },
+            { name: 'Multi-Speciality Hospitals', href: '/specialties/multi-speciality-hospitals' },
         ]
     },
-    { name: 'Resources', tKey: 'nav.resources', href: '/resources' },
-    { name: 'Compliance & Security', tKey: 'nav.compliance', href: '/security' },
-    { name: 'RCM Calculator', tKey: 'nav.rcm_calculator', href: '/rcm-calculator' },
-    { name: 'Pricing', tKey: 'nav.pricing', href: '/pricing' },
-    { name: 'Blog', tKey: 'nav.blog', href: '/blog' },
-    { name: 'Contact Us', tKey: 'nav.contact_us', href: '/contact-us' },
+    { name: 'Resources', href: '/resources' },
+    { name: 'Compliance & Security', href: '/security' },
+    { name: 'RCM Calculator', href: '/rcm-calculator' },
+    { name: 'Pricing', href: '/pricing' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Contact Us', href: '/contact-us' },
 ];
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
-    const [showLanguageToggle, setShowLanguageToggle] = useState(false);
     const pathname = usePathname();
-    const { t } = useLanguage();
 
     const toggleMenu = () => setIsOpen(!isOpen);
 
     useEffect(() => {
-        // Only show language toggle on specific domain or localhost for testing
-        if (typeof window !== 'undefined') {
-            const hostname = window.location.hostname;
-            if (hostname.includes('sbnmedicalbillingservices.ae') || hostname === 'localhost') {
-                setShowLanguageToggle(true);
-            }
-        }
-
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
 
@@ -135,7 +121,7 @@ const Header = () => {
                                                 }`}
                                         >
                                             <span className="relative z-10 flex items-center">
-                                                {link.tKey ? t(link.tKey) : link.name}
+                                                {link.name}
                                                 {link.dropdown && (
                                                     <FaAngleDown className={`ml-1 text-[9px] transition-all ${active ? 'text-[#0033e7] opacity-100' : 'opacity-40 group-hover:text-[#0033e7] group-hover:opacity-100'}`} />
                                                 )}
@@ -154,7 +140,7 @@ const Header = () => {
                                                                 className={`block py-[10px] px-[25px] text-[12px] font-bold border-b border-slate-50 last:border-0 transition-all duration-300 hover:bg-blue-50 hover:text-[#0033e7] hover:pl-[30px] no-underline uppercase ${subActive ? 'text-[#0033e7] bg-blue-50/50 pl-[30px] border-l-4 border-l-[#0033e7]' : 'text-slate-600'
                                                                     }`}
                                                             >
-                                                                {subLink.tKey ? t(subLink.tKey) : subLink.name}
+                                                                {subLink.name}
                                                             </Link>
                                                         </li>
                                                     );
@@ -168,8 +154,7 @@ const Header = () => {
                     </nav>
 
                     {/* Action Section / Mobile Toggle */}
-                    <div className="flex items-center ml-auto gap-2 xl:gap-4">
-                        {showLanguageToggle && <LanguageSwitcher />}
+                    <div className="flex items-center ml-auto gap-4">
                         <button
                             className="w-10 h-10 xl:w-12 xl:h-12 bg-[#0033e7] hover:bg-blue-800 text-white rounded-xl flex items-center justify-center transition-all duration-300 shadow-lg shadow-[#0033e7]/20 xl:hidden"
                             onClick={toggleMenu}
@@ -197,7 +182,7 @@ const Header = () => {
                                     {link.dropdown ? (
                                         <>
                                             <span className={`text-[12px] font-black uppercase tracking-[2px] block mb-3 ${active ? 'text-[#0033e7]' : 'text-slate-900'}`}>
-                                                {link.tKey ? t(link.tKey) : link.name}
+                                                {link.name}
                                             </span>
                                             <ul className="mt-[10px] mb-[10px] flex flex-col gap-[12px] border-l-2 border-slate-100 ml-2">
                                                 {link.dropdown.map(subLink => {
@@ -209,7 +194,7 @@ const Header = () => {
                                                                 className={`text-[11px] font-bold block pl-[20px] uppercase no-underline transition-colors ${subActive ? 'text-[#0033e7]' : 'text-slate-500 hover:text-[#0033e7]'}`}
                                                                 onClick={toggleMenu}
                                                             >
-                                                                {subLink.tKey ? t(subLink.tKey) : subLink.name}
+                                                                {subLink.name}
                                                             </Link>
                                                         </li>
                                                     );
@@ -222,7 +207,7 @@ const Header = () => {
                                             className={`text-[12px] font-black block uppercase tracking-[2px] no-underline transition-colors ${active ? 'text-[#0033e7]' : 'text-slate-900 hover:text-[#0033e7]'}`}
                                             onClick={toggleMenu}
                                         >
-                                            {link.tKey ? t(link.tKey) : link.name}
+                                            {link.name}
                                         </Link>
                                     )}
                                 </li>

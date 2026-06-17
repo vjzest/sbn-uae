@@ -4,7 +4,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import { FaPlay, FaQuoteLeft, FaTimes, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import Image from 'next/image';
 import { useNativeInView } from '@/hooks/useNativeInView';
-import { useLanguage } from '@/context/LanguageContext';
 
 interface Testimonial {
     id: number;
@@ -18,34 +17,32 @@ interface Testimonial {
     videoUrl: string;
 }
 
+const testimonialsData: Testimonial[] = [
+    {
+        id: 1,
+        name: "Dr. Sarah Mitchell",
+        title: "Medical Director",
+        practice: "Mitchell Family Practice",
+        metric: "90 Days",
+        metricLabel: "To See Impact",
+        quote: "SBN Healthcare transformed our revenue cycle. We saw an immediate impact on cash flow within the first 90 days.",
+        avatar: "/img/avatar1.webp",
+        videoUrl: "/img/v2.mp4"
+    },
+    {
+        id: 2,
+        name: "James Wilson",
+        title: "Practice Administrator",
+        practice: "Oakwood Orthopedics",
+        metric: "100%",
+        metricLabel: "Transparency",
+        quote: "The level of transparency SBN provides is unmatched. We finally feel like we have a partner who is as invested in our financial success as we are.",
+        avatar: "/img/avatar2.webp",
+        videoUrl: "/img/v3.mp4"
+    }
+];
+
 const Testimonials = () => {
-    const { t } = useLanguage();
-
-    const testimonialsData: Testimonial[] = [
-        {
-            id: 1,
-            name: t('testimonials_section.t1_name'),
-            title: t('testimonials_section.t1_title'),
-            practice: t('testimonials_section.t1_practice'),
-            metric: t('testimonials_section.t1_metric'),
-            metricLabel: t('testimonials_section.t1_metricLabel'),
-            quote: t('testimonials_section.t1_quote'),
-            avatar: "/img/avatar1.webp",
-            videoUrl: "/img/v2.mp4"
-        },
-        {
-            id: 2,
-            name: t('testimonials_section.t2_name'),
-            title: t('testimonials_section.t2_title'),
-            practice: t('testimonials_section.t2_practice'),
-            metric: t('testimonials_section.t2_metric'),
-            metricLabel: t('testimonials_section.t2_metricLabel'),
-            quote: t('testimonials_section.t2_quote'),
-            avatar: "/img/avatar2.webp",
-            videoUrl: "/img/v3.mp4"
-        }
-    ];
-
     const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
     const scrollRef = useRef<HTMLDivElement>(null);
     const sectionRef = useRef<HTMLElement>(null);
@@ -90,11 +87,11 @@ const Testimonials = () => {
                     <div className="max-w-2xl">
                         <div className="inline-flex items-center gap-2 bg-blue-100/50 border border-blue-200 text-[#0033e7] font-semibold uppercase text-xs tracking-[2px] mb-6 px-5 py-2 rounded-full backdrop-blur-sm">
                             <span className="w-2 h-2 bg-[#0033e7] rounded-full animate-pulse"></span>
-                            {t('testimonials_section.tag')}
+                            Proof of Success
                         </div>
 
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight leading-[1.2]">
-                            {t('testimonials_section.title')}
+                            Trusted by High-Performance Practices
                         </h2>
                     </div>
 

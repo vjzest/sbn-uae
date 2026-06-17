@@ -4,7 +4,6 @@ import Script from 'next/script';
 import { Asap } from 'next/font/google';
 import './globals.css';
 import { ReduxProvider } from '@/components/providers/ReduxProvider';
-import { LanguageProvider } from '@/context/LanguageContext';
 
 const asap = Asap({
   subsets: ['latin'],
@@ -45,9 +44,7 @@ export default function RootLayout({
           `}
         </Script>
         <ReduxProvider>
-          <LanguageProvider>
-            {children}
-          </LanguageProvider>
+          {children}
         </ReduxProvider>
       </body>
     </html>

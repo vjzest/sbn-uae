@@ -37,11 +37,11 @@ const WhatWeDo = () => {
                     </div>
 
                     <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold text-gray-900 tracking-tight leading-[1.2] mb-8">
-                        Complete Healthcare Billing Services, <br className="hidden md:block" /> From Intake to Payment
+                        Revenue Cycle Solutions for Urgent Care Growth
                     </h2>
 
                     <p className="text-gray-600 text-[1.1rem] md:text-[1.2rem] max-w-3xl mx-auto leading-relaxed font-medium">
-                        We manage your entire revenue cycle so you do not have to. Think of us as your dedicated billing department — without the overhead.
+                        Specialized solutions designed to improve reimbursement performance, strengthen operational efficiency, and support long-term growth.
                     </p>
                 </div>
 

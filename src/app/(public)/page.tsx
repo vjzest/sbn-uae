@@ -17,9 +17,9 @@ const FAQ = dynamic(() => import('@/components/home/FAQ'), { ssr: true });
 export async function generateMetadata(): Promise<Metadata> {
   const dynamic = await getDynamicMetadata('home');
   return constructMetadata(dynamic, {
-    title: 'Medical Billing Services | SBN Healthcare Solution',
-    description: 'Struggling with claim denials? SBN expert medical billing services help USA practices recover more revenue reduce AR days and get paid faster. Free consultation!',
-    keywords: 'Medical Billing Services',
+    title: 'Urgent Care Revenue Cycle Management | SBN Healthcare Solution',
+    description: 'SBN Healthcare Solution helps urgent care organizations improve collections, reduce claim denials, optimize revenue cycle performance, and increase cash flow.',
+    keywords: 'Urgent Care Revenue Cycle Management',
     slug: ''
   });
 }

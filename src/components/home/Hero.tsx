@@ -22,21 +22,21 @@ const Hero = () => {
                             className="inline-flex items-center gap-2 bg-blue-100/50 border border-blue-200 text-[#0033e7] font-semibold uppercase text-xs tracking-[2px] mb-8 px-5 py-2 rounded-full backdrop-blur-sm"
                         >
                             <span className="w-2 h-2 bg-[#0033e7] rounded-full animate-pulse"></span>
-                            {heroData.subheadline || 'RCM Excellence'}
+                            Revenue Intelligence for Urgent Care
                         </div>
 
                         <h1
                             className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-[3.5rem] font-extrabold text-gray-900 leading-[1.2] mb-5 tracking-tight"
                         >
-                            Trusted Medical <br className="hidden xl:block" />
-                            <span className="text-[#0033e7]">Billing Services</span> <br />
-                            That Put Your Practice First
+                            Find Revenue Leaks <br className="hidden xl:block" />
+                            <span className="text-[#0033e7]">Before They Become</span> <br />
+                            Lost Revenue
                         </h1>
 
                         <p
                             className="text-base md:text-[1.1rem] text-gray-600 mb-8 max-w-[550px] mx-auto lg:mx-0 leading-relaxed font-medium"
                         >
-                            You became a healthcare provider to care for patients, not to chase insurance companies, decode claim rejections, or spend hours buried in billing paperwork. At SBN Healthcare Solution, we handle all of that for you.
+                            Most urgent care revenue problems begin long before a claim is denied. SBN helps identify operational gaps, improve revenue performance, and strengthen financial outcomes across the entire patient-to-payment journey.
                         </p>
 
                         <div
@@ -47,7 +47,7 @@ const Hero = () => {
                                     href="/contact-us"
                                     className="bg-[#0033e7] text-white px-8 py-4 rounded-2xl font-semibold hover:bg-blue-800 hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(0,51,231,0.2)] transition-all duration-300 no-underline"
                                 >
-                                    Get Started
+                                    Get Free Consultation
                                 </Link>
                                 <div className="flex flex-wrap gap-4 text-sm font-medium text-gray-500 justify-center lg:justify-start">
                                     <span className="flex items-center gap-1.5 whitespace-nowrap">
@@ -56,20 +56,24 @@ const Hero = () => {
                                     </span>
                                     <span className="flex items-center gap-1.5 whitespace-nowrap">
                                         <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
-                                        US-Based Support
+                                        14+ Years Experience
                                     </span>
                                     <span className="flex items-center gap-1.5 whitespace-nowrap">
                                         <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
-                                        14+ Years Experience
+                                        200+ Billing Specialists
+                                    </span>
+                                    <span className="flex items-center gap-1.5 whitespace-nowrap">
+                                        <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+                                        Built for Urgent Care
                                     </span>
                                 </div>
                             </div>
 
                             <Link
-                                href="/services"
+                                href="/contact-us"
                                 className="text-gray-700 hover:text-[#0033e7] font-bold text-sm uppercase tracking-wider transition-colors no-underline flex items-center gap-2 group/link pl-4"
                             >
-                                Explore Platform
+                                See How It Works
                                 <svg className="w-5 h-5 transform group-hover/link:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                 </svg>

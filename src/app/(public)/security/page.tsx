@@ -5,8 +5,8 @@ import SecurityClient from '@/components/security/SecurityClient';
 export async function generateMetadata(): Promise<Metadata> {
     const dynamic = await getDynamicMetadata('security');
     return constructMetadata(dynamic, {
-        title: 'Compliance & Security Services | Secure Healthcare Systems',
-        description: 'Ensure compliance & security with HIPAA-aligned systems. Protect data, control access, and meet security compliance standards with confidence.',
+        title: 'Security Overview | SBN Healthcare Solution LLC',
+        description: 'Learn about SBN Healthcare Solution LLC\'s security practices, including data protection, identity management, and incident response.',
         slug: 'security'
     });
 }

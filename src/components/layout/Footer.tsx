@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaLinkedin, FaTwitter, FaFacebook, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
@@ -8,6 +8,7 @@ import { usePathname } from 'next/navigation';
 
 const Footer = () => {
     const pathname = usePathname();
+    const [isTrustOpen, setIsTrustOpen] = useState(false);
 
     // Hide footer on admin pages
     if (pathname?.startsWith('/admin')) {
@@ -91,6 +92,45 @@ const Footer = () => {
                                     </Link>
                                 </li>
                             ))}
+                            
+                            {/* Trust Center Dropdown right under Privacy & Security */}
+                            <li className="mt-2">
+                                <button 
+                                    onClick={() => setIsTrustOpen(!isTrustOpen)}
+                                    className="text-gray-600 text-[15px] font-bold hover:text-[#0033e7] transition-all flex items-center gap-3 group no-underline hover:translate-x-1 w-full text-left"
+                                >
+                                    <span className={`w-1 h-4 rounded-full transition-all ${isTrustOpen ? 'bg-[#0033e7]' : 'bg-blue-600/0 group-hover:bg-[#0033e7]'}`}></span>
+                                    Trust Center
+                                    <svg className={`w-3 h-3 ml-1 transition-transform duration-300 ${isTrustOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                
+                                <ul className={`flex flex-col gap-3 p-0 list-none overflow-hidden transition-all duration-300 pl-6 border-l-2 border-slate-100 ml-1.5 ${isTrustOpen ? 'max-h-[400px] opacity-100 mt-4' : 'max-h-0 opacity-0 mt-0'}`}>
+                                    {[
+                                        { name: 'Privacy Notice', href: '/privacy' },
+                                        { name: 'Security Overview', href: '/security' },
+                                        { name: 'Compliance Overview', href: '/compliance' },
+                                        { name: 'Terms of Service', href: '/terms' },
+                                        { name: 'Responsible Disclosure', href: '#', future: true },
+                                        { name: 'System Status', href: '#', future: true },
+                                        { name: 'Security Whitepaper', href: '#', future: true }
+                                    ].map((item, idx) => (
+                                        <li key={item.name}>
+                                            {item.future ? (
+                                                <div className="text-gray-400 text-[13px] font-bold flex items-center justify-between cursor-not-allowed">
+                                                    <span>{item.name}</span>
+                                                </div>
+                                            ) : (
+                                                <Link
+                                                    href={item.href}
+                                                    className="text-gray-500 text-[13px] font-bold hover:text-[#0033e7] transition-all no-underline block"
+                                                >
+                                                    {item.name}
+                                                </Link>
+                                            )}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </li>
                         </ul>
                     </div>
 
@@ -177,13 +217,15 @@ const Footer = () => {
             </div>
 
             <div className="border-t border-slate-200/50 pt-10 pb-10 text-center relative z-10 bg-white/30 backdrop-blur-sm">
-                <div className="container mx-auto px-4">
-                    <p className="text-slate-500 text-[11px] font-black uppercase tracking-[3px] mb-2">
-                        &copy; 2026 SBN Healthcare Solution. All Rights Reserved.
-                    </p>
-                    <p className="text-slate-400 text-[9px] font-bold uppercase tracking-[2px]">
-                        ENGINEERED FOR EXCELLENCE IN HEALTHCARE REVENUE CYCLE MANAGEMENT
-                    </p>
+                <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div className="text-left">
+                        <p className="text-slate-500 text-[11px] font-black uppercase tracking-[3px] mb-2">
+                            &copy; 2026 SBN Healthcare Solution. All Rights Reserved.
+                        </p>
+                        <p className="text-slate-400 text-[9px] font-bold uppercase tracking-[2px]">
+                            ENGINEERED FOR EXCELLENCE IN HEALTHCARE REVENUE CYCLE MANAGEMENT
+                        </p>
+                    </div>
                 </div>
             </div>
         </footer>

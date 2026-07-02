@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaLinkedin, FaTwitter, FaFacebook, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
@@ -8,7 +8,6 @@ import { usePathname } from 'next/navigation';
 
 const Footer = () => {
     const pathname = usePathname();
-    const [isTrustOpen, setIsTrustOpen] = useState(false);
 
     // Hide footer on admin pages
     if (pathname?.startsWith('/admin')) {
@@ -94,17 +93,16 @@ const Footer = () => {
                             ))}
                             
                             {/* Trust Center Dropdown right under Privacy & Security */}
-                            <li className="mt-2">
-                                <button 
-                                    onClick={() => setIsTrustOpen(!isTrustOpen)}
-                                    className="text-gray-600 text-[15px] font-bold hover:text-[#0033e7] transition-all flex items-center gap-3 group no-underline hover:translate-x-1 w-full text-left"
+                            <li className="mt-2 group/trust">
+                                <div 
+                                    className="text-gray-600 text-[15px] font-bold hover:text-[#0033e7] transition-all flex items-center gap-3 group no-underline lg:hover:translate-x-1 w-full text-left"
                                 >
-                                    <span className={`w-1 h-4 rounded-full transition-all ${isTrustOpen ? 'bg-[#0033e7]' : 'bg-blue-600/0 group-hover:bg-[#0033e7]'}`}></span>
+                                    <span className={`w-1 h-4 rounded-full transition-all bg-[#0033e7] lg:bg-transparent lg:group-hover/trust:bg-[#0033e7]`}></span>
                                     Trust Center
-                                    <svg className={`w-3 h-3 ml-1 transition-transform duration-300 ${isTrustOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-                                </button>
+                                    <svg className={`w-3 h-3 ml-1 transition-transform duration-300 rotate-180 lg:rotate-0 lg:group-hover/trust:rotate-180`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </div>
                                 
-                                <ul className={`flex flex-col gap-3 p-0 list-none overflow-hidden transition-all duration-300 pl-6 border-l-2 border-slate-100 ml-1.5 ${isTrustOpen ? 'max-h-[400px] opacity-100 mt-4' : 'max-h-0 opacity-0 mt-0'}`}>
+                                <ul className={`flex flex-col gap-3 p-0 list-none overflow-hidden transition-all duration-300 pl-6 border-l-2 border-slate-100 ml-1.5 max-h-[500px] opacity-100 mt-4 lg:max-h-0 lg:opacity-0 lg:mt-0 lg:group-hover/trust:max-h-[500px] lg:group-hover/trust:opacity-100 lg:group-hover/trust:mt-4`}>
                                     {[
                                         { name: 'Privacy Notice', href: '/privacy' },
                                         { name: 'Security Overview', href: '/security' },

@@ -3,7 +3,9 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { specialtiesList } from '@/data/services';
+import { specialtiesList as enSpecialtiesList, servicesList as enServicesList } from '@/data/services';
+import { specialtiesList as arSpecialtiesList, servicesList as arServicesList } from '@/data/services_ar';
+import { useLanguage } from '@/context/LanguageContext';
 import { notFound } from 'next/navigation';
 import KPIMetrics from '@/components/sections/KPIMetrics';
 import WorkflowVisual from '@/components/sections/WorkflowVisual';
@@ -18,7 +20,11 @@ const fadeUp = {
 };
 
 export default function SpecialtyDetailClient({ slug }: { slug: string }) {
-    const specialty = specialtiesList.find((s) => s.slug === slug);
+    const { language } = useLanguage();
+    const servicesList = language === 'ar' ? arServicesList : enServicesList;
+    const specialtiesList = language === 'ar' ? arSpecialtiesList : enSpecialtiesList;
+    const allServices = [...servicesList, ...specialtiesList];
+    const specialty = allServices.find((s) => s.slug === slug);
     if (!specialty) return notFound();
 
     return (
@@ -38,7 +44,7 @@ export default function SpecialtyDetailClient({ slug }: { slug: string }) {
                     >
                         <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 text-[#0033e7] font-bold uppercase text-[11px] tracking-[4px] mb-8 px-6 py-2 rounded-full shadow-sm">
                             <span className="w-2 h-2 bg-[#0033e7] rounded-full animate-pulse shadow-[0_0_10px_rgba(0,51,231,0.5)]"></span>
-                            Industry Expertise
+                            {language === 'ar' ? 'خبرة الصناعة' : 'Industry Expertise'}
                         </div>
                         <h1 className="text-4xl md:text-[4rem] lg:text-[4.5rem] font-black text-slate-900 leading-[1.1] mb-8 tracking-tighter">
                             {specialty.bannerTitle}
@@ -92,7 +98,7 @@ export default function SpecialtyDetailClient({ slug }: { slug: string }) {
                                             </p>
                                         )}
                                         <Link href="/contact-us" className="bg-[#0033e7] text-white px-12 py-5 rounded-xl font-black inline-flex items-center gap-4 transition-all duration-300 uppercase tracking-[2px] hover:bg-blue-800 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(0,51,231,0.3)] shadow-xl no-underline">
-                                            Talk To An Expert <FaArrowRight />
+                                            {language === 'ar' ? 'تحدث إلى خبير' : 'Talk To An Expert'} <FaArrowRight className={language === 'ar' ? 'rotate-180' : ''} />
                                         </Link>
                                     </div>
                                 </section>

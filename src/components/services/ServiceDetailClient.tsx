@@ -8,7 +8,9 @@ import WorkflowVisual from '@/components/sections/WorkflowVisual';
 import ProblemSnapshot from '@/components/sections/ProblemSnapshot';
 import AIIndicator from '@/components/sections/AIIndicator';
 import ComplianceShield from '@/components/sections/ComplianceShield';
-import { servicesList } from '@/data/services';
+import { servicesList as enServicesList, specialtiesList as enSpecialtiesList } from '@/data/services';
+import { servicesList as arServicesList, specialtiesList as arSpecialtiesList } from '@/data/services_ar';
+import { useLanguage } from '@/context/LanguageContext';
 import { notFound } from 'next/navigation';
 import { FaArrowRight } from 'react-icons/fa';
 
@@ -18,7 +20,11 @@ const fadeUp = {
 };
 
 export default function ServiceDetailClient({ slug }: { slug: string }) {
-    const service = servicesList.find((s) => s.slug === slug);
+    const { language } = useLanguage();
+    const servicesList = language === 'ar' ? arServicesList : enServicesList;
+    const specialtiesList = language === 'ar' ? arSpecialtiesList : enSpecialtiesList;
+    const allServices = [...servicesList, ...specialtiesList];
+    const service = allServices.find((s) => s.slug === slug);
     if (!service) return notFound();
 
     return (
@@ -52,7 +58,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
                     >
                         <div className="inline-flex items-center gap-2 bg-white/40 backdrop-blur-md border border-white/40 text-[#0033e7] font-black uppercase text-[10px] md:text-[11px] tracking-[5px] mb-10 px-8 py-3 rounded-full shadow-2xl">
                             <span className="w-2 h-2 bg-[#0033e7] rounded-full animate-ping"></span>
-                            Enterprise Solutions
+                            {language === 'ar' ? 'حلول المؤسسات' : 'Enterprise Solutions'}
                         </div>
                         <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-black tracking-tighter leading-[0.9] mb-10 text-slate-900 px-4">
                             {service.bannerTitle}
@@ -107,7 +113,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
                                             </p>
                                         )}
                                         <Link href="/contact-us" className="bg-[#0033e7] text-white px-12 py-5 rounded-xl font-black inline-flex items-center gap-4 transition-all duration-300 uppercase tracking-[2px] hover:bg-blue-800 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(0,51,231,0.3)] shadow-xl no-underline">
-                                            Talk To An Expert <FaArrowRight />
+                                            {language === 'ar' ? 'تحدث إلى خبير' : 'Talk To An Expert'} <FaArrowRight className={language === 'ar' ? 'rotate-180' : ''} />
                                         </Link>
                                     </div>
                                 </section>

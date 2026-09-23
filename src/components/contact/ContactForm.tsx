@@ -4,8 +4,10 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { motion } from 'framer-motion';
 import { FaCheckCircle } from 'react-icons/fa';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function ContactForm() {
+    const { t } = useLanguage();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -118,7 +120,7 @@ export default function ContactForm() {
 
                 {/* 1. Full Name */}
                 <div className="space-y-3">
-                    <label htmlFor="name" className="block text-[12px] font-black uppercase text-[#0033e7]/60 tracking-[3px] ml-1">Full Name</label>
+                    <label htmlFor="name" className="block text-[12px] font-black uppercase text-[#0033e7]/60 tracking-[3px] ml-1">{t('contact_form.fullname')}</label>
                     <input
                         type="text"
                         id="name"
@@ -133,7 +135,7 @@ export default function ContactForm() {
 
                 {/* 2. Work Email */}
                 <div className="space-y-3">
-                    <label htmlFor="email" className="block text-[12px] font-black uppercase text-[#0033e7]/60 tracking-[3px] ml-1">Work Email</label>
+                    <label htmlFor="email" className="block text-[12px] font-black uppercase text-[#0033e7]/60 tracking-[3px] ml-1">{t('contact_form.work_email')}</label>
                     <input
                         type="email"
                         id="email"
@@ -162,7 +164,7 @@ export default function ContactForm() {
 
                 {/* 4. Practice Name */}
                 <div className="space-y-3">
-                    <label htmlFor="practiceName" className="block text-[12px] font-black uppercase text-[#0033e7]/60 tracking-[3px] ml-1">Practice / Facility Name</label>
+                    <label htmlFor="practiceName" className="block text-[12px] font-black uppercase text-[#0033e7]/60 tracking-[3px] ml-1">{t('contact_form.practice_name')}</label>
                     <input
                         type="text"
                         id="practiceName"
@@ -178,8 +180,8 @@ export default function ContactForm() {
                 {/* 5. Monthly Claim Volume (Optional) */}
                 <div className="space-y-3">
                     <div className="flex justify-between items-center ml-1">
-                        <label htmlFor="claimVolume" className="block text-[12px] font-black uppercase text-[#0033e7]/60 tracking-[3px]">Monthly Claim Volume</label>
-                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Optional</span>
+                        <label htmlFor="claimVolume" className="block text-[12px] font-black uppercase text-[#0033e7]/60 tracking-[3px]">{t('contact_form.claim_volume')}</label>
+                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{t('contact_form.optional')}</span>
                     </div>
                     <input
                         type="text"
@@ -198,7 +200,7 @@ export default function ContactForm() {
                         disabled={status.type === 'loading'}
                         className="w-full flex items-center justify-center gap-3 bg-[#0033e7] text-white font-black py-6 rounded-xl uppercase tracking-[3px] text-[13px] transition-all hover:bg-blue-800 hover:shadow-[0_10px_25px_rgba(0,51,231,0.2)] hover:-translate-y-0.5 active:scale-[0.99] disabled:opacity-50 group no-underline cursor-pointer"
                     >
-                        {status.type === 'loading' ? 'Scheduling Request...' : 'Schedule Free Consultation'}
+                        {status.type === 'loading' ? t('contact_form.btn_loading') : t('contact_form.btn_submit')}
                         {!status.type && (
                             <motion.div
                                 animate={{ x: [0, 5, 0] }}
@@ -213,8 +215,8 @@ export default function ContactForm() {
                     
                     {/* Advanced Trust Line */}
                     <p className="mt-8 text-center text-slate-400 font-bold text-[12px] tracking-tight">
-                        “100% Confidential • HIPAA-Compliant Review” <br />
-                        <span className="opacity-50 font-medium">No obligation • Quick 15-minute introductory assessment</span>
+                        {t('contact_form.trust_1')} <br />
+                        <span className="opacity-50 font-medium">{t('contact_form.trust_2')}</span>
                     </p>
                 </div>
             </form>

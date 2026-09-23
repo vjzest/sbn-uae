@@ -4,8 +4,10 @@ import React, { useRef, useState, useEffect } from 'react';
 import { FaPlay, FaPause, FaExpand } from 'react-icons/fa';
 import Image from 'next/image';
 import { useNativeInView } from '@/hooks/useNativeInView';
+import { useLanguage } from '@/context/LanguageContext';
 
 const OfficeOperations = () => {
+    const { t } = useLanguage();
     const videoRef = useRef<HTMLVideoElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const [isPlaying, setIsPlaying] = useState(true);
@@ -54,15 +56,15 @@ const OfficeOperations = () => {
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center gap-2 bg-blue-100/50 border border-blue-200 text-[#0033e7] font-semibold uppercase text-xs tracking-[2px] mb-6 px-5 py-2 rounded-full backdrop-blur-sm">
                         <span className="w-2 h-2 bg-[#0033e7] rounded-full animate-pulse"></span>
-                        Why Providers Choose SBN
+                        {t('office_ops.tag')}
                     </div>
 
                     <h2 className="text-4xl md:text-5xl lg:text-5xl font-extrabold text-gray-900 tracking-tight mb-8 leading-[1.2]">
-                        We Treat Your Revenue Like Our Own
+                        {t('office_ops.title')}
                     </h2>
 
                     <p className="text-lg text-gray-600 font-medium max-w-3xl mx-auto leading-relaxed">
-                        There are many billing companies out there. Here’s why healthcare providers across the USA choose SBN — and stay with us:
+                        {t('office_ops.desc')}
                     </p>
                 </div>
 

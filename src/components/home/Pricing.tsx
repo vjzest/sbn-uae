@@ -2,13 +2,15 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { useLanguage } from '@/context/LanguageContext';
 
 const Pricing = () => {
+    const { t } = useLanguage();
     const customPricingModels = [
-        { title: "Complete Service Package", description: "Full billing management at one flat rate." },
-        { title: "Per Transaction", description: "Pay-as-you-go, starting at $0.75/claim." },
-        { title: "FTE Basis", description: "Dedicated staff for high-volume practices." },
-        { title: "Custom Plan", description: "Tailored to your exact needs." }
+        { title: t('pricing_section.m1_title'), description: t('pricing_section.m1_desc') },
+        { title: t('pricing_section.m2_title'), description: t('pricing_section.m2_desc') },
+        { title: t('pricing_section.m3_title'), description: t('pricing_section.m3_desc') },
+        { title: t('pricing_section.m4_title'), description: t('pricing_section.m4_desc') }
     ];
 
     return (
@@ -17,15 +19,15 @@ const Pricing = () => {
                 <div className="text-center mb-20 max-w-4xl mx-auto">
                     <div className="inline-flex items-center gap-2 bg-blue-100/50 border border-blue-200 text-[#0033e7] font-semibold uppercase text-xs tracking-[2px] px-5 py-2 rounded-full backdrop-blur-sm mb-6">
                         <span className="w-2 h-2 bg-[#0033e7] rounded-full animate-pulse"></span>
-                        Pricing That Works for You
+                        {t('pricing_section.tag')}
                     </div>
                     
                     <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold text-gray-900 tracking-tight leading-[1.2] mb-8">
-                        Flexible Plans Built Around <br className="hidden md:block" /> Your Practice
+                        {t('pricing_section.title_line1')} <br className="hidden md:block" /> {t('pricing_section.title_line2')}
                     </h2>
                     
                     <p className="text-base md:text-lg text-gray-600 leading-relaxed font-medium tracking-tight max-w-3xl mx-auto">
-                        We understand that every practice is different. That’s why we offer multiple pricing models:
+                        {t('pricing_section.desc')}
                     </p>
                 </div>
 
@@ -49,14 +51,14 @@ const Pricing = () => {
 
                 <div className="max-w-4xl mx-auto text-center">
                     <p className="text-[1.1rem] text-gray-600 leading-relaxed font-bold tracking-tight">
-                        No hidden fees. No surprise lock-in clauses. Just straightforward pricing that scales with your practice.
+                        {t('pricing_section.footer')}
                     </p>
                     <div className="mt-8">
                         <Link 
                             href="/contact-us" 
                             className="inline-block px-10 bg-[#0033e7] hover:bg-blue-800 text-white transform hover:-translate-y-1 transition-all duration-300 font-bold uppercase text-xs tracking-[2px] py-4 rounded-xl shadow-md hover:shadow-lg no-underline"
                         >
-                            Get Free Consultation
+                            {t('pricing_section.btn')}
                         </Link>
                     </div>
                 </div>
